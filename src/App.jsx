@@ -9,6 +9,7 @@ import Quarter3 from "./pages/Quarter3";
 import Quarter4 from "./pages/Quarter4";
 import Quarter1Details from "./pages/Quarter1Details";
 import Quarter2Detail from "./pages/Quarter2Detail";
+import Quarter3Detail from "./pages/Quarter3Detail.jsx";
 import FinancialStatement from "./pages/FinancialStatement";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import IncomeStatement from "./pages/admin/UpdateIncomeStatement";
@@ -18,6 +19,7 @@ import UserDetails from "./pages/admin/UserDetails";
 import Dashboard from "./pages/admin/Dashboard";
 import Revenue from "./pages/admin/Revenue";
 import UpdateQuarter2Info from "./pages/admin/UpdateQuarter2Info";
+import UpdateQuarter3Info from "./pages/admin/UpdateQuarter3Info";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -47,6 +49,7 @@ function App() {
         <Route path="/quarter2" element={<Quarter2 />} />
         <Route path="/quarter2/:id" element={<Quarter2Detail />} />
         <Route path="/quarter3" element={<Quarter3 />} />
+        <Route path="/quarter3/:id" element={<Quarter3Detail />} />
         <Route path="/quarter4" element={<Quarter4 />} />
         <Route path="/financialStatement" element={<FinancialStatement />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
@@ -55,6 +58,7 @@ function App() {
         <Route path="/admin/users" element={<UsersList />} />
         <Route path="/admin/user/:id" element={<UserDetails />} />
         <Route path="/admin/quarter2" element={<UpdateQuarter2Info />} />
+        <Route path="/admin/quarter3" element={<UpdateQuarter3Info />} />
       </Route>
     </Routes>
   );

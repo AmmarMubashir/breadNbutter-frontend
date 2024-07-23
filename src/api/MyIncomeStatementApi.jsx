@@ -116,3 +116,34 @@ export const useCreateUserIncomeStatement = () => {
 
   return { CreateUserIncome, isLoading, isSuccess, error };
 };
+
+export const useUpdateUserIncomeStatement = () => {
+  const { jwt } = useAuthContext();
+
+  const UpdateUserIncomeStatement = async () => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/user/incomeStatement`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+        body: JSON.stringify(),
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Error in Getting Income Statement");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: UpdateUserIncome,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(UpdateUserIncomeStatement);
+
+  return { UpdateUserIncome, isLoading, isSuccess, error };
+};
