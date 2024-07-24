@@ -122,7 +122,7 @@ export const useUpdateUserIncomeStatement = () => {
 
   const UpdateUserIncomeStatement = async () => {
     const response = await fetch(
-      `${API_BASE_URL}/api/v1/user/incomeStatement`,
+      `${API_BASE_URL}/api/v1/user/updateincomeStatement`,
       {
         method: "PUT",
         headers: {
