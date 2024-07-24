@@ -23,7 +23,7 @@
   outline: none;
   background: #1b375f;
   color: white;
-  border-radius: 15px;
+  border-radius: 0px;
   cursor: pointer;
 }
 #quarters::after {

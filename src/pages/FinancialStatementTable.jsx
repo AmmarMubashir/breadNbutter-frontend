@@ -286,7 +286,7 @@ const MyComponent = ({
             </h1>
           </div>
 
-          <div className="md:w-[70%] w-[95%] mx-auto">
+          {/* <div className="md:w-[70%] w-[95%] mx-auto">
             <div className="w-[100%] mx-auto py-2 px-3 md:px-4 bg-white rounded font-bold flex gap-3">
               Quarter 1 :
             </div>
@@ -413,7 +413,7 @@ const MyComponent = ({
                 <strong>Event:</strong> {quarter2.event}
               </div>
             </div>
-          )}
+          )} */}
 
           {incomeStatementD && (
             <div className="w-[100%]">
@@ -579,7 +579,7 @@ const MyComponent = ({
             </div>
           )}
 
-          {incomeStatementD && (
+          {/* {incomeStatementD && (
             <div className="w-[95%] md:w-[70%] mx-auto">
               <table className="w-[100%] mx-auto bg-white border mb-7   shadow-md rounded-lg overflow-hidden">
                 <div className="px-4 py-2 font-bold">Cash Flow</div>
@@ -611,7 +611,6 @@ const MyComponent = ({
                 <div className="px-4 py-2 font-bold">Revenues:</div>
 
                 {incomeStatementD && (
-                  // incomeStatementData[0].map((item, index) => (
                   <>
                     {Object.entries(incomeStatementD[0].Revenues).map(
                       ([key, value]) => (
@@ -620,11 +619,10 @@ const MyComponent = ({
                           className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                         >
                           <td className=" px-4 py-2">{key}</td>
-                          {/* <td className="border px-4 py-2">{value}</td> */}
                           {incomeStatementD.map((item, index) => {
                             return (
                               <>
-                                {/* {quarter2Data && index === 0 && ( */}
+                                
                                 <>
                                   <td className="px-4 py-2 text-center">
                                     {Math.floor(
@@ -647,18 +645,9 @@ const MyComponent = ({
                                           3
                                       )}
                                   </td>
-                                  {/* <td className="px-4 py-2 text-center">
-                                          {Math.ceil(
-                                            incomeStatementData[index].Revenues[
-                                              key
-                                            ] / 3
-                                          )}
-                                        </td> */}
                                 </>
-                                {/* )} */}
                               </>
                             );
-                            // }
                           })}
                         </tr>
                       )
@@ -674,9 +663,9 @@ const MyComponent = ({
                         className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                       >
                         <td className=" px-4 py-2">{key}</td>
-                        {/* <td className="border px-4 py-2">{value}</td> */}
+                        
                         {incomeStatementD.map((item, index) => {
-                          // if (index === 0) {
+                         
                           return (
                             <>
                               <td
@@ -701,17 +690,7 @@ const MyComponent = ({
                                   ] / 3
                                 )}
                               </td>
-                              {/* <td
-                                        className={`py-2 px-4 border-b text-center ${
-                                          item.Revenue < 0 ? `text-red-500` : ""
-                                        }`}
-                                      >
-                                        {Math.ceil(
-                                          incomeStatementData[index][
-                                            "Expenses And Costs"
-                                          ][key] / 3
-                                        )}
-                                      </td> */}
+                              
                               <td
                                 className={`py-2 px-4 border-b text-center ${
                                   item.Revenue < 0 ? `text-red-500` : ""
@@ -732,16 +711,16 @@ const MyComponent = ({
                                       ][key] / 3
                                     )
 
-                                  // incomeStatementData[index][ "Expenses And Costs" ][key]
+                                  
                                 }
                               </td>
                             </>
                           );
-                          // }
+                         
                         })}
                       </tr>
                     ))}
-                    {/* Cash Flow Extra Table */}
+                   
                     {cashflow &&
                       Object.entries(cashflow[0]).map(([key, value]) => (
                         <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300 font-bold">
@@ -763,7 +742,7 @@ const MyComponent = ({
                 )}
               </table>
             </div>
-          )}
+          )} */}
 
           {/* <CSVLink
             data={data}

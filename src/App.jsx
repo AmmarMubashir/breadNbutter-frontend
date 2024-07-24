@@ -9,7 +9,9 @@ import Quarter3 from "./pages/Quarter3";
 import Quarter4 from "./pages/Quarter4";
 import Quarter1Details from "./pages/Quarter1Details";
 import Quarter2Detail from "./pages/Quarter2Detail";
-import Quarter3Detail from "./pages/Quarter3Detail.jsx";
+import Quarter3Detail from "./pages/Quarter3Detail";
+import Resources from "./pages/Resources";
+import Cashflow from "./pages/Cashflow";
 import FinancialStatement from "./pages/FinancialStatement";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import IncomeStatement from "./pages/admin/UpdateIncomeStatement";
@@ -50,6 +52,8 @@ function App() {
         <Route path="/quarter2/:id" element={<Quarter2Detail />} />
         <Route path="/quarter3" element={<Quarter3 />} />
         <Route path="/quarter3/:id" element={<Quarter3Detail />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/cashflow" element={<Cashflow />} />
         <Route path="/quarter4" element={<Quarter4 />} />
         <Route path="/financialStatement" element={<FinancialStatement />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />

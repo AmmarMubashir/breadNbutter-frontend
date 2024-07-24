@@ -137,6 +137,15 @@ const AdminNav = () => {
           >
             Update Quarter 2
           </button>
+          <button
+            onClick={() => {
+              navigate("/admin/quarter3");
+              setOpen(!open);
+            }}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Update Quarter 3
+          </button>
         </div>
         <button
           onClick={() => {

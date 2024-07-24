@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogout } from "../../api/MyUserApi";
-import logo from "../../assets/Logo.png";
+import Logo from "../../assets/Logo.png";
 import { IoMdLogOut } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
@@ -57,7 +57,7 @@ const RightNav = () => {
   console.log("OPEN", open);
   return (
     <>
-      <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
+      {/* <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
         <div className="absolute top-[15vh] left-10 flex flex-col gap-1">
           <button
             className="px-2 py-1 bg-[#1b375f]  text-white rounded-full"
@@ -96,6 +96,95 @@ const RightNav = () => {
             Financial statement
           </Link>
         </div>
+      </div> */}
+
+      <div className="w-[200px] lg:w-[240px] h-[100vh] bg-white border-r-[5px] border-[#1B375F] py-6 hidden md:flex flex-col gap-[2rem]">
+        <img src={Logo} width="170px" />
+        <div className="w-full">
+          <button
+            onClick={() => navigate("/financialStatement")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Income Statement
+          </button>
+          <button
+            onClick={() => navigate("/cashflow")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Cash Flow
+          </button>
+          <button
+            onClick={() => navigate("/resources")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Resources
+          </button>
+          {/* <button
+            onClick={() => navigate("/reviews")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Review
+          </button> */}
+          <select
+            name="quarters"
+            id="quarters"
+            onChange={handleNavigation}
+            className="w-full"
+          >
+            <option>Quarters</option>
+            <option value="/quarter1">Quarter1</option>
+            <option value="/quarter2" disabled={quarter1}>
+              Quarter2
+            </option>
+            <option value="/quarter3" disabled={quarter2}>
+              Quarter3
+            </option>
+            <option value="/quarter4" disabled={true}>
+              Quarter4
+            </option>
+          </select>
+
+          {/* <button
+            onClick={() => navigate("/admin/users")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            User List
+          </button> */}
+          {/* <button
+            onClick={() => navigate("/admin/incomeStatement")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            >
+            Update Income Statement
+            </button>
+            <button
+            onClick={() => navigate("/admin/quarter2")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Update Quarter 2
+          </button>
+          <button
+            onClick={() => navigate("/admin/quarter3")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Update Quarter 3
+          </button> */}
+        </div>
+        <div className="w-full mt-auto">
+          {isAdmin && (
+            <button
+              onClick={(e) => navigate("/admin/dashboard")}
+              className="py-2 px-3 bg-[#1b375f] text-white text-start mt-auto w-full"
+            >
+              Admin Dashboard
+            </button>
+          )}
+          <button
+            onClick={() => logout()}
+            className="w-max px-7 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start flex gap-2 items-center relative mt-2 mx-auto  rounded-full"
+          >
+            <IoMdLogOut /> Logout
+          </button>
+        </div>
       </div>
 
       {/* Mobile navbar */}
@@ -114,14 +203,34 @@ const RightNav = () => {
           className="ml-auto mr-2 text-[2rem]"
           onClick={() => setOpen(!open)}
         />
-        <img src={logo} width="180px" />
+        <img src={Logo} width="180px" />
         <div className="w-full mt-4 flex flex-col">
           <button
-            className="px-2 py-1 bg-[#1b375f]  text-white border-b-[2px] border-white flex items-center gap-2"
-            onClick={logoutHandler}
+            onClick={() => {
+              navigate("/financialStatement");
+              setOpen(!open);
+            }}
+            className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
           >
-            <IoMdLogOut className="text-[1rem]" />
-            Logout
+            Income statement
+          </button>
+          <button
+            onClick={() => {
+              navigate("/cashflow");
+              setOpen(!open);
+            }}
+            className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
+          >
+            Cash Flow
+          </button>
+          <button
+            onClick={() => {
+              navigate("/cashflow");
+              setOpen(!open);
+            }}
+            className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
+          >
+            Resources
           </button>
           <select
             name="quarters"
@@ -143,23 +252,21 @@ const RightNav = () => {
           </select>
         </div>
 
-        <div className=" mt-auto w-full flex flex-col gap-3 text-start">
+        <div className=" mt-auto w-full flex flex-col gap-1 text-start">
           {isAdmin && (
             <Link
               to="/admin/dashboard"
               className="py-2 px-3 bg-[#1b375f] text-white"
             >
-              Dashboard
+              Admin Dashboard
             </Link>
           )}
           <button
-            onClick={() => {
-              navigate("/financialStatement");
-              setOpen(!open);
-            }}
-            className="py-2 px-2 bg-[#1b375f] text-white w-full"
+            className="px-2 py-1 bg-[#1b375f]  text-white border-b-[2px] border-white flex items-center gap-2"
+            onClick={logoutHandler}
           >
-            Financial statement
+            <IoMdLogOut className="text-[1rem]" />
+            Logout
           </button>
         </div>
       </div>
