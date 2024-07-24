@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { useGetIndividualQuarter1 } from "../../api/MyQuarterApi";
 import { useGetUserQuarter2 } from "../../api/MyQuarter2Api";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const RightNav = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -19,6 +20,7 @@ const RightNav = () => {
   const [quarter2, setQuarter2] = useState(true);
   const [quarter1, setQuarter1] = useState(true);
   const [selectedOption, setSelectedOption] = useState();
+  const [options, setOptions] = useState(false);
 
   useEffect(() => {
     let User = JSON.parse(localStorage.getItem("breadUser"));
@@ -115,7 +117,7 @@ const RightNav = () => {
           >
             Income Statement
           </button> */}
-          <select
+          {/* <select
             name="quarters"
             id="quarters"
             onChange={handleSelectChange}
@@ -124,7 +126,35 @@ const RightNav = () => {
             <option>Financial Statements</option>
             <option value="/financialStatement">Income Statement</option>
             <option value="/cashflow">Cashflow</option>
-          </select>
+          </select> */}
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setOptions(!options)}
+          >
+            Finance Statement <MdKeyboardArrowDown />
+          </button>
+          {options && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/financialStatement");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income Statement
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/cashflow");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Cashflow
+              </button>
+            </div>
+          )}
           {/* <button
             onClick={() => navigate("/cashflow")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -227,16 +257,34 @@ const RightNav = () => {
           >
             Income statement
           </button> */}
-          <select
-            name="quarters"
-            id="quarters"
-            onChange={handleSelectChange}
-            className="w-full"
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setOptions(!options)}
           >
-            <option>Financial Statements</option>
-            <option value="/financialStatement">Income Statement</option>
-            <option value="/cashflow">Cashflow</option>
-          </select>
+            Finance Statement <MdKeyboardArrowDown />
+          </button>
+          {options && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/financialStatement");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income Statement
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/cashflow");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Cashflow
+              </button>
+            </div>
+          )}
           {/* <button
             onClick={() => {
               navigate("/cashflow");
