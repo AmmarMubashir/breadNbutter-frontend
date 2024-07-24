@@ -125,12 +125,12 @@ const RightNav = () => {
             <option value="/financialStatement">Income Statement</option>
             <option value="/cashflow">Cashflow</option>
           </select>
-          <button
+          {/* <button
             onClick={() => navigate("/cashflow")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Cash Flow
-          </button>
+          </button> */}
           <button
             onClick={() => navigate("/resources")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -237,7 +237,7 @@ const RightNav = () => {
             <option value="/financialStatement">Income Statement</option>
             <option value="/cashflow">Cashflow</option>
           </select>
-          <button
+          {/* <button
             onClick={() => {
               navigate("/cashflow");
               setOpen(!open);
@@ -245,7 +245,7 @@ const RightNav = () => {
             className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
           >
             Cash Flow
-          </button>
+          </button> */}
           <button
             onClick={() => {
               navigate("/resources");
