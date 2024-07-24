@@ -225,7 +225,7 @@ const RightNav = () => {
           </button>
           <button
             onClick={() => {
-              navigate("/cashflow");
+              navigate("/resources");
               setOpen(!open);
             }}
             className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
