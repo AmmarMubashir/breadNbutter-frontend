@@ -131,7 +131,7 @@ const RightNav = () => {
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setOptions(!options)}
           >
-            Finance Statement <MdKeyboardArrowDown />
+            Finance <MdKeyboardArrowDown />
           </button>
           {options && (
             <div className="transition-all duration-300 overflow-hidden">
@@ -167,8 +167,11 @@ const RightNav = () => {
           >
             Resources
           </button>
+          <button className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start">
+            Dashboard
+          </button>
 
-          <select
+          {/* <select
             name="quarters"
             id="quarters"
             onChange={handleNavigation}
@@ -185,7 +188,7 @@ const RightNav = () => {
             <option value="/quarter4" disabled={true}>
               Quarter4
             </option>
-          </select>
+          </select> */}
 
           {/* <button
             onClick={() => navigate("/admin/users")}
@@ -303,7 +306,15 @@ const RightNav = () => {
           >
             Resources
           </button>
-          <select
+          <button
+            onClick={() => {
+              setOpen(!open);
+            }}
+            className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
+          >
+            Dashboard
+          </button>
+          {/* <select
             name="quarters"
             id="quarters"
             onChange={handleNavigation}
@@ -320,7 +331,7 @@ const RightNav = () => {
             <option value="/quarter4" disabled={true}>
               Quarter4
             </option>
-          </select>
+          </select> */}
         </div>
 
         <div className=" mt-auto w-full flex flex-col gap-1 text-start">
