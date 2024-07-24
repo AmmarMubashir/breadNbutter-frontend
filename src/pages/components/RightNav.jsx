@@ -18,6 +18,7 @@ const RightNav = () => {
 
   const [quarter2, setQuarter2] = useState(true);
   const [quarter1, setQuarter1] = useState(true);
+  const [selectedOption, setSelectedOption] = useState();
 
   useEffect(() => {
     let User = JSON.parse(localStorage.getItem("breadUser"));
@@ -55,6 +56,13 @@ const RightNav = () => {
   };
 
   console.log("OPEN", open);
+
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+    // console.log(selectedValue);
+    setSelectedOption(selectedValue);
+    navigate(selectedValue);
+  };
   return (
     <>
       {/* <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
@@ -101,12 +109,22 @@ const RightNav = () => {
       <div className="w-[200px] lg:w-[240px] h-[100vh] bg-white border-r-[5px] border-[#1B375F] py-6 hidden md:flex flex-col gap-[2rem]">
         <img src={Logo} width="170px" />
         <div className="w-full">
-          <button
+          {/* <button
             onClick={() => navigate("/financialStatement")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Income Statement
-          </button>
+          </button> */}
+          <select
+            name="quarters"
+            id="quarters"
+            onChange={handleSelectChange}
+            className="w-full"
+          >
+            <option>Financial Statements</option>
+            <option value="/financialStatement">Income Statement</option>
+            <option value="/cashflow">Cashflow</option>
+          </select>
           <button
             onClick={() => navigate("/cashflow")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -119,12 +137,7 @@ const RightNav = () => {
           >
             Resources
           </button>
-          {/* <button
-            onClick={() => navigate("/reviews")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Review
-          </button> */}
+
           <select
             name="quarters"
             id="quarters"
@@ -205,7 +218,7 @@ const RightNav = () => {
         />
         <img src={Logo} width="180px" />
         <div className="w-full mt-4 flex flex-col">
-          <button
+          {/* <button
             onClick={() => {
               navigate("/financialStatement");
               setOpen(!open);
@@ -213,7 +226,17 @@ const RightNav = () => {
             className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
           >
             Income statement
-          </button>
+          </button> */}
+          <select
+            name="quarters"
+            id="quarters"
+            onChange={handleSelectChange}
+            className="w-full"
+          >
+            <option>Financial Statements</option>
+            <option value="/financialStatement">Income Statement</option>
+            <option value="/cashflow">Cashflow</option>
+          </select>
           <button
             onClick={() => {
               navigate("/cashflow");

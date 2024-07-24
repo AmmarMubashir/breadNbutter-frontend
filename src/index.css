@@ -17,18 +17,19 @@
 }
 
 #quarters {
-  appearance: none;
+  /* appearance: none; */
   padding: 5px 10px;
   border: none;
   outline: none;
   background: #1b375f;
   color: white;
   border-radius: 0px;
+  border-bottom: 2px solid white;
   cursor: pointer;
 }
-#quarters::after {
-  content: "";
-}
+/* #quarters::after {
+  content: "*";
+} */
 #quarters > option {
   cursor: hover;
 }
@@ -39,12 +40,13 @@
 
 @media (max-width: 768px) {
   #quarters {
-    appearance: none;
+    /* appearance: none; */
     padding: 5px 10px;
     border: none;
     outline: none;
     background: #1b375f;
     color: white;
+    border-bottom: 2px solid white;
     border-radius: 0px;
     cursor: pointer;
   }
