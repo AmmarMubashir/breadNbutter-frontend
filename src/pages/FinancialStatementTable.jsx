@@ -433,6 +433,9 @@ const MyComponent = ({
                   <td className="py-2 px-4 border-b text-center font-bold">
                     Q5
                   </td>
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Total
+                  </td>
                 </tr>
                 <div className="px-1  py-2 font-bold ">Revenues:</div>
 
@@ -453,19 +456,7 @@ const MyComponent = ({
                             >
                               {key}
                             </td>
-                            {/* <td className="border px-4 py-2">{value}</td> */}
-                            {/* {incomeStatementData.map((item, index) => (
-                              <td
-                                className={`py-2 px-0 md:px-4 border-b text-center ${
-                                  key === "Total Revenue"
-                                    ? `font-bold px-1`
-                                    : ``
-                                }`}
-                              >
-                                {incomeStatementData[index].Revenues[key]}
-                                {incomeData[index].Revenues[key]}
-                              </td>
-                            ))} */}
+
                             {incomeStatementD.map((item, index) => {
                               // if (index === 0) {
                               return (
@@ -489,6 +480,48 @@ const MyComponent = ({
                               );
                               // }
                             })}
+                            {incomeStatementD &&
+                              incomeStatementD.length === 2 && (
+                                <>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                </>
+                              )}
+                            {incomeStatementD &&
+                              incomeStatementD.length === 1 && (
+                                <>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                </>
+                              )}
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {incomeStatementD.reduce(
+                                (acc, current) =>
+                                  acc + current["Revenues"][key],
+                                0
+                              )}
+                            </td>
                           </tr>
                         )
                       )}
@@ -522,6 +555,48 @@ const MyComponent = ({
                               {item["Expenses And Costs"][key]}
                             </td>
                           ))}
+                          {incomeStatementD &&
+                            incomeStatementD.length === 2 && (
+                              <>
+                                <td
+                                  className={`py-2 px-4 border-b text-center`}
+                                >
+                                  {null}
+                                </td>
+                                <td
+                                  className={`py-2 px-4 border-b text-center`}
+                                >
+                                  {null}
+                                </td>
+                              </>
+                            )}
+                          {incomeStatementD &&
+                            incomeStatementD.length === 1 && (
+                              <>
+                                <td
+                                  className={`py-2 px-4 border-b text-center`}
+                                >
+                                  {null}
+                                </td>
+                                <td
+                                  className={`py-2 px-4 border-b text-center`}
+                                >
+                                  {null}
+                                </td>
+                                <td
+                                  className={`py-2 px-4 border-b text-center`}
+                                >
+                                  {null}
+                                </td>
+                              </>
+                            )}
+                          <td className={`py-2 px-4 border-b text-center`}>
+                            {incomeStatementD.reduce(
+                              (acc, current) =>
+                                acc + current["Expenses And Costs"][key],
+                              0
+                            )}
+                          </td>
                         </tr>
                       ))}
 
@@ -567,6 +642,47 @@ const MyComponent = ({
                                   {item[key]}
                                 </td>
                               ))}
+                              {incomeStatementD &&
+                                incomeStatementD.length === 2 && (
+                                  <>
+                                    <td
+                                      className={`py-2 px-4 border-b text-center`}
+                                    >
+                                      {null}
+                                    </td>
+                                    <td
+                                      className={`py-2 px-4 border-b text-center`}
+                                    >
+                                      {null}
+                                    </td>
+                                  </>
+                                )}
+                              {incomeStatementD &&
+                                incomeStatementD.length === 1 && (
+                                  <>
+                                    <td
+                                      className={`py-2 px-4 border-b text-center`}
+                                    >
+                                      {null}
+                                    </td>
+                                    <td
+                                      className={`py-2 px-4 border-b text-center`}
+                                    >
+                                      {null}
+                                    </td>
+                                    <td
+                                      className={`py-2 px-4 border-b text-center`}
+                                    >
+                                      {null}
+                                    </td>
+                                  </>
+                                )}
+                              <td className={`py-2 px-4 border-b text-center`}>
+                                {incomeStatementD.reduce(
+                                  (acc, current) => acc + current[key],
+                                  0
+                                )}
+                              </td>
                             </tr>
                           );
                         }
