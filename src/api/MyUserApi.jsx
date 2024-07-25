@@ -5,56 +5,6 @@ import { useAuthContext } from "../../context/AuthContext";
 
 import { API_BASE_URL } from "./api";
 
-// export const useCreateMyUser = () => {
-//   const { setAuthUser } = useAuthContext();
-//   const createMyUserRequest = async (user) => {
-//     console.log("USERRRRRR", user);
-//     const response = await fetch(`http://localhost:7000/api/v1/signup`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(user),
-//     });
-
-//     const data = await response.json();
-
-//     if (!response.ok) {
-//       throw new Error("Failed to create user");
-//     }
-
-//     console.log(data.data);
-//     localStorage.setItem("breadUser", JSON.stringify(data.data));
-//     localStorage.setItem("breadToken", data.token);
-//     setAuthUser(data);
-//   };
-
-//   const {
-//     mutateAsync: createUser,
-//     isLoading,
-//     error,
-//     isSuccess,
-//   } = useMutation(createMyUserRequest);
-
-//   useEffect(() => {
-//     if (isSuccess) {
-//       toast.success("User created Successfully");
-//     }
-//   }, [isSuccess]);
-//   useEffect(() => {
-//     if (error) {
-//       toast.error(error.toString());
-//     }
-//   }, [error]);
-
-//   return {
-//     createUser,
-//     isLoading,
-//     error,
-//     isSuccess,
-//   };
-// };
-
 export const useCreateMyUser = () => {
   const { setAuthUser, setJwt } = useAuthContext();
   const createMyUserRequest = async (user) => {
@@ -72,7 +22,7 @@ export const useCreateMyUser = () => {
       throw new Error("Failed to create user");
     }
 
-    console.log(data.token);
+    // console.log(data.token);
     setJwt(data.token);
     localStorage.setItem("breadUser", JSON.stringify(data.data));
     localStorage.setItem("breadToken", data.token);

@@ -28,11 +28,6 @@ const Login = () => {
 
       setInputs({ email: "", password: "" });
       setAuthUser(true);
-      // localStorage.removeItem("quarter1");
-      localStorage.removeItem("quarter2");
-      localStorage.removeItem("quarter3");
-      localStorage.removeItem("quarter4");
-      localStorage.removeItem("quarter5");
     }
   }, [isSuccess]);
   return (

@@ -11,7 +11,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const { authUser } = useAuthContext();
+  const { authUser, setAuthUser } = useAuthContext();
   const { createUser, isSuccess } = useCreateMyUser();
   const signupHandler = async (e) => {
     e.preventDefault();
@@ -28,6 +28,7 @@ const Signup = () => {
       navigate("/quarter1");
 
       setInputs({ name: "", email: "", password: "" });
+      setAuthUser(true);
     }
   }, [isSuccess]);
   return (
@@ -106,8 +107,7 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            className="bg-[#1b375f] rounded-full py-2 px-6 text-white font-bold text-[1.2rem] ml-auto"
-            style={{ width: "max-content" }}
+            className="bg-[#1b375f] w-max rounded-full py-2 px-6 text-white font-bold text-[1.2rem] ml-auto"
           >
             Signup
           </button>
@@ -118,5 +118,3 @@ const Signup = () => {
 };
 
 export default Signup;
-{
-}
