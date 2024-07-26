@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AdminNav from "../components/AdminNav";
-import { useGetUserIncomeAdmin } from "../../api/MyIncomeStatementApi";
+import { toast } from "react-toastify";
+import {
+  useGetUserIncomeAdmin,
+  useUpdateUserIncomeAdmin,
+} from "../../api/MyIncomeStatementApi";
 
 const UpdateUserFinanceStatement = () => {
   const { id } = useParams();
   const { getUserIncomeAdmin } = useGetUserIncomeAdmin();
   const [incomeStatement, setIncomeStatement] = useState();
+  const { updateUserIncomeAdmin, isSuccess, error } =
+    useUpdateUserIncomeAdmin();
 
   useEffect(() => {
     const loadData = async function () {
@@ -19,7 +25,38 @@ const UpdateUserFinanceStatement = () => {
     };
 
     loadData();
-  }, []);
+  }, [id]);
+  const handleRevenueChange = (index, key, event) => {
+    const newIncomeData = [...incomeStatement];
+    newIncomeData[index].Revenues[key] = +event.target.value;
+    setIncomeStatement(newIncomeData);
+  };
+  const handleCostChange = (index, key, event) => {
+    const newIncomeData = [...incomeStatement];
+    newIncomeData[index]["Expenses And Costs"][key] = +event.target.value;
+    setIncomeStatement(newIncomeData);
+  };
+
+  // console.log("UPDATED", incomeStatement);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // console.log("id", id);
+    // console.log("SUBMIT", incomeStatement);
+    if (incomeStatement && id) {
+      await updateUserIncomeAdmin({ data: incomeStatement, id });
+      // console.log("CHECK", incomeStatement);
+    }
+  };
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Income Statement Updated Successfully");
+    }
+    if (error) {
+      toast.error("Error in Updating Income Statement");
+    }
+  }, [isSuccess, error]);
   return (
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <AdminNav />
@@ -29,7 +66,7 @@ const UpdateUserFinanceStatement = () => {
             Update Finance Statement
           </h1>
           <div className="mx-auto mt-4 w-[95%] md:w-[85%] bg-white px-4 py-2 rounded text-start">
-            <form>
+            <form onSubmit={handleSubmit}>
               {incomeStatement &&
                 incomeStatement.map((item, index) => (
                   <>
@@ -46,7 +83,10 @@ const UpdateUserFinanceStatement = () => {
                           <input
                             type="number"
                             value={item.Revenues["Additional Income"]}
-                            min={0}
+                            onChange={(e) =>
+                              handleRevenueChange(index, "Additional Income", e)
+                            }
+                            // min={0}
                             id="AdditionalIncome"
                             className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
                           />
@@ -65,7 +105,10 @@ const UpdateUserFinanceStatement = () => {
                             value={
                               item["Expenses And Costs"]["Additional Cost"]
                             }
-                            min={0}
+                            onChange={(e) =>
+                              handleCostChange(index, "Additional Cost", e)
+                            }
+                            // min={0}
                             id="AdditionalCost"
                             className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
                           />

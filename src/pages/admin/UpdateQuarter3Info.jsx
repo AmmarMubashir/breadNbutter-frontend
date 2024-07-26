@@ -62,6 +62,11 @@ const UpdateQuarter3Info = () => {
 
     setQuarter3(newQuarter3); // Update the state with the modified object
   };
+  const handleDataChange = (event, key) => {
+    const newQuarter3 = { ...quarter3 }; // Create a copy of the state
+    newQuarter3[key] = event.target.value;
+    setQuarter3(newQuarter3);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -254,6 +259,38 @@ const UpdateQuarter3Info = () => {
                     </div>
                   </div>
                 </div>
+                {/*  */}
+                <div className="flex md:flex-row flex-col gap-6 mt-4">
+                  <div className="flex flex-col flex-1 items-start gap-2 ">
+                    <label htmlFor="clients" className=" font-bold">
+                      Number of Clients per day:
+                    </label>
+                    <input
+                      type="number"
+                      id="clients"
+                      value={quarter3["No of Clients per day"]}
+                      onChange={(event) =>
+                        handleDataChange(event, "No of Clients per day")
+                      }
+                      className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1 items-start gap-2">
+                    <label htmlFor="price" className="w-max font-bold">
+                      Average Price:
+                    </label>
+                    <input
+                      type="number"
+                      id="price"
+                      value={quarter3["Average Price"]}
+                      onChange={(event) =>
+                        handleDataChange(event, "Average Price")
+                      }
+                      className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                    />
+                  </div>
+                </div>
+                {/*  */}
 
                 <div className="flex flex-col flex-1 items-start gap-2 mt-6">
                   <label htmlFor="event" className="font-bold">

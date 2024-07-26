@@ -21,6 +21,7 @@ const RightNav = () => {
   const [quarter1, setQuarter1] = useState(true);
   const [selectedOption, setSelectedOption] = useState();
   const [options, setOptions] = useState(false);
+  const [comparison, setComparison] = useState(false);
 
   useEffect(() => {
     let User = JSON.parse(localStorage.getItem("breadUser"));
@@ -167,9 +168,25 @@ const RightNav = () => {
           >
             Resources
           </button>
-          <button className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start">
-            Dashboard
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setComparison(!comparison)}
+          >
+            Dashboard <MdKeyboardArrowDown />
           </button>
+          {comparison && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/user/incomeComparison");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income Comparison
+              </button>
+            </div>
+          )}
 
           {/* <select
             name="quarters"

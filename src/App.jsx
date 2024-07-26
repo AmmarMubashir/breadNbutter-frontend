@@ -17,7 +17,8 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 import IncomeStatement from "./pages/admin/UpdateIncomeStatement";
 import UsersList from "./pages/admin/UsersList";
 import UserDetails from "./pages/admin/UserDetails";
-import UpdateUserFinanceStatement from "./pages/admin/UpdateUserFinanceStatement.jsx";
+import UpdateUserFinanceStatement from "./pages/admin/UpdateUserFinanceStatement";
+import UserIncomeComparison from "./pages/UserIncomeComparison";
 
 import Dashboard from "./pages/admin/Dashboard";
 import Revenue from "./pages/admin/Revenue";
@@ -57,6 +58,10 @@ function App() {
         <Route path="/cashflow" element={<Cashflow />} />
         <Route path="/quarter4" element={<Quarter4 />} />
         <Route path="/financialStatement" element={<FinancialStatement />} />
+        <Route
+          path="/user/incomeComparison"
+          element={<UserIncomeComparison />}
+        />
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/admin/revenue" element={<Revenue />} />
         <Route path="/admin/incomeStatement" element={<IncomeStatement />} />
