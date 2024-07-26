@@ -35,6 +35,9 @@ const UsersList = () => {
                       User Name
                     </th>
                     <th className="py-2 px-4 border-b text-start">Email</th>
+                    <th className="py-2 px-4 border-b text-start">
+                      Update Finance
+                    </th>
                     <th className="py-2 px-4 border-b text-start">Details</th>
                   </tr>
                 </thead>
@@ -48,6 +51,11 @@ const UsersList = () => {
                         </td>
                         <td className="py-2 px-4 border-b text-start">
                           {item.email}
+                        </td>
+                        <td className="py-2 px-4 border-b text-start">
+                          <Link to={`/admin/user/finance/${item._id}`}>
+                            Update
+                          </Link>
                         </td>
                         <td className="py-2 px-4 border-b text-start ">
                           <Link to={`/admin/user/${item._id}`}>Details</Link>

@@ -147,3 +147,31 @@ export const useUpdateUserIncomeStatement = () => {
 
   return { UpdateUserIncome, isLoading, isSuccess, error };
 };
+
+export const useGetUserIncomeAdmin = () => {
+  const { jwt } = useAuthContext();
+  const getUserIncomeStatementAdmin = async (id) => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/admin/user/incomeStatement/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Error in Getting Income Statement");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: getUserIncomeAdmin,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(getUserIncomeStatementAdmin);
+
+  return { getUserIncomeAdmin, isLoading, isSuccess, error };
+};
