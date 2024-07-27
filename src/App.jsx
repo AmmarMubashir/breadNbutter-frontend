@@ -19,6 +19,7 @@ import UsersList from "./pages/admin/UsersList";
 import UserDetails from "./pages/admin/UserDetails";
 import UpdateUserFinanceStatement from "./pages/admin/UpdateUserFinanceStatement";
 import UserIncomeComparison from "./pages/UserIncomeComparison";
+import UserCostComparison from "./pages/UserCostComparison";
 
 import Dashboard from "./pages/admin/Dashboard";
 import Revenue from "./pages/admin/Revenue";
@@ -62,6 +63,7 @@ function App() {
           path="/user/incomeComparison"
           element={<UserIncomeComparison />}
         />
+        <Route path="/user/costComparison" element={<UserCostComparison />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/admin/revenue" element={<Revenue />} />
         <Route path="/admin/incomeStatement" element={<IncomeStatement />} />

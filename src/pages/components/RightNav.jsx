@@ -185,6 +185,15 @@ const RightNav = () => {
               >
                 Income Comparison
               </button>
+              <button
+                onClick={() => {
+                  navigate("/user/costComparison");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Cost Comparison
+              </button>
             </div>
           )}
 
