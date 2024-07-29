@@ -422,6 +422,9 @@ const MyComponent = ({
                 <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                   <td className="py-2 px-4 border-b text-center">{null}</td>
                   <td className="py-2 px-4 border-b text-center font-bold">
+                    Q1
+                  </td>
+                  <td className="py-2 px-4 border-b text-center font-bold">
                     Q2
                   </td>
                   <td className="py-2 px-4 border-b text-center font-bold">
@@ -429,9 +432,6 @@ const MyComponent = ({
                   </td>
                   <td className="py-2 px-4 border-b text-center font-bold">
                     Q4
-                  </td>
-                  <td className="py-2 px-4 border-b text-center font-bold">
-                    Q5
                   </td>
                   <td className="py-2 px-4 border-b text-center font-bold">
                     Total

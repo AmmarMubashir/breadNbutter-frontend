@@ -24,7 +24,7 @@ const UsersList = () => {
       <div className="h-[100vh] overflow-auto flex-1">
         <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
           <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-            Users
+            Teams
           </h1>
           {users && (
             <div className="w-[95%] md:w-[85%] rounded mx-auto overflow-auto">
@@ -32,9 +32,9 @@ const UsersList = () => {
                 <thead>
                   <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                     <th className="py-2 px-4 border-b text-start font-bold">
-                      User Name
+                      Team Name
                     </th>
-                    <th className="py-2 px-4 border-b text-start">Email</th>
+
                     <th className="py-2 px-4 border-b text-start">
                       Update Finance
                     </th>
@@ -49,16 +49,16 @@ const UsersList = () => {
                         <td className="py-2 px-4 border-b text-start ">
                           {item.name}
                         </td>
-                        <td className="py-2 px-4 border-b text-start">
+                        {/* <td className="py-2 px-4 border-b text-start">
                           {item.email}
-                        </td>
+                        </td> */}
                         <td className="py-2 px-4 border-b text-start">
-                          <Link to={`/admin/user/finance/${item._id}`}>
+                          <Link to={`/admin/user/finance/${item.id}`}>
                             Update
                           </Link>
                         </td>
                         <td className="py-2 px-4 border-b text-start ">
-                          <Link to={`/admin/user/${item._id}`}>Details</Link>
+                          <Link to={`/admin/user/${item.id}`}>Details</Link>
                         </td>
                       </tr>
                     );

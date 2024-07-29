@@ -37,7 +37,7 @@ const AdminNav = () => {
             onClick={() => navigate("/admin/users")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            User List
+            Teams List
           </button>
           <button
             onClick={() => navigate("/admin/incomeStatement")}
@@ -117,7 +117,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            User List
+            Teams List
           </button>
           <button
             onClick={() => {

@@ -85,7 +85,7 @@ const Quarter2Detail = () => {
       <RightNav />
       <div className=" h-[100vh] mx-auto w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.2rem] text-[#1b375f] font-bold">
-          Quarter 2 details
+          Quarter 1 details
         </h1>
 
         {quarter2D && (

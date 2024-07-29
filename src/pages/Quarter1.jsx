@@ -131,7 +131,7 @@ const Quarter1 = () => {
 
       <div className=" h-[100vh] w-[100%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.8rem] text-[#1b375f] font-bold font-mono">
-          Quarter 1
+          Startup
         </h1>
         <form
           action=""

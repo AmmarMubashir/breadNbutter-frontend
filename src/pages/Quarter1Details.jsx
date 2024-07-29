@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useGetQuarter1 } from "../api/MyQuarterApi";
 import RightNav from "./components/RightNav";
+// import { useCashContext } from "../../context/CashFlowContext";
 
 const Quarter1Details = () => {
   const { id } = useParams();
+  // const { cashFlowStatement } = useCashContext();
+
+  // if (cashFlowStatement) {
+  //   console.log("CASH_FLOW_STATEMENT", cashFlowStatement);
+  // }
 
   const { getQuarter1 } = useGetQuarter1();
   const [quarter1Data, setQuarter1Data] = useState(null);
@@ -29,7 +35,7 @@ const Quarter1Details = () => {
       <RightNav />
       <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.2rem] text-[#1b375f] font-bold">
-          Quarter 1 Details
+          Startup Details
         </h1>
         <table className="w-[80%] bg-white border border-gray-300">
           <thead className="bg-gray-200">
@@ -62,9 +68,11 @@ const Quarter1Details = () => {
               </td>
             </tr>
             <tr className="cursor-pointer hover:bg-gray-200">
-              <td className="px-6 py-4 whitespace-nowrap">Budget</td>
+              <td className="px-6 py-4 whitespace-nowrap">No of Customer</td>
               <td className="px-6 py-4 whitespace-nowrap">
-                {quarter1Data ? `${quarter1Data.budjet} $` : "Loading..."}
+                {quarter1Data
+                  ? `${quarter1Data["No of Clients per day"]} `
+                  : "Loading..."}
               </td>
             </tr>
           </tbody>

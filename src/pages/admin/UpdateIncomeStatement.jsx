@@ -89,10 +89,10 @@ const UpdateIncomeStatement = () => {
                   <thead>
                     <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                       <th className="py-2 px-4 border-b text-start">Key</th>
+                      <th className="py-2 px-4 border-b text-center">Q1</th>
                       <th className="py-2 px-4 border-b text-center">Q2</th>
                       <th className="py-2 px-4 border-b text-center">Q3</th>
                       <th className="py-2 px-4 border-b text-center">Q4</th>
-                      <th className="py-2 px-4 border-b text-center">Q5</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -107,7 +107,9 @@ const UpdateIncomeStatement = () => {
                         >
                           <td
                             className={`py-2 px-4 border-b ${
-                              key === "Total Revenue" || key === "Opportunities"
+                              key === "Total Revenue" ||
+                              key === "Opportunities" ||
+                              key === "Additional Income"
                                 ? `hidden`
                                 : ``
                             }`}
@@ -118,7 +120,8 @@ const UpdateIncomeStatement = () => {
                             <td
                               className={`py-2 px-0 md:px-4 border-b text-center ${
                                 key === "Total Revenue" ||
-                                key === "Opportunities"
+                                key === "Opportunities" ||
+                                key === "Additional Income"
                                   ? `hidden`
                                   : ``
                               }`}
@@ -151,7 +154,8 @@ const UpdateIncomeStatement = () => {
                             className={`py-2 px-4 border-b ${
                               key === "Total Cost And Expenses" ||
                               key === "Opportunity Costs" ||
-                              key === "Other Cost"
+                              key === "Other Cost" ||
+                              key === "Additional Cost"
                                 ? `hidden`
                                 : ``
                             }`}
@@ -163,7 +167,8 @@ const UpdateIncomeStatement = () => {
                               className={`py-2 px-4 border-b text-center ${
                                 key === "Total Cost And Expenses" ||
                                 key === "Opportunity Costs" ||
-                                key === "Other Cost"
+                                key === "Other Cost" ||
+                                key === "Additional Cost"
                                   ? `hidden`
                                   : ``
                               }`}

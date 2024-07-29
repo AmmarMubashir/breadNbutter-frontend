@@ -10,6 +10,7 @@ import {
   useCreateUserIncomeStatement,
   useUpdateUserIncomeStatement,
 } from "../api/MyIncomeStatementApi";
+import { useCashContext } from "../../context/CashFlowContext";
 
 const Quarter3 = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Quarter3 = () => {
   const { UserQuarter3 } = useGetUserQuarter3();
   const { UpdateUserIncome } = useUpdateUserIncomeStatement();
   const [quarter3D, setQuarter3D] = useState();
+  const { cashFlowStatement } = useCashContext();
 
   useEffect(() => {
     const loadData = async () => {
@@ -102,13 +104,16 @@ const Quarter3 = () => {
     navigate(`/quarter3/${data._id}`);
   };
 
+  // let incomeAtStart = 0;
+  // if (cash)
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <RightNav />
       <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.8rem] text-[#1b375f] font-bold font-mono">
-          Quarter 3
+          Quarter 2
         </h1>
+
         {quarter3D && (
           <form
             onSubmit={handleSubmit}
@@ -118,6 +123,12 @@ const Quarter3 = () => {
               <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
                 Quarterly Opportunities and Events (OE)
               </h2>
+              <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
+                Income At Start:{" "}
+                {cashFlowStatement &&
+                  cashFlowStatement[2] &&
+                  cashFlowStatement[2]["Income at end"]}
+              </p>
               <div
                 className={`bg-white rounded px-2 py-2 ${
                   quarter3D.option1.selected && `border-[2px] border-black ml-3`

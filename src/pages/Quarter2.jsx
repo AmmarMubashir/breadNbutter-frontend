@@ -125,7 +125,7 @@ const Quarter2 = () => {
       <RightNav />
       <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.8rem] text-[#1b375f] font-bold font-mono">
-          Quarter 2
+          Quarter 1
         </h1>
         {quarter2D && (
           <form
@@ -136,6 +136,9 @@ const Quarter2 = () => {
               <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
                 Quarterly Opportunities and Events (OE)
               </h2>
+              <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
+                Income At Start: 350
+              </p>
               <div
                 className={`bg-white rounded px-2 py-2 ${
                   quarter2D.option1.selected && `border-[2px] border-black ml-3`
