@@ -10,7 +10,7 @@ const MyResponsiveBar = ({ data }) => {
     <div className="h-[70vh] w-[100%]">
       <ResponsiveBar
         data={data}
-        keys={["cost"]}
+        keys={["Expenditure"]}
         indexBy="name"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
@@ -63,7 +63,7 @@ const MyResponsiveBar = ({ data }) => {
           tickSize: 5,
           tickPadding: 10,
           tickRotation: 0,
-          legend: "USERS",
+          legend: "Teams",
           legendPosition: "middle",
           legendOffset: 40,
           truncateTickAt: 0,

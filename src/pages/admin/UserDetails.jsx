@@ -54,14 +54,14 @@ const UserDetails = () => {
           {!quarter1Data && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter1 goes here when user fill it...
+                Startup details goes here when user fill it...
               </p>
             </div>
           )}
           {quarter1Data && (
             <div className="w-[95%] md:w-[85%] rounded mx-auto overflow-auto">
               <h1 className=" w-[100%] bg-white px-2 py-2 mt-3 rounded font-bold  text-[1.4rem]">
-                Quarter1 Details
+                Startup Details
               </h1>
               <table className=" bg-white border mb-7 w-[100%]  shadow-md rounded-lg">
                 <thead>
@@ -103,7 +103,7 @@ const UserDetails = () => {
           {!quarter2 && (
             <div className="w-[95%] md:w-[85%] mx-auto min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter2 goes here when user fill it...
+                Quarter1 goes here when user fill it...
               </p>
             </div>
           )}
@@ -111,7 +111,7 @@ const UserDetails = () => {
           {quarter2 && (
             <div className=" w-[95%] md:w-[85%] mx-auto ">
               <h1 className=" w-[100%] bg-white px-2 py-2 mt-3 rounded font-bold  text-[1.4rem]">
-                Quarter2 Details
+                Quarter1 Details
               </h1>
               <div className="w-[100%] overflow-auto">
                 <table className="min-w-full bg-white border  shadow-md rounded-lg overflow-hidden">
@@ -227,7 +227,7 @@ const UserDetails = () => {
           {!quarter3 && (
             <div className="w-[95%] md:w-[85%] mx-auto mt-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter3 goes here when user fill it...
+                Quarter2 goes here when user fill it...
               </p>
             </div>
           )}
@@ -235,7 +235,7 @@ const UserDetails = () => {
           {quarter3 && (
             <div className=" w-[95%] md:w-[85%] mx-auto  ">
               <h1 className=" w-[100%] bg-white px-2 py-2 mt-3 rounded font-bold  text-[1.4rem]">
-                Quarter3 Details
+                Quarter2 Details
               </h1>
               <div className="w-[100%] overflow-auto">
                 <table className="min-w-full bg-white border  shadow-md rounded-lg overflow-hidden">

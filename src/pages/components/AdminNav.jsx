@@ -25,13 +25,13 @@ const AdminNav = () => {
             onClick={() => navigate("/admin/dashboard")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Cost Comparison
+            Expenditure Comparison
           </button>
           <button
             onClick={() => navigate("/admin/revenue")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Revenue Comparison
+            Income Comparison
           </button>
           <button
             onClick={() => navigate("/admin/users")}
@@ -49,13 +49,13 @@ const AdminNav = () => {
             onClick={() => navigate("/admin/quarter2")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Update Quarter 2
+            Update Quarter 1
           </button>
           <button
             onClick={() => navigate("/admin/quarter3")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Update Quarter 3
+            Update Quarter 2
           </button>
         </div>
         <button
@@ -99,7 +99,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Cost Comparison
+            Expenditure Comparison
           </button>
           <button
             onClick={() => {
@@ -108,7 +108,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Revenue Comparison
+            Income Comparison
           </button>
           <button
             onClick={() => {
@@ -135,7 +135,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Update Quarter 2
+            Update Quarter 1
           </button>
           <button
             onClick={() => {
@@ -144,7 +144,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Update Quarter 3
+            Update Quarter 2
           </button>
         </div>
         <button

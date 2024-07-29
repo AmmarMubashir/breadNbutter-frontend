@@ -44,7 +44,7 @@ const IncomeChart = () => {
         <div className="flex-1 h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
           <div>
             <h1 className="text-center font-bold text-[2rem]">
-              Cost Comparison
+              Expenditure Comparison
             </h1>
           </div>
           <MyResponsiveBar data={data} />
