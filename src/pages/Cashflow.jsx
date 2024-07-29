@@ -236,6 +236,9 @@ const Cashflow = () => {
                       </td>
                     </>
                   )}
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Total
+                  </td>
                 </tr>
                 <div className="px-4 py-2 font-bold">Revenues:</div>
 
@@ -276,19 +279,16 @@ const Cashflow = () => {
                                           3
                                       )}
                                   </td>
-                                  {/* <td className="px-4 py-2 text-center">
-                                          {Math.ceil(
-                                            incomeStatementData[index].Revenues[
-                                              key
-                                            ] / 3
-                                          )}
-                                        </td> */}
                                 </>
-                                {/* )} */}
                               </>
                             );
-                            // }
                           })}
+                          <td className={`py-2 px-4 border-b text-center`}>
+                            {incomeStatementD.reduce(
+                              (acc, current) => acc + current["Revenues"][key],
+                              0
+                            )}
+                          </td>
                         </tr>
                       )
                     )}
@@ -368,6 +368,13 @@ const Cashflow = () => {
                           );
                           // }
                         })}
+                        <td className={`py-2 px-4 border-b text-center`}>
+                          {incomeStatementD.reduce(
+                            (acc, current) =>
+                              acc + current["Expenses And Costs"][key],
+                            0
+                          )}
+                        </td>
                       </tr>
                     ))}
                     {/* Cash Flow Extra Table */}
@@ -386,6 +393,12 @@ const Cashflow = () => {
                               {item[key]}
                             </td>
                           ))}
+                          <td className={`py-2 px-4 border-b text-center`}>
+                            {cashflow.reduce(
+                              (acc, current) => acc + current[key],
+                              0
+                            )}
+                          </td>
                         </tr>
                       ))}
                   </>

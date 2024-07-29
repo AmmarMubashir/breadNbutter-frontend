@@ -363,7 +363,11 @@ const UserFinanceStatement = ({ id }) => {
                     if (
                       key === "Revenues" ||
                       key === "Expenses And Costs" ||
-                      key === "_id"
+                      key === "_id" ||
+                      key === "EBITIDA" ||
+                      key === "EBIT" ||
+                      key === "Depreciation" ||
+                      key === "Interest"
                     ) {
                       return null;
                     }
@@ -441,7 +445,7 @@ const UserFinanceStatement = ({ id }) => {
       )}
 
       {incomeStatementD && (
-        <div className="w-[95%] md:w-[85%] mx-auto overflow-auto">
+        <div className="w-[95%] md:w-[85%] mx-auto">
           <table className="w-[100%] mx-auto bg-white border mb-7   shadow-md rounded-lg overflow-hidden">
             <div className="px-4 py-2 font-bold">Cash Flow</div>
             <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
@@ -468,6 +472,9 @@ const UserFinanceStatement = ({ id }) => {
                   </td>
                 </>
               )}
+              <td className="py-2 px-4 border-b text-center font-bold">
+                Total
+              </td>
             </tr>
             <div className="px-4 py-2 font-bold">Revenues:</div>
 
@@ -506,19 +513,16 @@ const UserFinanceStatement = ({ id }) => {
                                     incomeStatementD[index].Revenues[key] / 3
                                   )}
                               </td>
-                              {/* <td className="px-4 py-2 text-center">
-                                          {Math.ceil(
-                                            incomeStatementData[index].Revenues[
-                                              key
-                                            ] / 3
-                                          )}
-                                        </td> */}
                             </>
-                            {/* )} */}
                           </>
                         );
-                        // }
                       })}
+                      <td className={`py-2 px-4 border-b text-center`}>
+                        {incomeStatementD.reduce(
+                          (acc, current) => acc + current["Revenues"][key],
+                          0
+                        )}
+                      </td>
                     </tr>
                   )
                 )}
@@ -597,6 +601,13 @@ const UserFinanceStatement = ({ id }) => {
                         );
                         // }
                       })}
+                      <td className={`py-2 px-4 border-b text-center`}>
+                        {incomeStatementD.reduce(
+                          (acc, current) =>
+                            acc + current["Expenses And Costs"][key],
+                          0
+                        )}
+                      </td>
                     </tr>
                   )
                 )}
@@ -614,6 +625,12 @@ const UserFinanceStatement = ({ id }) => {
                           {item[key]}
                         </td>
                       ))}
+                      <td className={`py-2 px-4 border-b text-center`}>
+                        {cashflow.reduce(
+                          (acc, current) => acc + current[key],
+                          0
+                        )}
+                      </td>
                     </tr>
                   ))}
               </>

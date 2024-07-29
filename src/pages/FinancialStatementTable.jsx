@@ -605,7 +605,11 @@ const MyComponent = ({
                           if (
                             key === "Revenues" ||
                             key === "Expenses And Costs" ||
-                            key === "_id"
+                            key === "_id" ||
+                            key === "EBITIDA" ||
+                            key === "EBIT" ||
+                            key === "Depreciation" ||
+                            key === "Interest"
                           ) {
                             return null;
                           }
