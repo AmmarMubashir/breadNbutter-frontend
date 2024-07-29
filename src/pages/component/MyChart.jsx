@@ -10,7 +10,7 @@ const MyResponsiveBar = ({ data }) => {
     <div className="h-[70vh] w-[100%]">
       <ResponsiveBar
         data={data}
-        keys={["Expenditure"]}
+        keys={["cost"]}
         indexBy="name"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
