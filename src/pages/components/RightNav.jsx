@@ -299,8 +299,8 @@ const RightNav = () => {
       />
 
       <div
-        className={`h-[100vh] bg-white  w-[200px] border-r-[10px]  py-5 border-[#1b375f] absolute z-10   md:hidden flex flex-col   items-center ${
-          !open && `translate-x-[-240px]`
+        className={`h-[100vh] bg-white  w-[200px] border-r-[10px]  py-5 border-[#1b375f] fixed z-10   md:hidden flex flex-col   items-center ${
+          !open && `translate-x-[-240px] fixed`
         } transition-all`}
       >
         <RxCross2
@@ -356,22 +356,70 @@ const RightNav = () => {
             Cash Flow
           </button> */}
           <button
-            onClick={() => {
-              navigate("/resources");
-              setOpen(!open);
-            }}
-            className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setResourcesOption(!resourcesOption)}
           >
-            Resources
+            Resources <MdKeyboardArrowDown />
           </button>
+          {resourcesOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/resources/pdf");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                pdf
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/resources/presentation");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Presentation
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/resources/videos");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Videos
+              </button>
+            </div>
+          )}
           <button
-            onClick={() => {
-              setOpen(!open);
-            }}
-            className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setComparison(!comparison)}
           >
-            Dashboard
+            Dashboard <MdKeyboardArrowDown />
           </button>
+          {comparison && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/user/incomeComparison");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income Comparison
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/user/costComparison");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Expenditure Comparison
+              </button>
+            </div>
+          )}
           {/* <select
             name="quarters"
             id="quarters"

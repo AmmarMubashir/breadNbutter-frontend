@@ -27,7 +27,7 @@ const ResourcesVideos = () => {
     <div className="w-[100%] h-[100vh]  flex">
       <RightNav />
       <div className="h-[100vh] overflow-auto flex-1">
-        <div className=" w-[100%] min-h-[100vh] bg-[#FBB748] py-8  ">
+        <div className=" w-[100%] min-h-[100vh] bg-[#FBB748] py-[50px]  ">
           {videoData && (
             <>
               <div className="bg-white px-2 py-2 rounded text-start text-[1.4rem] w-[95%] md:w-[85%] mx-auto font-bold">
