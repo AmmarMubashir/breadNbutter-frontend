@@ -21,15 +21,15 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <AuthContextProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <AuthContextProvider>
           <CashContextProvider>
             <App />
             <ToastContainer autoClose={2500} position="top-center" />
           </CashContextProvider>
-        </BrowserRouter>
-      </AuthContextProvider>
-    </QueryClientProvider>
+        </AuthContextProvider>
+      </QueryClientProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
