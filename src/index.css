@@ -7,12 +7,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* body {
-  background: url("./assets/bg.jpg") !important;
-  background-size: cover;
-  width: 100%;
-  background-repeat: no-repeat;
-} */
 
 .custom-circle-clippath {
   clip-path: circle(52.6% at 0 49%);
