@@ -62,7 +62,6 @@ const UpdateQuarter2Info = () => {
 
     setQuarter2(newQuarter2); // Update the state with the modified object
   };
-
   const handleDataChange = (event, key) => {
     const newQuarter2 = { ...quarter2 }; // Create a copy of the state
     newQuarter2[key] = event.target.value;
@@ -80,7 +79,7 @@ const UpdateQuarter2Info = () => {
       <div className="h-[100vh] overflow-auto flex-1">
         <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
           <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-            Update Quarter 1
+            Update Quarter 2
           </h1>
           <div className="mx-auto mt-4 w-[95%] md:w-[85%] bg-white px-4 py-2 rounded text-start">
             {quarter2 && (
@@ -260,7 +259,6 @@ const UpdateQuarter2Info = () => {
                     </div>
                   </div>
                 </div>
-
                 {/*  */}
                 <div className="flex md:flex-row flex-col gap-6 mt-4">
                   <div className="flex flex-col flex-1 items-start gap-2 ">
@@ -293,6 +291,7 @@ const UpdateQuarter2Info = () => {
                   </div>
                 </div>
                 {/*  */}
+
                 <div className="flex flex-col flex-1 items-start gap-2 mt-6">
                   <label htmlFor="event" className="font-bold">
                     Event:

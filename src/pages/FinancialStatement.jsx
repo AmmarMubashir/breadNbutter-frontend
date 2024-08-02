@@ -1,65 +1,38 @@
 import React, { useEffect, useState } from "react";
 import FinancialStatementTable from "./FinancialStatementTable";
-import { useGetIndividualQuarter1 } from "../api/MyQuarterApi";
-import { useGetUserQuarter2 } from "../api/MyQuarter2Api";
+import { useGetIndividualStartup } from "../api/MyStartupApi";
+import { useGetUserQuarter1 } from "../api/MyQuarter1Api";
 
 const FinancialStatement = () => {
-  const [quarters, setQuarters] = useState({
-    quarter1: false,
-    quarter2: false,
-    quarter3: false,
-    quarter4: false,
-  });
-
-  const [quarter1Info, setQuarter1Info] = useState({
-    name: "",
-    members: "",
-    location: "",
-    budjet: 0,
-  });
+  const [startup, setStartup] = useState();
   const [quarter1, setQuarter1] = useState();
-  const [quarter2, setQuarter2] = useState();
-  const [quarter2Info, setQuarter2Info] = useState();
-  const { getIndividualQuarter } = useGetIndividualQuarter1();
-  const { UserQuarter2 } = useGetUserQuarter2();
+  const [quarter1Info, setQuarter1Info] = useState();
+  const { getIndividualStartup } = useGetIndividualStartup();
+  const { UserQuarter1 } = useGetUserQuarter1();
 
-  let quarter1Data, quarter2Data;
   useEffect(() => {
     const loadData = async function () {
-      quarter1Data =
-        (await JSON.parse(localStorage.getItem("quarter1"))) || null;
-      const quarter1D = await getIndividualQuarter();
-      const quarter2D = await UserQuarter2();
+      const startupD = await getIndividualStartup();
+      const quarter1D = await UserQuarter1();
 
-      setQuarter1(quarter1D.data);
-      setQuarter2(quarter2D);
-      quarter2Data =
-        (await JSON.parse(localStorage.getItem("quarter2"))) || null;
-
-      if (quarter1Data) {
-        setQuarters({ ...quarters, quarter1: true });
-        setQuarter1Info({ ...quarter1Data });
-      }
-      if (quarter2Data) {
-        setQuarter2Info(quarter2Data);
-      }
+      setStartup(startupD.data);
+      setQuarter1(quarter1D);
     };
 
     loadData();
-    console.log(quarter1Info);
+    // console.log(startupInfo);
   }, []);
-  if (quarter1) {
-    // console.log("QUARTER 1", quarter1);
+  if (startup) {
+    // console.log("QUARTER 1", startup);
   }
   return (
     <div className="bg-[#fbb748] min-h-[100vh] w-[100%]">
       <div>
         <FinancialStatementTable
-          quarters={quarters}
+          startup={startup}
           quarter1={quarter1}
-          quarter2={quarter2}
+          startupData={startup}
           quarter1Data={quarter1Info}
-          quarter2Data={quarter2Info}
         />
       </div>
     </div>

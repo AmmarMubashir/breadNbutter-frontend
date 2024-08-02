@@ -1,16 +1,16 @@
 import { ResponsiveBar } from "@nivo/bar";
 const MyResponsiveBar = ({ data }) => {
   console.log(data);
-  const costs = data.map((item) => item.cost); // Extract all cost values
+  const expenditure = data.map((item) => item.Expenditure); // Extract all cost values
 
-  const minCost = Math.min(...costs);
-  const maxCost = Math.max(...costs);
+  const minCost = Math.min(...expenditure);
+  const maxCost = Math.max(...expenditure);
 
   return (
     <div className="h-[70vh] w-[100%]">
       <ResponsiveBar
         data={data}
-        keys={["cost"]}
+        keys={["Expenditure"]}
         indexBy="name"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
@@ -72,7 +72,7 @@ const MyResponsiveBar = ({ data }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "COST",
+          legend: "Expenditure",
           legendPosition: "middle",
           legendOffset: -50,
           truncateTickAt: 0,

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RightNav from "./components/RightNav";
-import { useGetUserQuarter2 } from "../api/MyQuarter2Api";
+import { useGetUserQuarter1 } from "../api/MyQuarter1Api";
 import { useGetUserIncome } from "../api/MyIncomeStatementApi";
 import { ResponsiveBar } from "@nivo/bar";
 
@@ -22,79 +22,103 @@ const userCostComparison = () => {
   //   let quarter1={
 
   //   }
-  let quarter2Graph;
+  let quarter1Graph;
   if (incomeStatement) {
     console.log(incomeStatement);
-    quarter2Graph = [
+    quarter1Graph = [
       {
-        id: "Opportunity Cost",
-        "Opportunity Cost":
-          incomeStatement[0]["Expenses And Costs"]["Opportunity Costs"] +
-          incomeStatement[0]["Expenses And Costs"]["Opportunity Costs"],
+        id: "Expenses from opportunities",
+        "Expenses from opportunities":
+          incomeStatement[0]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[0]["Expenditure"]["Expenses from other sources"],
       },
       {
         id: "Purchases",
-        Purchases:
-          0.23 * incomeStatement[0]["Revenues"]["Opportunities"] +
-          incomeStatement[0]["Revenues"]["Sales From Home"] +
-          incomeStatement[0]["Revenues"]["Additional Income"],
+        Purchases: incomeStatement[0]["Expenditure"]["Purchases"],
+        // 0.23 * incomeStatement[0]["Revenues"]["Opportunities"] +
+        // incomeStatement[0]["Revenues"]["Sales From Home"] +
+        // incomeStatement[0]["Revenues"]["Additional Income"],
       },
+      {
+        id: "Additional cost",
+        "Additional cost": incomeStatement[0]["Expenditure"]["Additional cost"],
+      },
+
       {
         id: "Total Expenditure",
         "Total Expenditure":
-          incomeStatement[0]["Expenses And Costs"]["Total Cost And Expenses"],
+          incomeStatement[0]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[0]["Expenditure"]["Expenses from other sources"] +
+          incomeStatement[0]["Expenditure"]["Purchases"] +
+          incomeStatement[0]["Expenditure"]["Additional cost"],
+        // "Total Expenditure":
+        //   incomeStatement[0]["Expenditure"]["Total Expenditure"],
       },
     ];
   }
 
-  let quarter3Graph;
+  let quarter2Graph;
   if (incomeStatement && incomeStatement[1]) {
     // console.log(incomeStatement);
-    quarter3Graph = [
+    quarter2Graph = [
       {
-        id: "Opportunity Cost",
-        "Opportunity Cost":
-          incomeStatement[1]["Expenses And Costs"]["Opportunity Costs"] +
-          incomeStatement[1]["Expenses And Costs"]["Opportunity Costs"],
+        id: "Expenses from opportunities",
+        "Expenses from opportunities":
+          incomeStatement[1]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[1]["Expenditure"]["Expenses from other sources"],
       },
       {
         id: "Purchases",
-        Purchases:
-          0.23 * incomeStatement[1]["Revenues"]["Opportunities"] +
-          incomeStatement[1]["Revenues"]["Sales From Home"] +
-          incomeStatement[1]["Revenues"]["Additional Income"],
+        Purchases: incomeStatement[1]["Expenditure"]["Purchases"],
+        // 0.23 * incomeStatement[1]["Revenues"]["Opportunities"] +
+        // incomeStatement[1]["Revenues"]["Sales From Home"] +
+        // incomeStatement[1]["Revenues"]["Additional Income"],
+      },
+      {
+        id: "Additional cost",
+        "Additional cost": incomeStatement[1]["Expenditure"]["Additional cost"],
       },
       {
         id: "Total Expenditure",
         "Total Expenditure":
-          incomeStatement[1]["Expenses And Costs"]["Total Cost And Expenses"],
+          incomeStatement[1]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[1]["Expenditure"]["Expenses from other sources"] +
+          incomeStatement[1]["Expenditure"]["Purchases"] +
+          incomeStatement[1]["Expenditure"]["Additional cost"],
+        // "Total Expenditure":
+        //   incomeStatement[1]["Expenditure"]["Total Expenditure"],
       },
     ];
   }
 
-  console.log(quarter2Graph);
+  console.log(quarter1Graph);
   return (
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <RightNav />
       <div className="h-[100vh] overflow-auto flex-1">
         <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
-          {!quarter2Graph && (
+          {!quarter1Graph && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter2 Expenditure Comparison goes here when you fill it...
+                Quarter1 Expenditure Comparison goes here when you fill it...
               </p>
             </div>
           )}
-          {quarter2Graph && (
+          {quarter1Graph && (
             <>
               <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-                Quarter 2 Expenditure Comparisonn
+                Quarter 1 Expenditure Comparisonn
               </h1>
 
               <div className="w-[100%] h-[50vh]">
                 <ResponsiveBar
-                  data={quarter2Graph}
-                  keys={["Opportunity Cost", "Purchases", "Total Expenditure"]}
+                  data={quarter1Graph}
+                  keys={[
+                    "Expenses from opportunities",
+                    "Purchases",
+                    "Additional cost",
+                    "Total Expenditure",
+                  ]}
                   indexBy="id"
                   margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
                   padding={0.3}
@@ -104,7 +128,7 @@ const userCostComparison = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: "Product",
+                    legend: "Cost",
                     legendOffset: 36,
                     legendPosition: "middle",
                   }}
@@ -129,22 +153,27 @@ const userCostComparison = () => {
             </>
           )}
 
-          {!quarter3Graph && (
+          {!quarter2Graph && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter3 Expenditure Comparison goes here when you fill it...
+                Quarter2 Expenditure Comparison goes here when you fill it...
               </p>
             </div>
           )}
-          {quarter3Graph && (
+          {quarter2Graph && (
             <>
               <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-                Quarter 3 Expenditure Comparison
+                Quarter 2 Expenditure Comparison
               </h1>
               <div className="w-[100%] h-[50vh]">
                 <ResponsiveBar
-                  data={quarter3Graph}
-                  keys={["Opportunity Cost", "Purchases", "Total Expenditure"]}
+                  data={quarter2Graph}
+                  keys={[
+                    "Expenses from opportunities",
+                    "Purchases",
+                    "Additional cost",
+                    "Total Expenditure",
+                  ]}
                   indexBy="id"
                   margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
                   padding={0.3}
@@ -154,7 +183,7 @@ const userCostComparison = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: "Product",
+                    legend: "Cost",
                     legendOffset: 36,
                     legendPosition: "middle",
                   }}

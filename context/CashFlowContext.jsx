@@ -38,19 +38,15 @@ export const CashContextProvider = ({ children }) => {
         {
           "Income at Start": 350,
           "Profit(Loss)":
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             ),
           "Income at end":
             350 +
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             ),
         },
       ];
@@ -60,19 +56,15 @@ export const CashContextProvider = ({ children }) => {
         {
           "Income at Start": cashflow[0]["Income at end"],
           "Profit(Loss)":
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             ),
           "Income at end":
             cashflow[0]["Income at end"] +
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             ),
         },
       ];
@@ -82,40 +74,28 @@ export const CashContextProvider = ({ children }) => {
         {
           "Income at Start": cashflow[1]["Income at end"],
           "Profit(Loss)":
-            incomeStatementD[0].Revenues["Total Revenue"] -
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-            (incomeStatementD[0]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] -
+            incomeStatementD[0].Income["Total Income"] -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+            (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
               Math.floor(
-                incomeStatementD[0]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
               ) -
               Math.floor(
-                incomeStatementD[0]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
               )),
 
           "Income at end":
             cashflow[1]["Income at end"] +
-            incomeStatementD[0].Revenues["Total Revenue"] -
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-            Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-            (incomeStatementD[0]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] -
+            incomeStatementD[0].Income["Total Income"] -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+            (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
               Math.floor(
-                incomeStatementD[0]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
               ) -
               Math.floor(
-                incomeStatementD[0]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
               )),
         },
       ];
@@ -126,19 +106,15 @@ export const CashContextProvider = ({ children }) => {
           {
             "Income at Start": cashflow[2]["Income at end"],
             "Profit(Loss)":
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               ),
             "Income at end":
               cashflow[2]["Income at end"] +
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               ),
           },
         ];
@@ -148,19 +124,15 @@ export const CashContextProvider = ({ children }) => {
           {
             "Income at Start": cashflow[3]["Income at end"],
             "Profit(Loss)":
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               ),
             "Income at end":
               cashflow[3]["Income at end"] +
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               ),
           },
         ];
@@ -170,40 +142,28 @@ export const CashContextProvider = ({ children }) => {
           {
             "Income at Start": cashflow[4]["Income at end"],
             "Profit(Loss)":
-              incomeStatementD[1].Revenues["Total Revenue"] -
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-              (incomeStatementD[1]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] -
+              incomeStatementD[1].Income["Total Income"] -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+              (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
                 Math.floor(
-                  incomeStatementD[1]["Expenses And Costs"][
-                    "Total Cost And Expenses"
-                  ] / 3
+                  incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
                 ) -
                 Math.floor(
-                  incomeStatementD[1]["Expenses And Costs"][
-                    "Total Cost And Expenses"
-                  ] / 3
+                  incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
                 )),
 
             "Income at end":
               cashflow[4]["Income at end"] +
-              incomeStatementD[1].Revenues["Total Revenue"] -
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-              Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-              (incomeStatementD[1]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] -
+              incomeStatementD[1].Income["Total Income"] -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+              Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+              (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
                 Math.floor(
-                  incomeStatementD[1]["Expenses And Costs"][
-                    "Total Cost And Expenses"
-                  ] / 3
+                  incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
                 ) -
                 Math.floor(
-                  incomeStatementD[1]["Expenses And Costs"][
-                    "Total Cost And Expenses"
-                  ] / 3
+                  incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
                 )),
           },
         ];

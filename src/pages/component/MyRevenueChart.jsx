@@ -1,20 +1,21 @@
 import { ResponsiveBar } from "@nivo/bar";
 const MyRevenueChart = ({ data }) => {
   //   console.log(data);
-  const revenue = data.map((item) => item.revenue); // Extract all cost values
+  const income = data.map((item) => item.Income); // Extract all cost values
 
-  const minRevenue = Math.min(...revenue);
-  const maxRevenue = Math.max(...revenue);
+  const minIncome = Math.min(...income);
+  const maxIncome = Math.max(...income);
+  console.log(maxIncome);
   return (
     <div className="h-[70vh]">
       <ResponsiveBar
         data={data}
-        keys={["revenue"]}
+        keys={["Income"]}
         indexBy="name"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
         minValue={-100}
-        maxValue={maxRevenue + 1000}
+        maxValue={maxIncome + 2000}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
         colors="#fff8d8"

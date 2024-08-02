@@ -19,12 +19,12 @@ const Login = () => {
   };
   useEffect(() => {
     if (authUser) {
-      navigate("/quarter1");
+      navigate("/startup");
     }
   }, []);
   useEffect(() => {
     if (isSuccess) {
-      navigate("/quarter1");
+      navigate("/startup");
 
       setInputs({ email: "", password: "" });
       setAuthUser(true);

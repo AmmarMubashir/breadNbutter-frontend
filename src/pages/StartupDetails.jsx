@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useGetQuarter1 } from "../api/MyQuarterApi";
+import { useGetStartup } from "../api/MyStartupApi";
 import RightNav from "./components/RightNav";
 // import { useCashContext } from "../../context/CashFlowContext";
 
-const Quarter1Details = () => {
+const StartupDetails = () => {
   const { id } = useParams();
   // const { cashFlowStatement } = useCashContext();
 
@@ -12,26 +12,23 @@ const Quarter1Details = () => {
   //   console.log("CASH_FLOW_STATEMENT", cashFlowStatement);
   // }
 
-  const { getQuarter1 } = useGetQuarter1();
-  const [quarter1Data, setQuarter1Data] = useState(null);
+  const { getStartup } = useGetStartup();
+  const [startupData, setStartupData] = useState(null);
 
   useEffect(() => {
-    const fetchQuarterData = async () => {
+    const loadData = async () => {
       try {
-        const quarter1 = await getQuarter1(id);
-        setQuarter1Data(quarter1.data);
+        const startup = await getStartup(id);
+        setStartupData(startup.data);
       } catch (error) {
-        console.error("Error fetching quarter data:", error);
+        console.error("Error fetching startup data:", error);
       }
     };
 
-    fetchQuarterData();
+    loadData();
   }, [id]);
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
-      {/* <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
-        <h1 className="text-[#1b375f] text-[2rem] font-bold">LOGO</h1>
-      </div> */}
       <RightNav />
       <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.2rem] text-[#1b375f] font-bold">
@@ -52,26 +49,21 @@ const Quarter1Details = () => {
             <tr className="cursor-pointer hover:bg-gray-200">
               <td className="px-6 py-4 whitespace-nowrap">Name</td>
               <td className="px-6 py-4 whitespace-nowrap">
-                {quarter1Data ? quarter1Data.name : "Loading..."}
+                {startupData ? startupData.name : "Loading..."}
               </td>
             </tr>
-            <tr className="cursor-pointer hover:bg-gray-200">
-              <td className="px-6 py-4 whitespace-nowrap">Member</td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                {quarter1Data ? quarter1Data.members : "Loading..."}
-              </td>
-            </tr>
+
             <tr className="cursor-pointer hover:bg-gray-200">
               <td className="px-6 py-4 whitespace-nowrap">Location</td>
               <td className="px-6 py-4 whitespace-nowrap">
-                {quarter1Data ? quarter1Data.location : "Loading..."}
+                {startupData ? startupData.location : "Loading..."}
               </td>
             </tr>
             <tr className="cursor-pointer hover:bg-gray-200">
               <td className="px-6 py-4 whitespace-nowrap">No of Customer</td>
               <td className="px-6 py-4 whitespace-nowrap">
-                {quarter1Data
-                  ? `${quarter1Data["No of Clients per day"]} `
+                {startupData
+                  ? `${startupData["No of Clients per day"]} `
                   : "Loading..."}
               </td>
             </tr>
@@ -80,7 +72,7 @@ const Quarter1Details = () => {
 
         <div className="absolute bottom-9 right-11">
           <Link
-            to="/quarter2"
+            to="/quarter1EmpInfo"
             className="bg-[#1b375f] text-white px-4 py-2 rounded"
           >
             Next
@@ -91,4 +83,4 @@ const Quarter1Details = () => {
   );
 };
 
-export default Quarter1Details;
+export default StartupDetails;

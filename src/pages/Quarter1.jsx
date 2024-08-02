@@ -1,209 +1,217 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
-  usecreateQuarter1,
-  useGetIndividualQuarter1,
-} from "../api/MyQuarterApi";
-import { Link, useNavigate } from "react-router-dom";
-import { useLogout } from "../api/MyUserApi";
-import { useAuthContext } from "../../context/AuthContext";
+  useCreateQuarter1,
+  useGetQuarter1,
+  useGetUserQuarter1,
+} from "../api/MyQuarter1Api";
 import RightNav from "./components/RightNav";
 import { useCreateUserIncomeStatement } from "../api/MyIncomeStatementApi";
 
 const Quarter1 = () => {
   const navigate = useNavigate();
-  const { isSuccess, createQuarter } = usecreateQuarter1();
-  const { getIndividualQuarter, isSuccess: individualQuarterSuccess } =
-    useGetIndividualQuarter1();
-  // const { createUserIncome } = useCreateUserIncomeStatement();
-  // const [jwt, setJwt] = useState();
-  const [isAdmin, setIsAdmin] = useState(false);
-  const { logout } = useLogout();
-  const [inputs, setInputs] = useState({
-    name: "",
-    members: "",
-    location: "",
-  });
+  const { Quarter1Info } = useGetQuarter1();
+  const { CreateQuarter1 } = useCreateQuarter1();
+  const { UserQuarter1 } = useGetUserQuarter1();
+  const { CreateUserIncome } = useCreateUserIncomeStatement();
+  const [quarter1D, setQuarter1D] = useState();
 
-  const [quarters, setQuarters] = useState({
-    quarter1: false,
-    quarter2: true,
-    quarter3: true,
-    quarter4: true,
-  });
-
-  const handleNavigation = (event) => {
-    const selectedValue = event.target.value;
-    if (selectedValue && selectedValue !== "Quarters") {
-      navigate(selectedValue);
-    }
-  };
-
-  let User, quarter1, quarter2, quarter3, quarter4;
   useEffect(() => {
     const loadData = async () => {
-      const data = await getIndividualQuarter();
+      const data = await Quarter1Info();
+      const userQuarterData = await UserQuarter1();
 
+      if (userQuarterData) {
+        navigate(`/quarter1/${userQuarterData._id}`);
+        // console.log(userQuarterData);
+      }
       if (data) {
-        // console.log(data);
-        navigate(`/quarter1/${data.data._id}`);
+        const data1 = data[0];
+        if (data1) {
+          setQuarter1D(data1);
+        }
       }
     };
 
     loadData();
-
-    quarter1 = JSON.parse(localStorage.getItem("quarter1")) || false;
-
-    quarter2 = localStorage.getItem("quarter2") || false;
-    quarter3 = localStorage.getItem("quarter3") || false;
-    quarter4 = localStorage.getItem("quarter4") || false;
-
-    User = JSON.parse(localStorage.getItem("breadUser"));
-    if (User) {
-      if (User.role === "admin") {
-        setIsAdmin(true);
-      }
-    }
-
-    // if (quarter1) {
-    //   setInputs({
-    //     name: quarter1.name,
-    //     members: quarter1.members,
-    //     location: quarter1.location,
-    //   });
-    //   setQuarters({ ...quarters, quarter2: false });
-    // }
-
-    if (quarter2) {
-      setQuarters({
-        ...quarters,
-        quarter1: false,
-        quarter2: false,
-        quarter3: false,
-      });
-    }
-    if (quarter3) {
-      setQuarters({
-        ...quarters,
-        quarter1: false,
-        quarter2: false,
-        quarter4: false,
-      });
-    }
-    if (quarter4) {
-      setQuarters({
-        ...quarters,
-        quarter1: false,
-        quarter2: false,
-        quarter3: false,
-      });
-    }
   }, []);
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
+    const { name, checked } = e.target;
+    setQuarter1D((prevData) => ({
+      ...prevData,
+      [name]: {
+        ...prevData[name],
+        selected: checked,
+      },
+    }));
 
-    // console.log(jwt);
-
-    const quarter = await createQuarter(inputs);
-
-    // if (quarter1) {
-    //   createUserIncome();
-    // }
-
-    const quarter1Id = quarter.data._id;
-
-    localStorage.setItem(
-      "quarter1",
-      JSON.stringify({ ...quarter.data, budjet: 5000 })
-    );
-
-    navigate(`/quarter1/${quarter1Id}`);
+    // console.log(quarter1D);
   };
+  // console.log("QUARTER", quarter1D);
 
-  const logoutHandler = () => {
-    logout();
-    console.log("HEllo");
+  let netProfit = 5000;
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    // CreateQuarter1(quarter1D);
+    const data = await CreateQuarter1(quarter1D);
+    console.log(quarter1D);
+
+    if (data) {
+      CreateUserIncome();
+    }
+
+    // console.log("Selected options:", selectedOptions);
+    // Handle the selected options further, e.g., send them to a server
+
+    navigate(`/quarter1/${data._id}`);
   };
 
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <RightNav />
-
-      <div className=" h-[100vh] w-[100%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
+      <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.8rem] text-[#1b375f] font-bold font-mono">
-          Startup
+          Quarter 1
         </h1>
-        <form
-          action=""
-          onSubmit={submitHandler}
-          className="flex flex-col gap-[20px] w-[95%] md:w-[80%]  px-2 py-2"
-        >
-          <div className="flex gap-5 items-center">
-            <label
-              htmlFor="name"
-              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
+        {quarter1D && (
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-[20px] w-[95%]  px-2 py-2 rounded"
+          >
+            <div className="flex flex-col gap-3">
+              <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
+                Quarterly Opportunities and Events (OE)
+              </h2>
+              <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
+                Income At Start: 350
+              </p>
+              <div
+                className="py-2"
+                // className={`bg-white rounded px-2 py-2 ${
+                //   quarter1D.option1.selected && `border-[2px] border-black ml-3`
+                // }`}
+              >
+                <input
+                  type="checkbox"
+                  id="option1"
+                  name="option1"
+                  checked={quarter1D && quarter1D.option1.selected}
+                  onChange={handleChange}
+                  className="mr-2 hidden"
+                />
+                <label
+                  htmlFor="option1"
+                  className={`bg-white rounded px-2 py-2 cursor-pointer ${
+                    quarter1D.option1.selected &&
+                    `border-[2px] border-black ml-3`
+                  }`}
+                >
+                  {quarter1D.option1.description}
+                </label>
+              </div>
+              <div
+                className="py-2"
+                // className={`bg-white rounded px-2 py-2 ${
+                //   quarter1D.option2.selected && `border-[2px] border-black ml-3`
+                // }`}
+              >
+                <input
+                  type="checkbox"
+                  id="option2"
+                  name="option2"
+                  checked={quarter1D && quarter1D.option2.selected}
+                  onChange={handleChange}
+                  className="mr-2 hidden"
+                />
+                <label
+                  htmlFor="option2"
+                  className={`bg-white rounded px-2 py-2 cursor-pointer ${
+                    quarter1D.option2.selected &&
+                    `border-[2px] border-black ml-3`
+                  }`}
+                >
+                  {quarter1D.option2.description}
+                </label>
+              </div>
+              <div
+                className="py-2"
+                // className={`bg-white rounded px-2 py-2 ${
+                //   quarter1D.option3.selected && `border-[2px] border-black ml-3`
+                // }`}
+              >
+                <input
+                  type="checkbox"
+                  id="option3"
+                  name="option3"
+                  checked={quarter1D && quarter1D.option3.selected}
+                  onChange={handleChange}
+                  className="mr-2 hidden"
+                />
+                <label
+                  htmlFor="option3"
+                  className={`bg-white rounded px-2 py-2 cursor-pointer ${
+                    quarter1D.option3.selected &&
+                    `border-[2px] border-black ml-3`
+                  }`}
+                >
+                  {quarter1D.option3.description}
+                </label>
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="bg-[#1b375f] text-white px-4 py-2 rounded ml-auto"
+              style={{ width: "max-content" }}
             >
-              Name:
-            </label>
-            <input
-              type="name"
-              placeholder="Enter your Team Name"
-              id="name"
-              required
-              value={inputs.name}
-              onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
-              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
-            />
-          </div>
-          <div className="flex gap-5 items-center">
-            <label
-              htmlFor="members"
-              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
-            >
-              Members:
-            </label>
-            <input
-              type="members"
-              placeholder="Enter number Of your Team member"
-              id="members"
-              required
-              value={inputs.members}
-              onChange={(e) =>
-                setInputs({ ...inputs, members: e.target.value })
-              }
-              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
-            />
-          </div>
-          <div className="flex gap-5 items-center">
-            <label
-              htmlFor="location"
-              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
-            >
-              Location:
-            </label>
-            <input
-              type="location"
-              id="location"
-              required
-              placeholder="Enter Your Location"
-              value={inputs.location}
-              onChange={(e) =>
-                setInputs({ ...inputs, location: e.target.value })
-              }
-              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
-            />
-          </div>
-          <div className="text-[#1b375f] text-center">
-            *Budjet for this project is 5000$
+              Save
+            </button>
+          </form>
+        )}
+        {/* <form action="" className="flex flex-col gap-[20px] w-[80%]">
+          <div>
+            <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
+              Quarterly Opportunities and Events (OE)
+            </h2>
+            <div>
+              <input
+                type="checkbox"
+                id="option1"
+                name="option1"
+                className="mr-2"
+              />
+              <label htmlFor="option1" name="option1">
+                Market Stall (regular Sat) - £250 month/time commitment extra
+                ingredients cost 160
+              </label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="option2"
+                name="option2"
+                className="mr-2"
+              />
+              <label htmlFor="option2" name="option2">
+                Short dated goods - job lot cost £450
+              </label>
+            </div>
+            <div>
+              <input type="checkbox" id="option3" name="3" className="mr-2" />
+              <label htmlFor="option3" name="3">
+                Special Deal! Marketing - leaflets and branded stickers worth
+                £800 sale for £350
+              </label>
+            </div>
           </div>
           <button
             type="submit"
-            className="bg-[#1b375f] rounded-full py-2 px-6 text-white font-bold text-[1.2rem] w-[90%] ml-auto"
+            className="bg-[#1b375f] rounded-full py-2 px-4 text-white font-bold text-[1.2rem] w-[90%]"
             style={{ width: "max-content" }}
           >
             Save
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );

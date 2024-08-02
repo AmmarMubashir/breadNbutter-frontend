@@ -27,13 +27,13 @@ const UpdateIncomeStatement = () => {
 
   const handleRevenueChange = (index, key, event) => {
     const newIncomeData = [...incomeData];
-    newIncomeData[index].Revenues[key] = +event.target.value;
+    newIncomeData[index].Income[key] = +event.target.value;
     setIncomeData(newIncomeData);
   };
 
   const handleCostsChange = (index, key, event) => {
     const newIncomeData = [...incomeData];
-    newIncomeData[index]["Expenses And Costs"][key] = +event.target.value;
+    newIncomeData[index]["Expenditure"][key] = +event.target.value;
     setIncomeData(newIncomeData);
   };
   const handleDepreciationChange = (index, event) => {
@@ -97,9 +97,9 @@ const UpdateIncomeStatement = () => {
                   </thead>
                   <tbody>
                     <div className="mx-auto py-2 px-3 md:px-4 bg-white rounded font-bold flex gap-3">
-                      Revenues
+                      Income
                     </div>
-                    {Object.entries(incomeData[0].Revenues).map(
+                    {Object.entries(incomeData[0].Income).map(
                       ([key, value]) => (
                         <tr
                           key={key}
@@ -107,9 +107,9 @@ const UpdateIncomeStatement = () => {
                         >
                           <td
                             className={`py-2 px-4 border-b ${
-                              key === "Total Revenue" ||
-                              key === "Opportunities" ||
-                              key === "Additional Income"
+                              key === "Total Income" ||
+                              key === "Income from opportunities" ||
+                              key === "Additional income"
                                 ? `hidden`
                                 : ``
                             }`}
@@ -119,9 +119,9 @@ const UpdateIncomeStatement = () => {
                           {incomeData.map((item, index) => (
                             <td
                               className={`py-2 px-0 md:px-4 border-b text-center ${
-                                key === "Total Revenue" ||
-                                key === "Opportunities" ||
-                                key === "Additional Income"
+                                key === "Total Income" ||
+                                key === "Income from opportunities" ||
+                                key === "Additional income"
                                   ? `hidden`
                                   : ``
                               }`}
@@ -129,12 +129,12 @@ const UpdateIncomeStatement = () => {
                               <input
                                 className="border-none outline-none w-[50px] text-center  px-1 bg-gray-300 rounded disabled:cursor-not-allowed"
                                 type="text"
-                                value={incomeData[index].Revenues[key]}
+                                value={incomeData[index].Income[key]}
                                 onChange={(e) =>
                                   handleRevenueChange(index, key, e)
                                 }
                               />
-                              {/* {incomeData[index].Revenues[key]} */}
+                              {/* {incomeData[index].Income[key]} */}
                             </td>
                           ))}
                         </tr>
@@ -142,9 +142,9 @@ const UpdateIncomeStatement = () => {
                     )}
                     {/* Costs */}
                     <div className="mx-auto py-2 px-[5px] md:px-[5px] bg-white rounded font-bold flex gap-3">
-                      Expenses And Costs
+                      Expenditure
                     </div>
-                    {Object.entries(incomeData[0]["Expenses And Costs"]).map(
+                    {Object.entries(incomeData[0]["Expenditure"]).map(
                       ([key, value]) => (
                         <tr
                           key={key}
@@ -152,10 +152,10 @@ const UpdateIncomeStatement = () => {
                         >
                           <td
                             className={`py-2 px-4 border-b ${
-                              key === "Total Cost And Expenses" ||
-                              key === "Opportunity Costs" ||
-                              key === "Other Cost" ||
-                              key === "Additional Cost"
+                              key === "Total Expenditure" ||
+                              key === "Expenses from opportunities" ||
+                              key === "Expenses from other sources" ||
+                              key === "Additional cost"
                                 ? `hidden`
                                 : ``
                             }`}
@@ -165,10 +165,10 @@ const UpdateIncomeStatement = () => {
                           {incomeData.map((item, index) => (
                             <td
                               className={`py-2 px-4 border-b text-center ${
-                                key === "Total Cost And Expenses" ||
-                                key === "Opportunity Costs" ||
-                                key === "Other Cost" ||
-                                key === "Additional Cost"
+                                key === "Total Expenditure" ||
+                                key === "Expenses from opportunities" ||
+                                key === "Expenses from other sources" ||
+                                key === "Additional cost"
                                   ? `hidden`
                                   : ``
                               }`}
@@ -176,15 +176,13 @@ const UpdateIncomeStatement = () => {
                               <input
                                 className={`border-none outline-none w-[50px] text-center px-1 bg-gray-300 rounded disabled:cursor-not-allowed`}
                                 type="text"
-                                disabled={key === "Total Cost And Expenses"}
-                                value={
-                                  incomeData[index]["Expenses And Costs"][key]
-                                }
+                                disabled={key === "Total Expenditure"}
+                                value={incomeData[index]["Expenditure"][key]}
                                 onChange={(e) =>
                                   handleCostsChange(index, key, e)
                                 }
                               />
-                              {/* {incomeData[index]["Expenses And Costs"][key]} */}
+                              {/* {incomeData[index]["Expenditure"][key]} */}
                             </td>
                           ))}
                         </tr>

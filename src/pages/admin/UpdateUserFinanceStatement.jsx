@@ -28,12 +28,12 @@ const UpdateUserFinanceStatement = () => {
   }, [id]);
   const handleRevenueChange = (index, key, event) => {
     const newIncomeData = [...incomeStatement];
-    newIncomeData[index].Revenues[key] = +event.target.value;
+    newIncomeData[index].Income[key] = +event.target.value;
     setIncomeStatement(newIncomeData);
   };
   const handleCostChange = (index, key, event) => {
     const newIncomeData = [...incomeStatement];
-    newIncomeData[index]["Expenses And Costs"][key] = +event.target.value;
+    newIncomeData[index]["Expenditure"][key] = +event.target.value;
     setIncomeStatement(newIncomeData);
   };
 
@@ -75,16 +75,16 @@ const UpdateUserFinanceStatement = () => {
                     </h1>
                     <div className=" mt-1 flex flex-col md:flex-row gap-5">
                       <div className="flex flex-1 flex-col gap-6">
-                        <h1 className="font-bold text-1.4rem">Revenues:</h1>
+                        <h1 className="font-bold text-1.4rem">Income:</h1>
                         <div className="flex flex-col flex-1 items-start gap-2">
                           <label htmlFor="AdditionalIncome">
-                            Additional Income:
+                            Additional income:
                           </label>
                           <input
                             type="number"
-                            value={item.Revenues["Additional Income"]}
+                            value={item.Income["Additional income"]}
                             onChange={(e) =>
-                              handleRevenueChange(index, "Additional Income", e)
+                              handleRevenueChange(index, "Additional income", e)
                             }
                             // min={0}
                             id="AdditionalIncome"
@@ -93,20 +93,16 @@ const UpdateUserFinanceStatement = () => {
                         </div>
                       </div>
                       <div className="flex flex-1 flex-col gap-6">
-                        <h1 className="font-bold text-1.4rem">
-                          Expenses and costs:
-                        </h1>
+                        <h1 className="font-bold text-1.4rem">Expenditure:</h1>
                         <div className="flex flex-col flex-1 items-start gap-2">
                           <label htmlFor="AdditionalCost">
-                            Additional Cost:
+                            Additional cost:
                           </label>
                           <input
                             type="number"
-                            value={
-                              item["Expenses And Costs"]["Additional Cost"]
-                            }
+                            value={item["Expenditure"]["Additional cost"]}
                             onChange={(e) =>
-                              handleCostChange(index, "Additional Cost", e)
+                              handleCostChange(index, "Additional cost", e)
                             }
                             // min={0}
                             id="AdditionalCost"

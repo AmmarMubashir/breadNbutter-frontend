@@ -11,7 +11,7 @@ export const useGetQuarter2 = () => {
       },
     });
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 2");
+      throw new Error("Error in Getting quarter 3");
     }
 
     return await response.json();
@@ -42,7 +42,7 @@ export const useUpdateQuarter2 = () => {
       }
     );
     if (!response.ok) {
-      throw new Error("Error in Updating quarter 2");
+      throw new Error("Error in Updating quarter 3");
     }
 
     return await response.json();
@@ -70,7 +70,7 @@ export const useCreateQuarter2 = () => {
       body: JSON.stringify(data),
     });
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 2");
+      throw new Error("Error in Getting quarter 3");
     }
 
     return await response.json();
@@ -98,7 +98,7 @@ export const useGetUserQuarter2 = () => {
       }
     );
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 2");
+      throw new Error("Error in Getting quarter 3");
     }
 
     return await response.json();
@@ -127,7 +127,7 @@ export const useGetIndividualUserQuarter2 = () => {
       }
     );
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 2");
+      throw new Error("Error in Getting quarter 3");
     }
 
     return await response.json();

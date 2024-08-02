@@ -20,12 +20,12 @@ const Signup = () => {
   };
   useEffect(() => {
     if (authUser) {
-      navigate("/quarter1");
+      navigate("/startup");
     }
   }, []);
   useEffect(() => {
     if (isSuccess) {
-      navigate("/quarter1");
+      navigate("/startup");
 
       setInputs({ name: "", email: "", password: "" });
       setAuthUser(true);

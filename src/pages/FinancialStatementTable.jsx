@@ -7,13 +7,7 @@ import RightNav from "./components/RightNav";
 import { IoArrowBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
-const MyComponent = ({
-  quarters,
-  quarter1Data,
-  quarter2Data,
-  quarter1,
-  quarter2,
-}) => {
+const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
   const { getIncome } = useGetIncome();
   const { getUserIncome } = useGetUserIncome();
   const [incomeStatement, setIncomeStatement] = useState();
@@ -63,19 +57,15 @@ const MyComponent = ({
       {
         "Income at Start": 350,
         "Profit(Loss)":
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
-            incomeStatementD[0]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] / 3
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
         "Income at end":
           350 +
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
-            incomeStatementD[0]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] / 3
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
       },
     ];
@@ -85,19 +75,15 @@ const MyComponent = ({
       {
         "Income at Start": cashflow[0]["Income at end"],
         "Profit(Loss)":
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
-            incomeStatementD[0]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] / 3
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
         "Income at end":
           cashflow[0]["Income at end"] +
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
-            incomeStatementD[0]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] / 3
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
       },
     ];
@@ -107,40 +93,28 @@ const MyComponent = ({
       {
         "Income at Start": cashflow[1]["Income at end"],
         "Profit(Loss)":
-          incomeStatementD[0].Revenues["Total Revenue"] -
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-          (incomeStatementD[0]["Expenses And Costs"][
-            "Total Cost And Expenses"
-          ] -
+          incomeStatementD[0].Income["Total Income"] -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             ) -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             )),
 
         "Income at end":
           cashflow[1]["Income at end"] +
-          incomeStatementD[0].Revenues["Total Revenue"] -
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-          Math.floor(incomeStatementD[0].Revenues["Total Revenue"] / 3) -
-          (incomeStatementD[0]["Expenses And Costs"][
-            "Total Cost And Expenses"
-          ] -
+          incomeStatementD[0].Income["Total Income"] -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             ) -
             Math.floor(
-              incomeStatementD[0]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             )),
       },
     ];
@@ -151,19 +125,15 @@ const MyComponent = ({
         {
           "Income at Start": cashflow[2]["Income at end"],
           "Profit(Loss)":
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[1]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
           "Income at end":
             cashflow[2]["Income at end"] +
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[1]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
         },
       ];
@@ -173,19 +143,15 @@ const MyComponent = ({
         {
           "Income at Start": cashflow[3]["Income at end"],
           "Profit(Loss)":
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[1]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
           "Income at end":
             cashflow[3]["Income at end"] +
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
-              incomeStatementD[1]["Expenses And Costs"][
-                "Total Cost And Expenses"
-              ] / 3
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
         },
       ];
@@ -195,40 +161,28 @@ const MyComponent = ({
         {
           "Income at Start": cashflow[4]["Income at end"],
           "Profit(Loss)":
-            incomeStatementD[1].Revenues["Total Revenue"] -
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-            (incomeStatementD[1]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] -
+            incomeStatementD[1].Income["Total Income"] -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               ) -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               )),
 
           "Income at end":
             cashflow[4]["Income at end"] +
-            incomeStatementD[1].Revenues["Total Revenue"] -
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-            Math.floor(incomeStatementD[1].Revenues["Total Revenue"] / 3) -
-            (incomeStatementD[1]["Expenses And Costs"][
-              "Total Cost And Expenses"
-            ] -
+            incomeStatementD[1].Income["Total Income"] -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               ) -
               Math.floor(
-                incomeStatementD[1]["Expenses And Costs"][
-                  "Total Cost And Expenses"
-                ] / 3
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               )),
         },
       ];
@@ -237,27 +191,27 @@ const MyComponent = ({
     console.log(cashflow);
   }
 
-  const headers = [
-    { label: "", key: "field" },
-    { label: "Quarter 1", key: "value" },
-    { label: "Extra 1", key: "value1" },
-    { label: "Extra 2", key: "value2" },
-    { label: "Extra 3", key: "value3" },
-  ];
+  // const headers = [
+  //   { label: "", key: "field" },
+  //   { label: "Quarter 1", key: "value" },
+  //   { label: "Extra 1", key: "value1" },
+  //   { label: "Extra 2", key: "value2" },
+  //   { label: "Extra 3", key: "value3" },
+  // ];
 
-  // Define the data structure to match the table layout
-  const data = [
-    {
-      field: "Team Name",
-      value: quarter1Data.name,
-      value1: "checking",
-      value2: "checking",
-      value3: "checking",
-    },
-    { field: "No. of members", value: quarter1Data.members },
-    { field: "Location", value: quarter1Data.location },
-    { field: "Budget", value: quarter1Data.budjet },
-  ];
+  // // Define the data structure to match the table layout
+  // const data = [
+  //   {
+  //     field: "Team Name",
+  //     value: startupData.name,
+  //     value1: "checking",
+  //     value2: "checking",
+  //     value3: "checking",
+  //   },
+  //   { field: "No. of members", value: startupData.members },
+  //   { field: "Location", value: startupData.location },
+  //   { field: "Budget", value: startupData.budjet },
+  // ];
 
   return (
     <div>
@@ -416,7 +370,7 @@ const MyComponent = ({
           )} */}
 
           {incomeStatementD && (
-            <div className="w-[100%]">
+            <div className="w-[100%] overflow-auto">
               <table className="w-[70%] mx-auto bg-white border mb-7   shadow-md rounded-lg overflow-hidden">
                 <div className="px-4 py-2 font-bold">Income Statement:</div>
                 <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
@@ -437,13 +391,13 @@ const MyComponent = ({
                     Total
                   </td>
                 </tr>
-                <div className="px-1  py-2 font-bold ">Revenues:</div>
+                <div className="px-1  py-2 font-bold ">Income:</div>
 
                 {
                   incomeStatementD && (
                     // incomeStatementData[0].map((item, index) => (
                     <>
-                      {Object.entries(incomeStatementD[0].Revenues).map(
+                      {Object.entries(incomeStatementD[0].Income).map(
                         ([key, value]) => (
                           <tr
                             key={key}
@@ -451,7 +405,7 @@ const MyComponent = ({
                           >
                             <td
                               className={`px-4 py-2 ${
-                                key === "Total Revenue" ? `font-bold px-1` : ``
+                                key === "Total Income" ? `font-bold px-1` : ``
                               }`}
                             >
                               {key}
@@ -465,14 +419,14 @@ const MyComponent = ({
                                     <>
                                       <td
                                         className={`py-2 px-4 border-b text-center ${
-                                          item.Revenue < 0 ? `text-red-500` : ""
+                                          item.Income < 0 ? `text-red-500` : ""
                                         } ${
-                                          key === "Total Cost And Expenses"
+                                          key === "Total Expenditure"
                                             ? `font-bold`
                                             : ``
                                         }`}
                                       >
-                                        {item["Revenues"][key]}
+                                        {item["Income"][key]}
                                       </td>
                                     </>
                                   )}
@@ -517,94 +471,91 @@ const MyComponent = ({
                               )}
                             <td className={`py-2 px-4 border-b text-center`}>
                               {incomeStatementD.reduce(
-                                (acc, current) =>
-                                  acc + current["Revenues"][key],
+                                (acc, current) => acc + current["Income"][key],
                                 0
                               )}
                             </td>
                           </tr>
                         )
                       )}
-                      <div className="px-1 py-2 font-bold">
-                        Expenses And Costs:
-                      </div>
-                      {Object.entries(
-                        incomeStatementD[0]["Expenses And Costs"]
-                      ).map(([key, value]) => (
-                        <tr
-                          key={key}
-                          className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
-                        >
-                          <td
-                            className={`px-4 py-2 ${
-                              key === "Total Cost And Expenses"
-                                ? `font-bold px-1`
-                                : ``
-                            }`}
+                      <div className="px-1 py-2 font-bold">Expenditure:</div>
+                      {Object.entries(incomeStatementD[0]["Expenditure"]).map(
+                        ([key, value]) => (
+                          <tr
+                            key={key}
+                            className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                           >
-                            {key}
-                          </td>
-                          {incomeStatementD.map((item, index) => (
                             <td
-                              className={`py-2 px-4 border-b text-center ${
-                                key === "Total Cost And Expenses"
+                              className={`px-4 py-2 ${
+                                key === "Total Expenditure"
                                   ? `font-bold px-1`
                                   : ``
                               }`}
                             >
-                              {item["Expenses And Costs"][key]}
+                              {key}
                             </td>
-                          ))}
-                          {incomeStatementD &&
-                            incomeStatementD.length === 2 && (
-                              <>
-                                <td
-                                  className={`py-2 px-4 border-b text-center`}
-                                >
-                                  {null}
-                                </td>
-                                <td
-                                  className={`py-2 px-4 border-b text-center`}
-                                >
-                                  {null}
-                                </td>
-                              </>
-                            )}
-                          {incomeStatementD &&
-                            incomeStatementD.length === 1 && (
-                              <>
-                                <td
-                                  className={`py-2 px-4 border-b text-center`}
-                                >
-                                  {null}
-                                </td>
-                                <td
-                                  className={`py-2 px-4 border-b text-center`}
-                                >
-                                  {null}
-                                </td>
-                                <td
-                                  className={`py-2 px-4 border-b text-center`}
-                                >
-                                  {null}
-                                </td>
-                              </>
-                            )}
-                          <td className={`py-2 px-4 border-b text-center`}>
-                            {incomeStatementD.reduce(
-                              (acc, current) =>
-                                acc + current["Expenses And Costs"][key],
-                              0
-                            )}
-                          </td>
-                        </tr>
-                      ))}
+                            {incomeStatementD.map((item, index) => (
+                              <td
+                                className={`py-2 px-4 border-b text-center ${
+                                  key === "Total Expenditure"
+                                    ? `font-bold px-1`
+                                    : ``
+                                }`}
+                              >
+                                {item["Expenditure"][key]}
+                              </td>
+                            ))}
+                            {incomeStatementD &&
+                              incomeStatementD.length === 2 && (
+                                <>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                </>
+                              )}
+                            {incomeStatementD &&
+                              incomeStatementD.length === 1 && (
+                                <>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                  <td
+                                    className={`py-2 px-4 border-b text-center`}
+                                  >
+                                    {null}
+                                  </td>
+                                </>
+                              )}
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {incomeStatementD.reduce(
+                                (acc, current) =>
+                                  acc + current["Expenditure"][key],
+                                0
+                              )}
+                            </td>
+                          </tr>
+                        )
+                      )}
 
                       {Object.entries(incomeStatementD[0]).map(
                         ([key, value]) => {
                           if (
-                            key === "Revenues" ||
-                            key === "Expenses And Costs" ||
+                            key === "Income" ||
+                            key === "Expenditure" ||
                             key === "_id" ||
                             key === "EBITIDA" ||
                             key === "EBIT" ||
@@ -728,11 +679,11 @@ const MyComponent = ({
                     </>
                   )}
                 </tr>
-                <div className="px-4 py-2 font-bold">Revenues:</div>
+                <div className="px-4 py-2 font-bold">Income:</div>
 
                 {incomeStatementD && (
                   <>
-                    {Object.entries(incomeStatementD[0].Revenues).map(
+                    {Object.entries(incomeStatementD[0].Income).map(
                       ([key, value]) => (
                         <tr
                           key={key}
@@ -746,22 +697,22 @@ const MyComponent = ({
                                 <>
                                   <td className="px-4 py-2 text-center">
                                     {Math.floor(
-                                      incomeStatementD[index].Revenues[key] / 3
+                                      incomeStatementD[index].Income[key] / 3
                                     )}
                                   </td>
                                   <td className="px-4 py-2 text-center">
                                     {Math.floor(
-                                      incomeStatementD[index].Revenues[key] / 3
+                                      incomeStatementD[index].Income[key] / 3
                                     )}
                                   </td>
                                   <td className="px-4 py-2 text-center">
-                                    {incomeStatementD[index].Revenues[key] -
+                                    {incomeStatementD[index].Income[key] -
                                       Math.floor(
-                                        incomeStatementD[index].Revenues[key] /
+                                        incomeStatementD[index].Income[key] /
                                           3
                                       ) -
                                       Math.floor(
-                                        incomeStatementD[index].Revenues[key] /
+                                        incomeStatementD[index].Income[key] /
                                           3
                                       )}
                                   </td>
@@ -773,10 +724,10 @@ const MyComponent = ({
                       )
                     )}
                     <div className="px-4 py-2 font-bold">
-                      Total Expenses And Costs:
+                      Total Expenditure:
                     </div>
                     {Object.entries(
-                      incomeStatementD[0]["Expenses And Costs"]
+                      incomeStatementD[0]["Expenditure"]
                     ).map(([key, value]) => (
                       <tr
                         key={key}
@@ -794,7 +745,7 @@ const MyComponent = ({
                                 }`}
                               >
                                 {Math.floor(
-                                  incomeStatementD[index]["Expenses And Costs"][
+                                  incomeStatementD[index]["Expenditure"][
                                     key
                                   ] / 3
                                 )}
@@ -805,7 +756,7 @@ const MyComponent = ({
                                 }`}
                               >
                                 {Math.floor(
-                                  incomeStatementD[index]["Expenses And Costs"][
+                                  incomeStatementD[index]["Expenditure"][
                                     key
                                   ] / 3
                                 )}
@@ -817,17 +768,17 @@ const MyComponent = ({
                                 }`}
                               >
                                 {
-                                  incomeStatementD[index]["Expenses And Costs"][
+                                  incomeStatementD[index]["Expenditure"][
                                     key
                                   ] -
                                     Math.floor(
                                       incomeStatementD[index][
-                                        "Expenses And Costs"
+                                        "Expenditure"
                                       ][key] / 3
                                     ) -
                                     Math.floor(
                                       incomeStatementD[index][
-                                        "Expenses And Costs"
+                                        "Expenditure"
                                       ][key] / 3
                                     )
 

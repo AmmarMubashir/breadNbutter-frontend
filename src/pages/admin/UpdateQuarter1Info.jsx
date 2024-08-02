@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import AdminNav from "../components/AdminNav";
-import { useGetQuarter3, useUpdateQuarter3 } from "../../api/MyQuarter3Api";
+import { useGetQuarter1, useUpdateQuarter1 } from "../../api/MyQuarter1Api";
 import { toast } from "react-toastify";
 
-const UpdateQuarter3Info = () => {
-  const { Quarter3Info } = useGetQuarter3();
-  const [quarter3, setQuarter3] = useState();
-  const { isSuccess, error, UpdateQuarter3 } = useUpdateQuarter3();
+const UpdateQuarter1Info = () => {
+  const { Quarter1Info } = useGetQuarter1();
+  const [quarter1, setQuarter1] = useState();
+  const { isSuccess, error, UpdateQuarter1 } = useUpdateQuarter1();
   useEffect(() => {
     const loadData = async () => {
-      const data = await Quarter3Info();
+      const data = await Quarter1Info();
       if (data) {
-        setQuarter3(data[0]);
+        setQuarter1(data[0]);
       }
     };
     loadData();
@@ -19,58 +19,59 @@ const UpdateQuarter3Info = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("Quarter3 updated successfully");
+      toast.success("Quarter1 updated successfully");
     }
     if (error) {
       toast.error(error.toString());
     }
   }, [isSuccess, error]);
 
-  if (quarter3) {
-    console.log(quarter3);
+  if (quarter1) {
+    console.log(quarter1);
   }
 
   const handleInputChange = (event, optionNumber, property) => {
     // Accepts three arguments: event, option number, and property
-    const newQuarter3 = { ...quarter3 }; // Create a copy of the state
+    const newQuarter1 = { ...quarter1 }; // Create a copy of the state
 
     console.log(optionNumber, property, event.target.value);
     // Update the appropriate option's property based on arguments
-    newQuarter3[`option${optionNumber}`][property] = Number(event.target.value);
+    newQuarter1[`option${optionNumber}`][property] = Number(event.target.value);
 
-    setQuarter3(newQuarter3); // Update the state with the modified object
+    setQuarter1(newQuarter1); // Update the state with the modified object
   };
 
   const handleDescriptionChange = (event, optionNumber) => {
     // Accepts three arguments: event, option number, and property
-    const newQuarter3 = { ...quarter3 }; // Create a copy of the state
+    const newQuarter1 = { ...quarter1 }; // Create a copy of the state
 
     // console.log(optionNumber, property, event.target.value);
     // Update the appropriate option's property based on arguments
-    newQuarter3[`option${optionNumber}`]["description"] = event.target.value;
+    newQuarter1[`option${optionNumber}`]["description"] = event.target.value;
 
-    setQuarter3(newQuarter3); // Update the state with the modified object
+    setQuarter1(newQuarter1); // Update the state with the modified object
   };
 
   const handleEventChange = (event) => {
     // Accepts three arguments: event, option number, and property
-    const newQuarter3 = { ...quarter3 }; // Create a copy of the state
+    const newQuarter1 = { ...quarter1 }; // Create a copy of the state
 
     // console.log(optionNumber, property, event.target.value);
     // Update the appropriate option's property based on arguments
-    newQuarter3["event"] = event.target.value;
+    newQuarter1["event"] = event.target.value;
 
-    setQuarter3(newQuarter3); // Update the state with the modified object
+    setQuarter1(newQuarter1); // Update the state with the modified object
   };
+
   const handleDataChange = (event, key) => {
-    const newQuarter3 = { ...quarter3 }; // Create a copy of the state
-    newQuarter3[key] = event.target.value;
-    setQuarter3(newQuarter3);
+    const newQuarter1 = { ...quarter1 }; // Create a copy of the state
+    newQuarter1[key] = event.target.value;
+    setQuarter1(newQuarter1);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    UpdateQuarter3(quarter3);
+    UpdateQuarter1(quarter1);
   };
 
   return (
@@ -79,10 +80,10 @@ const UpdateQuarter3Info = () => {
       <div className="h-[100vh] overflow-auto flex-1">
         <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
           <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-            Update Quarter 2
+            Update Quarter 1
           </h1>
           <div className="mx-auto mt-4 w-[95%] md:w-[85%] bg-white px-4 py-2 rounded text-start">
-            {quarter3 && (
+            {quarter1 && (
               <form onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-6">
                   <h1 className="font-bold text-1.4rem">Option 1:</h1>
@@ -91,7 +92,7 @@ const UpdateQuarter3Info = () => {
                       <label htmlFor="opt1Desc">Description:</label>
                       <textarea
                         id="opt1Desc"
-                        value={quarter3 && quarter3.option1.description}
+                        value={quarter1 && quarter1.option1.description}
                         onChange={(event) => handleDescriptionChange(event, 1)}
                         className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
                       ></textarea>
@@ -104,7 +105,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt1Cost"
-                          value={quarter3.option1.cost}
+                          value={quarter1.option1.cost}
                           onChange={(event) =>
                             handleInputChange(event, 1, "cost")
                           }
@@ -118,7 +119,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt1OtherCost"
-                          value={quarter3.option1.otherCost}
+                          value={quarter1.option1.otherCost}
                           onChange={(event) =>
                             handleInputChange(event, 1, "otherCost")
                           }
@@ -132,7 +133,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt1Income"
-                          value={quarter3.option1.income}
+                          value={quarter1.option1.income}
                           onChange={(event) =>
                             handleInputChange(event, 1, "income")
                           }
@@ -150,7 +151,7 @@ const UpdateQuarter3Info = () => {
                       <label htmlFor="opt2Desc">Description:</label>
                       <textarea
                         id="opt2Desc"
-                        value={quarter3.option2.description}
+                        value={quarter1.option2.description}
                         onChange={(event) => handleDescriptionChange(event, 2)}
                         className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
                       ></textarea>
@@ -163,7 +164,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt2Cost"
-                          value={quarter3.option2.cost}
+                          value={quarter1.option2.cost}
                           onChange={(event) =>
                             handleInputChange(event, 2, "cost")
                           }
@@ -177,7 +178,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt2OtherCost"
-                          value={quarter3.option2.otherCost}
+                          value={quarter1.option2.otherCost}
                           onChange={(event) =>
                             handleInputChange(event, 2, "otherCost")
                           }
@@ -191,7 +192,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt2Income"
-                          value={quarter3.option2.income}
+                          value={quarter1.option2.income}
                           onChange={(event) =>
                             handleInputChange(event, 2, "income")
                           }
@@ -208,7 +209,7 @@ const UpdateQuarter3Info = () => {
                       <label htmlFor="opt3Desc">Description:</label>
                       <textarea
                         id="opt3Desc"
-                        value={quarter3 && quarter3.option3.description}
+                        value={quarter1 && quarter1.option3.description}
                         onChange={(event) => handleDescriptionChange(event, 3)}
                         className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
                       ></textarea>
@@ -221,7 +222,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt3Cost"
-                          value={quarter3.option3.cost}
+                          value={quarter1.option3.cost}
                           onChange={(event) =>
                             handleInputChange(event, 3, "cost")
                           }
@@ -235,7 +236,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt3OtherCost"
-                          value={quarter3.option3.otherCost}
+                          value={quarter1.option3.otherCost}
                           onChange={(event) =>
                             handleInputChange(event, 3, "otherCost")
                           }
@@ -249,7 +250,7 @@ const UpdateQuarter3Info = () => {
                         <input
                           type="number"
                           id="opt3Income"
-                          value={quarter3.option3.income}
+                          value={quarter1.option3.income}
                           onChange={(event) =>
                             handleInputChange(event, 3, "income")
                           }
@@ -259,6 +260,7 @@ const UpdateQuarter3Info = () => {
                     </div>
                   </div>
                 </div>
+
                 {/*  */}
                 <div className="flex md:flex-row flex-col gap-6 mt-4">
                   <div className="flex flex-col flex-1 items-start gap-2 ">
@@ -268,7 +270,7 @@ const UpdateQuarter3Info = () => {
                     <input
                       type="number"
                       id="clients"
-                      value={quarter3["No of Clients per day"]}
+                      value={quarter1["No of Clients per day"]}
                       onChange={(event) =>
                         handleDataChange(event, "No of Clients per day")
                       }
@@ -282,7 +284,7 @@ const UpdateQuarter3Info = () => {
                     <input
                       type="number"
                       id="price"
-                      value={quarter3["Average Price"]}
+                      value={quarter1["Average Price"]}
                       onChange={(event) =>
                         handleDataChange(event, "Average Price")
                       }
@@ -291,14 +293,13 @@ const UpdateQuarter3Info = () => {
                   </div>
                 </div>
                 {/*  */}
-
                 <div className="flex flex-col flex-1 items-start gap-2 mt-6">
                   <label htmlFor="event" className="font-bold">
                     Event:
                   </label>
                   <textarea
                     id="event"
-                    value={quarter3.event}
+                    value={quarter1.event}
                     onChange={(event) => handleEventChange(event)}
                     className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
                   ></textarea>
@@ -315,4 +316,4 @@ const UpdateQuarter3Info = () => {
   );
 };
 
-export default UpdateQuarter3Info;
+export default UpdateQuarter1Info;

@@ -5,8 +5,8 @@ import Logo from "../../assets/Logo.png";
 import { IoMdLogOut } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
-import { useGetIndividualQuarter1 } from "../../api/MyQuarterApi";
-import { useGetUserQuarter2 } from "../../api/MyQuarter2Api";
+import { useGetIndividualStartup } from "../../api/MyStartupApi";
+import { useGetUserQuarter1 } from "../../api/MyQuarter1Api";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const RightNav = () => {
@@ -14,14 +14,15 @@ const RightNav = () => {
   const { logout } = useLogout();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const { getIndividualQuarter } = useGetIndividualQuarter1();
-  const { UserQuarter2 } = useGetUserQuarter2();
+  const { getIndividualStartup } = useGetIndividualStartup();
+  const { UserQuarter1 } = useGetUserQuarter1();
 
-  const [quarter2, setQuarter2] = useState(true);
   const [quarter1, setQuarter1] = useState(true);
+  const [startup, setStartup] = useState(true);
   const [selectedOption, setSelectedOption] = useState();
   const [options, setOptions] = useState(false);
   const [comparison, setComparison] = useState(false);
+  const [resourcesOption, setResourcesOption] = useState(false);
 
   useEffect(() => {
     let User = JSON.parse(localStorage.getItem("breadUser"));
@@ -32,14 +33,14 @@ const RightNav = () => {
     }
 
     const loadData = async () => {
-      const quarter1D = await getIndividualQuarter();
-      const quarter2D = await UserQuarter2();
+      const startupD = await getIndividualStartup();
+      const quarter1D = await UserQuarter1();
 
+      if (startupD) {
+        setStartup(false);
+      }
       if (quarter1D) {
         setQuarter1(false);
-      }
-      if (quarter2D) {
-        setQuarter2(false);
       }
     };
 
@@ -78,11 +79,11 @@ const RightNav = () => {
           </button>
           <select name="quarters" id="quarters" onChange={handleNavigation}>
             <option>Quarters</option>
-            <option value="/quarter1">Quarter1</option>
-            <option value="/quarter2" disabled={quarter1}>
-              Quarter2
+            <option value="/startup">Startup</option>
+            <option value="/quarter1" disabled={startup}>
+              Quarter1
             </option>
-            <option value="/quarter3" disabled={quarter2}>
+            <option value="/quarter3" disabled={quarter1}>
               Quarter3
             </option>
             <option value="/quarter4" disabled={true}>
@@ -163,11 +164,42 @@ const RightNav = () => {
             Cash Flow
           </button> */}
           <button
-            onClick={() => navigate("/resources")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setResourcesOption(!resourcesOption)}
           >
-            Resources
+            Resources <MdKeyboardArrowDown />
           </button>
+          {resourcesOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/resources/pdf");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                pdf
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/resources/presentation");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Presentation
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/resources/videos");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Videos
+              </button>
+            </div>
+          )}
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setComparison(!comparison)}
@@ -204,11 +236,11 @@ const RightNav = () => {
             className="w-full"
           >
             <option>Quarters</option>
-            <option value="/quarter1">Quarter1</option>
-            <option value="/quarter2" disabled={quarter1}>
-              Quarter2
+            <option value="/startup">Startup</option>
+            <option value="/quarter1" disabled={startup}>
+              Quarter1
             </option>
-            <option value="/quarter3" disabled={quarter2}>
+            <option value="/quarter3" disabled={quarter1}>
               Quarter3
             </option>
             <option value="/quarter4" disabled={true}>
@@ -229,7 +261,7 @@ const RightNav = () => {
             Update Income Statement
             </button>
             <button
-            onClick={() => navigate("/admin/quarter2")}
+            onClick={() => navigate("/admin/quarter1")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Update Quarter 2
@@ -347,11 +379,11 @@ const RightNav = () => {
             className="w-full"
           >
             <option>Quarters</option>
-            <option value="/quarter1">Quarter1</option>
-            <option value="/quarter2" disabled={quarter1}>
-              Quarter2
+            <option value="/startup">Startup</option>
+            <option value="/quarter1" disabled={startup}>
+              Quarter1
             </option>
-            <option value="/quarter3" disabled={quarter2}>
+            <option value="/quarter3" disabled={quarter1}>
               Quarter3
             </option>
             <option value="/quarter4" disabled={true}>

@@ -4,12 +4,12 @@ import { toast } from "react-toastify";
 import { useAuthContext } from "../../context/AuthContext";
 import { API_BASE_URL } from "./api";
 
-export const usecreateQuarter1 = () => {
+export const useCreateStartup = () => {
   const { jwt } = useAuthContext();
   // console.log(jwt);
-  const createQuarter1 = async (data) => {
+  const createStartupData = async (data) => {
     // console.log(data);
-    const response = await fetch(`${API_BASE_URL}/api/v1/quarter1`, {
+    const response = await fetch(`${API_BASE_URL}/api/v1/startup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,22 +18,22 @@ export const usecreateQuarter1 = () => {
       body: JSON.stringify(data),
     });
     if (!response.ok) {
-      throw new Error("Error in saving quarter 1");
+      throw new Error("Error in saving Startup ");
     }
 
     return await response.json();
   };
 
   const {
-    mutateAsync: createQuarter,
+    mutateAsync: createStartup,
     isLoading,
     isSuccess,
     error,
-  } = useMutation(createQuarter1);
+  } = useMutation(createStartupData);
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("Quarter 1 saved Successfully");
+      toast.success("Startup saved Successfully");
     }
   }, [isSuccess]);
   useEffect(() => {
@@ -42,33 +42,33 @@ export const usecreateQuarter1 = () => {
     }
   }, [error]);
 
-  return { createQuarter, isLoading, isSuccess, error };
+  return { createStartup, isLoading, isSuccess, error };
 };
 
-export const useGetQuarter1 = () => {
-  const getQuarter1Details = async (id) => {
-    const response = await fetch(`${API_BASE_URL}/api/v1/quarter1/${id}`);
+export const useGetStartup = () => {
+  const getStartupData = async (id) => {
+    const response = await fetch(`${API_BASE_URL}/api/v1/startup/${id}`);
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 1");
+      throw new Error("Error in Getting Startup");
     }
 
     return await response.json();
   };
 
   const {
-    mutateAsync: getQuarter1,
+    mutateAsync: getStartup,
     isLoading,
     isSuccess,
     error,
-  } = useMutation(getQuarter1Details);
+  } = useMutation(getStartupData);
 
-  return { getQuarter1, isLoading, isSuccess, error };
+  return { getStartup, isLoading, isSuccess, error };
 };
 
-export const useGetIndividualQuarter1 = () => {
+export const useGetIndividualStartup = () => {
   const { jwt } = useAuthContext();
-  const getIndividualQuarter1 = async () => {
-    const response = await fetch(`${API_BASE_URL}/api/v1/quarter1`, {
+  const getIndividualStartupData = async () => {
+    const response = await fetch(`${API_BASE_URL}/api/v1/startup`, {
       headers: {
         Authorization: `Bearer ${jwt}`,
       },
@@ -81,13 +81,41 @@ export const useGetIndividualQuarter1 = () => {
   };
 
   const {
-    mutateAsync: getIndividualQuarter,
+    mutateAsync: getIndividualStartup,
     isLoading,
     isSuccess,
     error,
-  } = useMutation(getIndividualQuarter1);
+  } = useMutation(getIndividualStartupData);
 
-  return { getIndividualQuarter, isLoading, isSuccess, error };
+  return { getIndividualStartup, isLoading, isSuccess, error };
+};
+
+export const useGetIndividualStartupAdmin = () => {
+  const { jwt } = useAuthContext();
+  const getIndividualStartupAdminData = async (id) => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/admin/getIndividualStartup/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Error in Getting Startup");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: getIndividualStartupAdmin,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(getIndividualStartupAdminData);
+
+  return { getIndividualStartupAdmin, isLoading, isSuccess, error };
 };
 
 export const useGetIndividualQuarter1Admin = () => {
@@ -102,20 +130,20 @@ export const useGetIndividualQuarter1Admin = () => {
       }
     );
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 1");
+      throw new Error("Error in Getting quarter 2");
     }
 
     return await response.json();
   };
 
   const {
-    mutateAsync: getIndividualQuarterAdmin,
+    mutateAsync: getQuarter1Admin,
     isLoading,
     isSuccess,
     error,
   } = useMutation(getIndividualQuarter1Admin);
 
-  return { getIndividualQuarterAdmin, isLoading, isSuccess, error };
+  return { getQuarter1Admin, isLoading, isSuccess, error };
 };
 
 export const useGetIndividualQuarter2Admin = () => {
@@ -130,7 +158,7 @@ export const useGetIndividualQuarter2Admin = () => {
       }
     );
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 2");
+      throw new Error("Error in Getting quarter 3");
     }
 
     return await response.json();
@@ -144,32 +172,4 @@ export const useGetIndividualQuarter2Admin = () => {
   } = useMutation(getIndividualQuarter2Admin);
 
   return { getQuarter2Admin, isLoading, isSuccess, error };
-};
-
-export const useGetIndividualQuarter3Admin = () => {
-  const { jwt } = useAuthContext();
-  const getIndividualQuarter3Admin = async (id) => {
-    const response = await fetch(
-      `${API_BASE_URL}/api/v1/admin/getIndividualQuarter3/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${jwt}`,
-        },
-      }
-    );
-    if (!response.ok) {
-      throw new Error("Error in Getting quarter 3");
-    }
-
-    return await response.json();
-  };
-
-  const {
-    mutateAsync: getQuarter3Admin,
-    isLoading,
-    isSuccess,
-    error,
-  } = useMutation(getIndividualQuarter3Admin);
-
-  return { getQuarter3Admin, isLoading, isSuccess, error };
 };
