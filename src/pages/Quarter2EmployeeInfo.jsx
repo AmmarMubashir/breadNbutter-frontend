@@ -20,9 +20,9 @@ const Quarter2EmployeeInfo = () => {
       const data = await getEmployeeInfo();
       const data1 = await getQuarter2Emp();
 
-      //   if (data1) {
-      //     navigate("/quarter1");
-      //   }
+      if (data1) {
+        navigate("/quarter2");
+      }
       if (data) {
         console.log(data);
         setEmployeeInfo(data);

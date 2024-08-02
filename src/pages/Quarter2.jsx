@@ -6,7 +6,10 @@ import {
   useGetUserQuarter2,
 } from "../api/MyQuarter2Api";
 import RightNav from "./components/RightNav";
-import { useUpdateUserIncomeStatement } from "../api/MyIncomeStatementApi";
+import {
+  useGetUserIncome,
+  useUpdateUserIncomeStatement,
+} from "../api/MyIncomeStatementApi";
 // import { useCashContext } from "../../context/CashFlowContext";
 
 const Quarter2 = () => {
@@ -16,12 +19,19 @@ const Quarter2 = () => {
   const { UserQuarter2 } = useGetUserQuarter2();
   const { UpdateUserIncome } = useUpdateUserIncomeStatement();
   const [quarter2D, setQuarter2D] = useState();
+  const [incomeStatementD, setIncomeStatementD] = useState();
+  const { getUserIncome } = useGetUserIncome();
   // const { cashFlowStatement } = useCashContext();
 
   useEffect(() => {
     const loadData = async () => {
       const data = await Quarter2Info();
       const userQuarterData = await UserQuarter2();
+      const incomeD = await getUserIncome();
+
+      if (incomeD) {
+        setIncomeStatementD(incomeD.income);
+      }
 
       if (userQuarterData) {
         console.log(userQuarterData);
@@ -69,6 +79,146 @@ const Quarter2 = () => {
     //   });
     // }
   }, []);
+  let cashflow = [];
+  if (incomeStatementD) {
+    // console.log("NEWW", incomeStatementD);
+    cashflow = [
+      {
+        "Income at Start": 350,
+        "Profit(Loss)":
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+          ),
+        "Income at end":
+          350 +
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+          ),
+      },
+    ];
+
+    cashflow = [
+      ...cashflow,
+      {
+        "Income at Start": cashflow[0]["Income at end"],
+        "Profit(Loss)":
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+          ),
+        "Income at end":
+          cashflow[0]["Income at end"] +
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(
+            incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+          ),
+      },
+    ];
+
+    cashflow = [
+      ...cashflow,
+      {
+        "Income at Start": cashflow[1]["Income at end"],
+        "Profit(Loss)":
+          incomeStatementD[0].Income["Total Income"] -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
+            Math.floor(
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+            ) -
+            Math.floor(
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+            )),
+
+        "Income at end":
+          cashflow[1]["Income at end"] +
+          incomeStatementD[0].Income["Total Income"] -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
+          (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
+            Math.floor(
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+            ) -
+            Math.floor(
+              incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
+            )),
+      },
+    ];
+
+    if (incomeStatementD[1]) {
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[2]["Income at end"],
+          "Profit(Loss)":
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+            ),
+          "Income at end":
+            cashflow[2]["Income at end"] +
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+            ),
+        },
+      ];
+
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[3]["Income at end"],
+          "Profit(Loss)":
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+            ),
+          "Income at end":
+            cashflow[3]["Income at end"] +
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+            ),
+        },
+      ];
+
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[4]["Income at end"],
+          "Profit(Loss)":
+            incomeStatementD[1].Income["Total Income"] -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
+              Math.floor(
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+              ) -
+              Math.floor(
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+              )),
+
+          "Income at end":
+            cashflow[4]["Income at end"] +
+            incomeStatementD[1].Income["Total Income"] -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
+            (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
+              Math.floor(
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+              ) -
+              Math.floor(
+                incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
+              )),
+        },
+      ];
+    }
+
+    console.log("CASHFLOW", cashflow);
+  }
 
   const handleChange = (e) => {
     const { name, checked } = e.target;
@@ -120,12 +270,9 @@ const Quarter2 = () => {
               <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
                 Quarterly Opportunities and Events (OE)
               </h2>
-              {/* <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
-                Income At Start:{" "}
-                {cashFlowStatement &&
-                  cashFlowStatement[2] &&
-                  cashFlowStatement[2]["Income at end"]}
-              </p> */}
+              <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
+                Income At Start: {cashflow && cashflow[2]["Income at end"]}
+              </p>
               <div
                 className="py-2"
                 // className={`bg-white rounded px-2 py-2 ${
