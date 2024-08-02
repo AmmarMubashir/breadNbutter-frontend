@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContextProvider } from "../context/AuthContext.jsx";
-import { CashContextProvider } from "../context/CashFlowContext.jsx";
+// import { CashContextProvider } from "../context/CashFlowContext.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,10 +24,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <AuthContextProvider>
-          <CashContextProvider>
-            <App />
-            <ToastContainer autoClose={2500} position="top-center" />
-          </CashContextProvider>
+          {/* <CashContextProvider> */}
+          <App />
+          <ToastContainer autoClose={2500} position="top-center" />
+          {/* </CashContextProvider> */}
         </AuthContextProvider>
       </QueryClientProvider>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import {
 } from "../api/MyQuarter2Api";
 import RightNav from "./components/RightNav";
 import { useUpdateUserIncomeStatement } from "../api/MyIncomeStatementApi";
-import { useCashContext } from "../../context/CashFlowContext";
+// import { useCashContext } from "../../context/CashFlowContext";
 
 const Quarter2 = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Quarter2 = () => {
   const { UserQuarter2 } = useGetUserQuarter2();
   const { UpdateUserIncome } = useUpdateUserIncomeStatement();
   const [quarter2D, setQuarter2D] = useState();
-  const { cashFlowStatement } = useCashContext();
+  // const { cashFlowStatement } = useCashContext();
 
   useEffect(() => {
     const loadData = async () => {
@@ -120,12 +120,12 @@ const Quarter2 = () => {
               <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
                 Quarterly Opportunities and Events (OE)
               </h2>
-              <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
+              {/* <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
                 Income At Start:{" "}
                 {cashFlowStatement &&
                   cashFlowStatement[2] &&
                   cashFlowStatement[2]["Income at end"]}
-              </p>
+              </p> */}
               <div
                 className="py-2"
                 // className={`bg-white rounded px-2 py-2 ${
