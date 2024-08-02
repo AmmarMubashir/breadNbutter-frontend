@@ -264,7 +264,7 @@ const Quarter2 = () => {
         {quarter2D && (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-[20px] w-[95%]  px-2 py-2 rounded"
+            className="flex flex-col gap-[20px] w-[95%] md:w-[85%]  px-2 py-2 rounded"
           >
             <div className="flex flex-col gap-3">
               <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
@@ -274,10 +274,9 @@ const Quarter2 = () => {
                 Income At Start: {cashflow && cashflow[2]["Income at end"]}
               </p>
               <div
-                className="py-2"
-                // className={`bg-white rounded px-2 py-2 ${
-                //   quarter2D.option1.selected && `border-[2px] border-black ml-3`
-                // }`}
+                className={`bg-white rounded px-2 py-2 ${
+                  quarter2D.option1.selected && `border-[2px] border-black ml-3`
+                }`}
               >
                 <input
                   type="checkbox"
@@ -287,21 +286,14 @@ const Quarter2 = () => {
                   onChange={handleChange}
                   className="mr-2 hidden"
                 />
-                <label
-                  htmlFor="option1"
-                  className={`bg-white rounded px-2 py-2 cursor-pointer ${
-                    quarter2D.option1.selected &&
-                    `border-[2px] border-black ml-3`
-                  }`}
-                >
+                <label htmlFor="option1" className="cursor-pointer">
                   {quarter2D.option1.description}
                 </label>
               </div>
               <div
-                className="py-2"
-                // className={`bg-white rounded px-2 py-2 ${
-                //   quarter2D.option2.selected && `border-[2px] border-black ml-3`
-                // }`}
+                className={`bg-white rounded px-2 py-2 ${
+                  quarter2D.option2.selected && `border-[2px] border-black ml-3`
+                }`}
               >
                 <input
                   type="checkbox"
@@ -311,21 +303,14 @@ const Quarter2 = () => {
                   onChange={handleChange}
                   className="mr-2 hidden"
                 />
-                <label
-                  htmlFor="option2"
-                  className={`bg-white rounded px-2 py-2 cursor-pointer ${
-                    quarter2D.option2.selected &&
-                    `border-[2px] border-black ml-3`
-                  }`}
-                >
+                <label htmlFor="option2" className="cursor-pointer">
                   {quarter2D.option2.description}
                 </label>
               </div>
               <div
-                className="py-2"
-                // className={`bg-white rounded px-2 py-2 ${
-                //   quarter2D.option3.selected && `border-[2px] border-black ml-3`
-                // }`}
+                className={`bg-white rounded px-2 py-2 ${
+                  quarter2D.option3.selected && `border-[2px] border-black ml-3`
+                }`}
               >
                 <input
                   type="checkbox"
@@ -335,13 +320,7 @@ const Quarter2 = () => {
                   onChange={handleChange}
                   className="mr-2 hidden"
                 />
-                <label
-                  htmlFor="option3"
-                  className={`bg-white rounded px-2 py-2 cursor-pointer ${
-                    quarter2D.option3.selected &&
-                    `border-[2px] border-black ml-3`
-                  }`}
-                >
+                <label htmlFor="option3" className="cursor-pointer">
                   {quarter2D.option3.description}
                 </label>
               </div>

@@ -67,17 +67,11 @@ const Quarter2EmployeeInfo = () => {
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <RightNav />
       <div className="h-[100vh] overflow-auto flex-1">
-        <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
+        <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem] flex items-center">
           {employeeInfo && (
             <div className="w-[95%] md:w-[85%] rounded mx-auto overflow-auto">
-              <div className="w-[100%] px-2 py-2 bg-white rounded font-bold flex justify-between items-center">
+              <div className="w-[100%] px-2 py-3 bg-white rounded font-bold ">
                 Manage Emloyee for quarter 2
-                <button
-                  className="px-3 py-2 bg-[#1B375F] text-white rounded"
-                  onClick={handleSubmit}
-                >
-                  Next
-                </button>
               </div>
               <table className=" bg-white border  mb-7 w-[100%]  shadow-md rounded-lg  mt-3">
                 <thead>
@@ -132,6 +126,14 @@ const Quarter2EmployeeInfo = () => {
                     ))}
                 </tbody>
               </table>
+              <div>
+                <button
+                  className="px-3 py-2 bg-[#1B375F] text-white rounded block ml-auto"
+                  onClick={handleSubmit}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           )}
         </div>
