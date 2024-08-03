@@ -148,6 +148,67 @@ export const useUpdateUserIncomeStatement = () => {
   return { UpdateUserIncome, isLoading, isSuccess, error };
 };
 
+export const useUpdateUserIncomeStatementQuarter3 = () => {
+  const { jwt } = useAuthContext();
+
+  const UpdateUserIncomeStatementQuarter3 = async () => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/user/updateincomeStatementQuarter3`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+        body: JSON.stringify(),
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Error in Getting Income Statement");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: UpdateUserIncomeQuarter3,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(UpdateUserIncomeStatementQuarter3);
+
+  return { UpdateUserIncomeQuarter3, isLoading, isSuccess, error };
+};
+export const useUpdateUserIncomeStatementQuarter4 = () => {
+  const { jwt } = useAuthContext();
+
+  const UpdateUserIncomeStatementQuarter4 = async () => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/user/updateincomeStatementQuarter4`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+        body: JSON.stringify(),
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Error in Getting Income Statement");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: UpdateUserIncomeQuarter4,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(UpdateUserIncomeStatementQuarter4);
+
+  return { UpdateUserIncomeQuarter4, isLoading, isSuccess, error };
+};
+
 export const useGetUserIncomeAdmin = () => {
   const { jwt } = useAuthContext();
   const getUserIncomeStatementAdmin = async (id) => {

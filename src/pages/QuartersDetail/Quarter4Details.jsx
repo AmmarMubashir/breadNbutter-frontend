@@ -2,21 +2,21 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { TiTick } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
-import { useGetIndividualUserQuarter2 } from "../api/MyQuarter2Api";
-import RightNav from "./components/RightNav";
+import { useGetIndividualUserQuarter4 } from "../../api/MyQuarter4Api";
+import RightNav from "../../pages/components/RightNav";
 import { Link } from "react-router-dom";
-const Quarter2Detail = () => {
-  const [quarter2D, setQuarter2D] = useState();
+const Quarter4Detail = () => {
+  const [quarter4D, setQuarter4D] = useState();
   const { id } = useParams();
-  const { IndividualUserQuarter2 } = useGetIndividualUserQuarter2();
+  const { IndividualUserQuarter4 } = useGetIndividualUserQuarter4();
 
   useEffect(() => {
     const loadData = async () => {
-      const data = await IndividualUserQuarter2(id);
+      const data = await IndividualUserQuarter4(id);
 
       console.log(data);
       if (data) {
-        setQuarter2D(data);
+        setQuarter4D(data);
       }
     };
     loadData();
@@ -27,10 +27,10 @@ const Quarter2Detail = () => {
       <RightNav />
       <div className=" h-[100vh] mx-auto w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
         <h1 className="mb-7 text-[1.2rem] text-[#1b375f] font-bold">
-          Quarter 2 details
+          Quarter 4 details
         </h1>
 
-        {quarter2D && (
+        {quarter4D && (
           <div className="w-[95%] md:w-[85%] flex flex-col justify-center ">
             <table className="min-w-full bg-white border  shadow-md rounded-lg overflow-hidden">
               <thead className="bg-gray-300">
@@ -51,65 +51,65 @@ const Quarter2Detail = () => {
               <tbody>
                 <tr className="border-b-[2px] border-gray-300 hover:bg-gray-300 cursor-pointer">
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option1.selected ? (
+                    {quarter4D && quarter4D.option1.selected ? (
                       <TiTick className="text-green-500 mx-auto text-2xl" />
                     ) : (
                       <RxCross2 className="text-red-500 mx-auto text-2xl" />
                     )}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option1.cost}
+                    {quarter4D && quarter4D.option1.cost}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option1.otherCost}
+                    {quarter4D && quarter4D.option1.otherCost}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option1.income}
+                    {quarter4D && quarter4D.option1.income}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option1.netProfit}
+                    {quarter4D && quarter4D.option1.netProfit}
                   </td>
                 </tr>
                 <tr className="border-b-[2px] border-gray-300 hover:bg-gray-300 cursor-pointer">
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option2.selected ? (
+                    {quarter4D && quarter4D.option2.selected ? (
                       <TiTick className="text-green-500 mx-auto text-2xl" />
                     ) : (
                       <RxCross2 className="text-red-500 mx-auto text-2xl" />
                     )}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option2.cost}
+                    {quarter4D && quarter4D.option2.cost}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option2.otherCost}
+                    {quarter4D && quarter4D.option2.otherCost}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option2.income}
+                    {quarter4D && quarter4D.option2.income}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option2.netProfit}
+                    {quarter4D && quarter4D.option2.netProfit}
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option3.selected ? (
+                    {quarter4D && quarter4D.option3.selected ? (
                       <TiTick className="text-green-500 mx-auto text-2xl" />
                     ) : (
                       <RxCross2 className="text-red-500 mx-auto text-2xl" />
                     )}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option3.cost}
+                    {quarter4D && quarter4D.option3.cost}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option3.otherCost}
+                    {quarter4D && quarter4D.option3.otherCost}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option3.income}
+                    {quarter4D && quarter4D.option3.income}
                   </td>
                   <td className="py-2 px-4 border-b text-center">
-                    {quarter2D && quarter2D.option3.netProfit}
+                    {quarter4D && quarter4D.option3.netProfit}
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-300 cursor-pointer">
@@ -126,22 +126,14 @@ const Quarter2Detail = () => {
                     {null}
                   </td>
                   <td className="py-2 px-4 border-b text-center col-span-3">
-                    {quarter2D && quarter2D.totalProfit}
+                    {quarter4D && quarter4D.totalProfit}
                   </td>
                 </tr>
               </tbody>
             </table>
             {/* <div className="hover:bg-gray-300 bg-white rounded mt-3 px-2 py-3 cursor-pointer">
-              <strong>Event:</strong> {quarter2D.event}
+              <strong>Event:</strong> {quarter4D.event}
             </div> */}
-            <div className="absolute bottom-9 right-11">
-              <Link
-                to="/quarter3EmpInfo"
-                className="bg-[#1b375f] text-white px-4 py-2 rounded"
-              >
-                Next
-              </Link>
-            </div>
           </div>
         )}
       </div>
@@ -149,4 +141,4 @@ const Quarter2Detail = () => {
   );
 };
 
-export default Quarter2Detail;
+export default Quarter4Detail;

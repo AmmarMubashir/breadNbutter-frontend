@@ -164,6 +164,143 @@ const UserFinanceStatement = ({ id }) => {
       ];
     }
 
+    if (incomeStatementD[2]) {
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[5]["Income at end"],
+          "Profit(Loss)":
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+            ),
+          "Income at end":
+            cashflow[5]["Income at end"] +
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+            ),
+        },
+      ];
+
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[6]["Income at end"],
+          "Profit(Loss)":
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+            ),
+          "Income at end":
+            cashflow[6]["Income at end"] +
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+            ),
+        },
+      ];
+
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[7]["Income at end"],
+          "Profit(Loss)":
+            incomeStatementD[2].Income["Total Income"] -
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            (incomeStatementD[2]["Expenditure"]["Total Expenditure"] -
+              Math.floor(
+                incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+              ) -
+              Math.floor(
+                incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+              )),
+
+          "Income at end":
+            cashflow[7]["Income at end"] +
+            incomeStatementD[2].Income["Total Income"] -
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
+            (incomeStatementD[2]["Expenditure"]["Total Expenditure"] -
+              Math.floor(
+                incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+              ) -
+              Math.floor(
+                incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
+              )),
+        },
+      ];
+    }
+
+    if (incomeStatementD[3]) {
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[8]["Income at end"],
+          "Profit(Loss)":
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+            ),
+          "Income at end":
+            cashflow[8]["Income at end"] +
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+            ),
+        },
+      ];
+
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[9]["Income at end"],
+          "Profit(Loss)":
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+            ),
+          "Income at end":
+            cashflow[6]["Income at end"] +
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            Math.floor(
+              incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+            ),
+        },
+      ];
+
+      cashflow = [
+        ...cashflow,
+        {
+          "Income at Start": cashflow[10]["Income at end"],
+          "Profit(Loss)":
+            incomeStatementD[3].Income["Total Income"] -
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            (incomeStatementD[3]["Expenditure"]["Total Expenditure"] -
+              Math.floor(
+                incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+              ) -
+              Math.floor(
+                incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+              )),
+
+          "Income at end":
+            cashflow[10]["Income at end"] +
+            incomeStatementD[3].Income["Total Income"] -
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
+            (incomeStatementD[3]["Expenditure"]["Total Expenditure"] -
+              Math.floor(
+                incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+              ) -
+              Math.floor(
+                incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
+              )),
+        },
+      ];
+    }
     console.log("CASHFLOW", cashflow);
   }
 
@@ -226,6 +363,13 @@ const UserFinanceStatement = ({ id }) => {
                           );
                           // }
                         })}
+                        {incomeStatementD && incomeStatementD.length === 3 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
                         {incomeStatementD && incomeStatementD.length === 2 && (
                           <>
                             <td className={`py-2 px-4 border-b text-center`}>
@@ -283,6 +427,13 @@ const UserFinanceStatement = ({ id }) => {
                             {item["Expenditure"][key]}
                           </td>
                         ))}
+                        {incomeStatementD && incomeStatementD.length === 3 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
                         {incomeStatementD && incomeStatementD.length === 2 && (
                           <>
                             <td className={`py-2 px-4 border-b text-center`}>
@@ -361,6 +512,13 @@ const UserFinanceStatement = ({ id }) => {
                             {item[key]}
                           </td>
                         ))}
+                        {incomeStatementD && incomeStatementD.length === 3 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
                         {incomeStatementD && incomeStatementD.length === 2 && (
                           <>
                             <td className={`py-2 px-4 border-b text-center`}>
@@ -402,7 +560,7 @@ const UserFinanceStatement = ({ id }) => {
       )}
 
       {incomeStatementD && (
-        <div className="w-[95%] md:w-[85%] mx-auto">
+        <div className="w-[95%] md:w-[85%] overflow-auto custom-scrollbar  mx-auto">
           <table className="w-[100%] mx-auto bg-white border mb-7   shadow-md rounded-lg overflow-hidden">
             <div className="px-4 py-2 font-bold">Cash Flow</div>
             <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
@@ -426,6 +584,32 @@ const UserFinanceStatement = ({ id }) => {
                   </td>
                   <td className="py-2 px-4 border-b text-center font-bold">
                     Month 6
+                  </td>
+                </>
+              )}
+              {incomeStatementD[2] && (
+                <>
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Month 7
+                  </td>
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Month 8
+                  </td>
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Month 9
+                  </td>
+                </>
+              )}
+              {incomeStatementD[3] && (
+                <>
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Month 10
+                  </td>
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Month 11
+                  </td>
+                  <td className="py-2 px-4 border-b text-center font-bold">
+                    Month 12
                   </td>
                 </>
               )}

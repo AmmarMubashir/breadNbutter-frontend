@@ -173,3 +173,58 @@ export const useGetIndividualQuarter2Admin = () => {
 
   return { getQuarter2Admin, isLoading, isSuccess, error };
 };
+export const useGetIndividualQuarter3Admin = () => {
+  const { jwt } = useAuthContext();
+  const getIndividualQuarter3Admin = async (id) => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/admin/getIndividualQuarter3/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Error in Getting quarter 3");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: getQuarter3Admin,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(getIndividualQuarter3Admin);
+
+  return { getQuarter3Admin, isLoading, isSuccess, error };
+};
+
+export const useGetIndividualQuarter4Admin = () => {
+  const { jwt } = useAuthContext();
+  const getIndividualQuarter4Admin = async (id) => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/admin/getIndividualQuarter4/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Error in Getting quarter 4");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: getQuarter4Admin,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(getIndividualQuarter4Admin);
+
+  return { getQuarter4Admin, isLoading, isSuccess, error };
+};

@@ -12,7 +12,7 @@ const AdminNav = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="w-[200px] lg:w-[240px] h-[100vh] bg-white border-r-[5px] border-[#1B375F] py-6 hidden md:flex flex-col gap-[2rem]">
+      <div className="w-[200px] lg:w-[240px] h-[100vh] overflow-auto custom-scrollbar bg-white border-r-[5px] border-[#1B375F] py-6 hidden md:flex flex-col gap-[2rem]">
         <img src={Logo} width="170px" />
         <div className="w-full">
           <button
@@ -62,6 +62,18 @@ const AdminNav = () => {
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Update Quarter 2
+          </button>
+          <button
+            onClick={() => navigate("/admin/quarter3")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Update Quarter 3
+          </button>
+          <button
+            onClick={() => navigate("/admin/quarter4")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Update Quarter 4
           </button>
         </div>
         <button
@@ -160,6 +172,18 @@ const AdminNav = () => {
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Update Quarter 2
+          </button>
+          <button
+            onClick={() => navigate("/admin/quarter3")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Update Quarter 3
+          </button>
+          <button
+            onClick={() => navigate("/admin/quarter4")}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Update Quarter 4
           </button>
         </div>
         <button

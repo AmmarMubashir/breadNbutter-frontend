@@ -6,7 +6,6 @@ import Login from "./pages/Login";
 import Startup from "./pages/Startup";
 import Quarter1 from "./pages/Quarter1";
 import Quarter2 from "./pages/Quarter2";
-import Quarter4 from "./pages/Quarter4";
 import StartupDetails from "./pages/StartupDetails";
 import Quarter1Detail from "./pages/Quarter1Detail";
 import Quarter2Detail from "./pages/Quarter2Detail";
@@ -30,6 +29,14 @@ import UpdateQuarter2Info from "./pages/admin/UpdateQuarter2Info";
 import UpdateEmployeeInfo from "./pages/admin/UpdateEmployeeInfo";
 import Quarter1EmployeeInfo from "./pages/Quarter1EmployeeInfo";
 import Quarter2EmployeeInfo from "./pages/Quarter2EmployeeInfo";
+import Quarter3Details from "./pages/QuartersDetail/Quarter3Details";
+import Quarter3 from "./pages/Quarters/Quarter3";
+import Quarter3EmployeeInfo from "./pages/QuartersEmployeeInfo/Quarter3EmployeeInfo";
+import UpdateQuarter3Info from "./pages/admin/UpdateQuarter3Info";
+import Quarter4Details from "./pages/QuartersDetail/Quarter4Details";
+import Quarter4 from "./pages/Quarters/Quarter4";
+import Quarter4EmployeeInfo from "./pages/QuartersEmployeeInfo/Quarter4EmployeeInfo";
+import UpdateQuarter4Info from "./pages/admin/UpdateQuarter4Info";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -60,6 +67,10 @@ function App() {
         <Route path="/quarter1/:id" element={<Quarter1Detail />} />
         <Route path="/quarter2" element={<Quarter2 />} />
         <Route path="/quarter2/:id" element={<Quarter2Detail />} />
+        <Route path="/quarter3" element={<Quarter3 />} />
+        <Route path="/quarter3/:id" element={<Quarter3Details />} />
+        <Route path="/quarter4" element={<Quarter4 />} />
+        <Route path="/quarter4/:id" element={<Quarter4Details />} />
         <Route
           path="/resources/presentation"
           element={<ResourcesPresentation />}
@@ -67,9 +78,10 @@ function App() {
         <Route path="/resources/pdf" element={<ResourcesPdf />} />
         <Route path="/resources/videos" element={<ResourcesVideos />} />
         <Route path="/cashflow" element={<Cashflow />} />
-        <Route path="/quarter4" element={<Quarter4 />} />
         <Route path="/quarter1EmpInfo" element={<Quarter1EmployeeInfo />} />
         <Route path="/quarter2EmpInfo" element={<Quarter2EmployeeInfo />} />
+        <Route path="/quarter3EmpInfo" element={<Quarter3EmployeeInfo />} />
+        <Route path="/quarter4EmpInfo" element={<Quarter4EmployeeInfo />} />
         <Route path="/financialStatement" element={<FinancialStatement />} />
         <Route
           path="/user/incomeComparison"
@@ -88,6 +100,8 @@ function App() {
         />
         <Route path="/admin/quarter1" element={<UpdateQuarter1Info />} />
         <Route path="/admin/quarter2" element={<UpdateQuarter2Info />} />
+        <Route path="/admin/quarter3" element={<UpdateQuarter3Info />} />
+        <Route path="/admin/quarter4" element={<UpdateQuarter4Info />} />
       </Route>
     </Routes>
   );

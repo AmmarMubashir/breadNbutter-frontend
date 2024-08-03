@@ -91,6 +91,74 @@ const userCostComparison = () => {
     ];
   }
 
+  let quarter3Graph;
+  if (incomeStatement && incomeStatement[2]) {
+    // console.log(incomeStatement);
+    quarter3Graph = [
+      {
+        id: "Expenses from opportunities",
+        "Expenses from opportunities":
+          incomeStatement[2]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[2]["Expenditure"]["Expenses from other sources"],
+      },
+      {
+        id: "Purchases",
+        Purchases: incomeStatement[2]["Expenditure"]["Purchases"],
+        // 0.23 * incomeStatement[2]["Revenues"]["Opportunities"] +
+        // incomeStatement[2]["Revenues"]["Sales From Home"] +
+        // incomeStatement[2]["Revenues"]["Additional Income"],
+      },
+      {
+        id: "Additional cost",
+        "Additional cost": incomeStatement[2]["Expenditure"]["Additional cost"],
+      },
+      {
+        id: "Total Expenditure",
+        "Total Expenditure":
+          incomeStatement[2]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[2]["Expenditure"]["Expenses from other sources"] +
+          incomeStatement[2]["Expenditure"]["Purchases"] +
+          incomeStatement[2]["Expenditure"]["Additional cost"],
+        // "Total Expenditure":
+        //   incomeStatement[2]["Expenditure"]["Total Expenditure"],
+      },
+    ];
+  }
+
+  let quarter4Graph;
+  if (incomeStatement && incomeStatement[3]) {
+    // console.log(incomeStatement);
+    quarter4Graph = [
+      {
+        id: "Expenses from opportunities",
+        "Expenses from opportunities":
+          incomeStatement[3]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[3]["Expenditure"]["Expenses from other sources"],
+      },
+      {
+        id: "Purchases",
+        Purchases: incomeStatement[3]["Expenditure"]["Purchases"],
+        // 0.33 * incomeStatement[3]["Revenues"]["Opportunities"] +
+        // incomeStatement[3]["Revenues"]["Sales From Home"] +
+        // incomeStatement[3]["Revenues"]["Additional Income"],
+      },
+      {
+        id: "Additional cost",
+        "Additional cost": incomeStatement[3]["Expenditure"]["Additional cost"],
+      },
+      {
+        id: "Total Expenditure",
+        "Total Expenditure":
+          incomeStatement[3]["Expenditure"]["Expenses from opportunities"] +
+          incomeStatement[3]["Expenditure"]["Expenses from other sources"] +
+          incomeStatement[3]["Expenditure"]["Purchases"] +
+          incomeStatement[3]["Expenditure"]["Additional cost"],
+        // "Total Expenditure":
+        //   incomeStatement[3]["Expenditure"]["Total Expenditure"],
+      },
+    ];
+  }
+
   console.log(quarter1Graph);
   return (
     <div className="w-[100%] h-[100vh] overflow-auto flex">
@@ -168,6 +236,116 @@ const userCostComparison = () => {
               <div className="w-[100%] h-[50vh]">
                 <ResponsiveBar
                   data={quarter2Graph}
+                  keys={[
+                    "Expenses from opportunities",
+                    "Purchases",
+                    "Additional cost",
+                    "Total Expenditure",
+                  ]}
+                  indexBy="id"
+                  margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
+                  padding={0.3}
+                  valueScale={{ type: "linear" }}
+                  indexScale={{ type: "band" }}
+                  axisBottom={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: "Cost",
+                    legendOffset: 36,
+                    legendPosition: "middle",
+                  }}
+                  axisLeft={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: "Amount",
+                    legendOffset: -40,
+                    legendPosition: "middle",
+                  }}
+                  colors={{ scheme: "nivo" }}
+                  tooltip={({ id, value }) => (
+                    <div>
+                      <strong>{id}</strong>
+                      <br />
+                      {value}
+                    </div>
+                  )}
+                />
+              </div>
+            </>
+          )}
+
+          {!quarter3Graph && (
+            <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
+              <p className="text-center text-[1.4rem]">
+                Quarter3 Expenditure Comparison goes here when you fill it...
+              </p>
+            </div>
+          )}
+          {quarter3Graph && (
+            <>
+              <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
+                Quarter 3 Expenditure Comparison
+              </h1>
+              <div className="w-[100%] h-[50vh]">
+                <ResponsiveBar
+                  data={quarter3Graph}
+                  keys={[
+                    "Expenses from opportunities",
+                    "Purchases",
+                    "Additional cost",
+                    "Total Expenditure",
+                  ]}
+                  indexBy="id"
+                  margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
+                  padding={0.3}
+                  valueScale={{ type: "linear" }}
+                  indexScale={{ type: "band" }}
+                  axisBottom={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: "Cost",
+                    legendOffset: 36,
+                    legendPosition: "middle",
+                  }}
+                  axisLeft={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: "Amount",
+                    legendOffset: -40,
+                    legendPosition: "middle",
+                  }}
+                  colors={{ scheme: "nivo" }}
+                  tooltip={({ id, value }) => (
+                    <div>
+                      <strong>{id}</strong>
+                      <br />
+                      {value}
+                    </div>
+                  )}
+                />
+              </div>
+            </>
+          )}
+
+          {!quarter4Graph && (
+            <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
+              <p className="text-center text-[1.4rem]">
+                Quarter4 Expenditure Comparison goes here when you fill it...
+              </p>
+            </div>
+          )}
+          {quarter4Graph && (
+            <>
+              <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
+                Quarter 4 Expenditure Comparison
+              </h1>
+              <div className="w-[100%] h-[50vh]">
+                <ResponsiveBar
+                  data={quarter4Graph}
                   keys={[
                     "Expenses from opportunities",
                     "Purchases",
