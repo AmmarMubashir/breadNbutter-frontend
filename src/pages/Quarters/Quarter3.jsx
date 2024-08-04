@@ -86,13 +86,13 @@ const Quarter3 = () => {
     // console.log("NEWW", incomeStatementD);
     cashflow = [
       {
-        "Income at Start": 350,
+        "Cash at beginnining": 350,
         "Profit(Loss)":
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
-        "Income at end":
+        "Cash at end of period":
           350 +
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
@@ -104,14 +104,14 @@ const Quarter3 = () => {
     cashflow = [
       ...cashflow,
       {
-        "Income at Start": cashflow[0]["Income at end"],
+        "Cash at beginnining": cashflow[0]["Cash at end of period"],
         "Profit(Loss)":
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
-        "Income at end":
-          cashflow[0]["Income at end"] +
+        "Cash at end of period":
+          cashflow[0]["Cash at end of period"] +
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
@@ -122,7 +122,7 @@ const Quarter3 = () => {
     cashflow = [
       ...cashflow,
       {
-        "Income at Start": cashflow[1]["Income at end"],
+        "Cash at beginnining": cashflow[1]["Cash at end of period"],
         "Profit(Loss)":
           incomeStatementD[0].Income["Total Income"] -
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
@@ -135,8 +135,8 @@ const Quarter3 = () => {
               incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             )),
 
-        "Income at end":
-          cashflow[1]["Income at end"] +
+        "Cash at end of period":
+          cashflow[1]["Cash at end of period"] +
           incomeStatementD[0].Income["Total Income"] -
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
@@ -154,14 +154,14 @@ const Quarter3 = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[2]["Income at end"],
+          "Cash at beginnining": cashflow[2]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[2]["Income at end"] +
+          "Cash at end of period":
+            cashflow[2]["Cash at end of period"] +
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
@@ -172,14 +172,14 @@ const Quarter3 = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[3]["Income at end"],
+          "Cash at beginnining": cashflow[3]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[3]["Income at end"] +
+          "Cash at end of period":
+            cashflow[3]["Cash at end of period"] +
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
@@ -190,7 +190,7 @@ const Quarter3 = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[4]["Income at end"],
+          "Cash at beginnining": cashflow[4]["Cash at end of period"],
           "Profit(Loss)":
             incomeStatementD[1].Income["Total Income"] -
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
@@ -203,8 +203,8 @@ const Quarter3 = () => {
                 incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               )),
 
-          "Income at end":
-            cashflow[4]["Income at end"] +
+          "Cash at end of period":
+            cashflow[4]["Cash at end of period"] +
             incomeStatementD[1].Income["Total Income"] -
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
@@ -223,14 +223,14 @@ const Quarter3 = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[5]["Income at end"],
+          "Cash at beginnining": cashflow[5]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[5]["Income at end"] +
+          "Cash at end of period":
+            cashflow[5]["Cash at end of period"] +
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
@@ -241,14 +241,14 @@ const Quarter3 = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[6]["Income at end"],
+          "Cash at beginnining": cashflow[6]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[6]["Income at end"] +
+          "Cash at end of period":
+            cashflow[6]["Cash at end of period"] +
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
@@ -259,7 +259,7 @@ const Quarter3 = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[7]["Income at end"],
+          "Cash at beginnining": cashflow[7]["Cash at end of period"],
           "Profit(Loss)":
             incomeStatementD[2].Income["Total Income"] -
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
@@ -272,8 +272,8 @@ const Quarter3 = () => {
                 incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
               )),
 
-          "Income at end":
-            cashflow[7]["Income at end"] +
+          "Cash at end of period":
+            cashflow[7]["Cash at end of period"] +
             incomeStatementD[2].Income["Total Income"] -
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
@@ -327,7 +327,7 @@ const Quarter3 = () => {
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <RightNav />
-      <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
+      <div className=" h-[100vh] flex-1 flex flex-col justify-center items-center ">
         <h1 className="mb-7 text-[1.8rem] text-[#1b375f] font-bold font-mono">
           Quarter 3
         </h1>
@@ -335,14 +335,15 @@ const Quarter3 = () => {
         {quarter3D && (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-[20px] w-[95%] md:w-[85%]  px-2 py-2 rounded"
+            className="flex flex-col gap-[20px] w-[95%] md:w-[75%] lg:w-[60%]  px-2 py-2 rounded"
           >
             <div className="flex flex-col gap-3">
               <h2 className="mb-2 text-[1.2rem] text-[#1b375f] font-bold">
                 Quarterly Opportunities and Events (OE)
               </h2>
               <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
-                Income At Start: {cashflow && cashflow[3]["Income at end"]}
+                Cash at beginnining:{" "}
+                {cashflow && cashflow[3]["Cash at end of period"]}
               </p>
               <div
                 className={`bg-white rounded px-2 py-2 ${

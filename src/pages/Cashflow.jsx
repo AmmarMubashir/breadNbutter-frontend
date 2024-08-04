@@ -28,13 +28,13 @@ const Cashflow = () => {
     // console.log("NEWW", incomeStatementD);
     cashflow = [
       {
-        "Income at Start": 350,
+        "Cash at beginnining": 350,
         "Profit(Loss)":
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
-        "Income at end":
+        "Cash at end of period":
           350 +
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
@@ -46,14 +46,14 @@ const Cashflow = () => {
     cashflow = [
       ...cashflow,
       {
-        "Income at Start": cashflow[0]["Income at end"],
+        "Cash at beginnining": cashflow[0]["Cash at end of period"],
         "Profit(Loss)":
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
           ),
-        "Income at end":
-          cashflow[0]["Income at end"] +
+        "Cash at end of period":
+          cashflow[0]["Cash at end of period"] +
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(
             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
@@ -64,7 +64,7 @@ const Cashflow = () => {
     cashflow = [
       ...cashflow,
       {
-        "Income at Start": cashflow[1]["Income at end"],
+        "Cash at beginnining": cashflow[1]["Cash at end of period"],
         "Profit(Loss)":
           incomeStatementD[0].Income["Total Income"] -
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
@@ -77,8 +77,8 @@ const Cashflow = () => {
               incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
             )),
 
-        "Income at end":
-          cashflow[1]["Income at end"] +
+        "Cash at end of period":
+          cashflow[1]["Cash at end of period"] +
           incomeStatementD[0].Income["Total Income"] -
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
           Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
@@ -96,14 +96,14 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[2]["Income at end"],
+          "Cash at beginnining": cashflow[2]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[2]["Income at end"] +
+          "Cash at end of period":
+            cashflow[2]["Cash at end of period"] +
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
@@ -114,14 +114,14 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[3]["Income at end"],
+          "Cash at beginnining": cashflow[3]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[3]["Income at end"] +
+          "Cash at end of period":
+            cashflow[3]["Cash at end of period"] +
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
@@ -132,7 +132,7 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[4]["Income at end"],
+          "Cash at beginnining": cashflow[4]["Cash at end of period"],
           "Profit(Loss)":
             incomeStatementD[1].Income["Total Income"] -
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
@@ -145,8 +145,8 @@ const Cashflow = () => {
                 incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
               )),
 
-          "Income at end":
-            cashflow[4]["Income at end"] +
+          "Cash at end of period":
+            cashflow[4]["Cash at end of period"] +
             incomeStatementD[1].Income["Total Income"] -
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
             Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
@@ -165,14 +165,14 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[5]["Income at end"],
+          "Cash at beginnining": cashflow[5]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[5]["Income at end"] +
+          "Cash at end of period":
+            cashflow[5]["Cash at end of period"] +
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
@@ -183,14 +183,14 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[6]["Income at end"],
+          "Cash at beginnining": cashflow[6]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[6]["Income at end"] +
+          "Cash at end of period":
+            cashflow[6]["Cash at end of period"] +
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
@@ -201,7 +201,7 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[7]["Income at end"],
+          "Cash at beginnining": cashflow[7]["Cash at end of period"],
           "Profit(Loss)":
             incomeStatementD[2].Income["Total Income"] -
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
@@ -214,8 +214,8 @@ const Cashflow = () => {
                 incomeStatementD[2]["Expenditure"]["Total Expenditure"] / 3
               )),
 
-          "Income at end":
-            cashflow[7]["Income at end"] +
+          "Cash at end of period":
+            cashflow[7]["Cash at end of period"] +
             incomeStatementD[2].Income["Total Income"] -
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
             Math.floor(incomeStatementD[2].Income["Total Income"] / 3) -
@@ -234,14 +234,14 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[8]["Income at end"],
+          "Cash at beginnining": cashflow[8]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[8]["Income at end"] +
+          "Cash at end of period":
+            cashflow[8]["Cash at end of period"] +
             Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
@@ -252,14 +252,14 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[9]["Income at end"],
+          "Cash at beginnining": cashflow[9]["Cash at end of period"],
           "Profit(Loss)":
             Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
             ),
-          "Income at end":
-            cashflow[6]["Income at end"] +
+          "Cash at end of period":
+            cashflow[6]["Cash at end of period"] +
             Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
             Math.floor(
               incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
@@ -270,7 +270,7 @@ const Cashflow = () => {
       cashflow = [
         ...cashflow,
         {
-          "Income at Start": cashflow[10]["Income at end"],
+          "Cash at beginnining": cashflow[10]["Cash at end of period"],
           "Profit(Loss)":
             incomeStatementD[3].Income["Total Income"] -
             Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
@@ -283,8 +283,8 @@ const Cashflow = () => {
                 incomeStatementD[3]["Expenditure"]["Total Expenditure"] / 3
               )),
 
-          "Income at end":
-            cashflow[10]["Income at end"] +
+          "Cash at end of period":
+            cashflow[10]["Cash at end of period"] +
             incomeStatementD[3].Income["Total Income"] -
             Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
             Math.floor(incomeStatementD[3].Income["Total Income"] / 3) -
@@ -500,6 +500,200 @@ const Cashflow = () => {
                         </tr>
                       )
                     )}
+                    {/* before cashflow extra table content start */}
+                    {/* Income row */}
+                    <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300 font-bold">
+                      <th className={`py-2 px-4 border-b text-start`}>
+                        Income
+                      </th>
+                      {incomeStatementD &&
+                        incomeStatementD.map((item) => (
+                          <>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                item.Income["Total Income"] < 0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {Math.floor(item.Income["Total Income"] / 3)}
+                            </td>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                item.Income["Total Income"] < 0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {Math.floor(item.Income["Total Income"] / 3)}
+                            </td>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                item.Income["Total Income"] < 0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {
+                                item.Income["Total Income"] -
+                                  Math.floor(item.Income["Total Income"] / 3) -
+                                  Math.floor(item.Income["Total Income"] / 3)
+
+                                // incomeStatementData[index][ "Expenditure" ][key]
+                              }
+                            </td>
+                          </>
+                        ))}
+                    </tr>
+                    {/* Expenditure row */}
+                    <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300 font-bold">
+                      <th className={`py-2 px-4 border-b text-start`}>
+                        Expenditure
+                      </th>
+                      {incomeStatementD &&
+                        incomeStatementD.map((item) => (
+                          <>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                Math.floor(
+                                  item.Expenditure["Total Expenditure"] / 3
+                                ) < 0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {Math.floor(
+                                item.Expenditure["Total Expenditure"] / 3
+                              )}
+                            </td>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                Math.floor(
+                                  item.Expenditure["Total Expenditure"] / 3
+                                ) < 0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {Math.floor(
+                                item.Expenditure["Total Expenditure"] / 3
+                              )}
+                            </td>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                item.Expenditure["Total Expenditure"] -
+                                  Math.floor(
+                                    item.Expenditure["Total Expenditure"] / 3
+                                  ) -
+                                  Math.floor(
+                                    item.Expenditure["Total Expenditure"] / 3
+                                  ) <
+                                0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {
+                                item.Expenditure["Total Expenditure"] -
+                                  Math.floor(
+                                    item.Expenditure["Total Expenditure"] / 3
+                                  ) -
+                                  Math.floor(
+                                    item.Expenditure["Total Expenditure"] / 3
+                                  )
+
+                                // incomeStatementData[index][ "Expenditure" ][key]
+                              }
+                            </td>
+                          </>
+                        ))}
+                    </tr>
+                    {/* Profit / loss row */}
+
+                    <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300 font-bold">
+                      <th className={`py-2 px-4 border-b text-start`}>
+                        Profit/Loss of period
+                      </th>
+                      {incomeStatementD &&
+                        incomeStatementD.map((item) => (
+                          <>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                Math.floor(item.Income["Total Income"] / 3) -
+                                  Math.floor(
+                                    item.Expenditure["Total Expenditure"] / 3
+                                  ) <
+                                0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {Math.floor(item.Income["Total Income"] / 3) -
+                                Math.floor(
+                                  item.Expenditure["Total Expenditure"] / 3
+                                )}
+                            </td>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                Math.floor(item.Income["Total Income"] / 3) -
+                                  Math.floor(
+                                    item.Expenditure["Total Expenditure"] / 3
+                                  ) <
+                                0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {Math.floor(item.Income["Total Income"] / 3) -
+                                Math.floor(
+                                  item.Expenditure["Total Expenditure"] / 3
+                                )}
+                            </td>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                item.Income["Total Income"] -
+                                  Math.floor(item.Income["Total Income"] / 3) -
+                                  Math.floor(item.Income["Total Income"] / 3) -
+                                  (item.Expenditure["Total Expenditure"] -
+                                    Math.floor(
+                                      item.Expenditure["Total Expenditure"] / 3
+                                    ) -
+                                    Math.floor(
+                                      item.Expenditure["Total Expenditure"] / 3
+                                    )) <
+                                0
+                                  ? `text-red-500`
+                                  : ""
+                              }`}
+                            >
+                              {
+                                item.Income["Total Income"] -
+                                  Math.floor(item.Income["Total Income"] / 3) -
+                                  Math.floor(item.Income["Total Income"] / 3) -
+                                  (item.Expenditure["Total Expenditure"] -
+                                    Math.floor(
+                                      item.Expenditure["Total Expenditure"] / 3
+                                    ) -
+                                    Math.floor(
+                                      item.Expenditure["Total Expenditure"] / 3
+                                    ))
+
+                                // incomeStatementData[index][ "Expenditure" ][key]
+                              }
+                            </td>
+                          </>
+                        ))}
+                      {cashflow && (
+                        <td className={`py-2 px-4 border-b text-center`}>
+                          {cashflow.reduce(
+                            (acc, current) => acc + current["Profit(Loss)"],
+                            0
+                          )}
+                        </td>
+                      )}
+                    </tr>
+
+                    {/* before cashflow extra table content end */}
                     {/* Cash Flow Extra Table */}
                     {cashflow &&
                       Object.entries(cashflow[0]).map(([key, value]) => (

@@ -25,13 +25,13 @@ const Quarter2Detail = () => {
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <RightNav />
-      <div className=" h-[100vh] mx-auto w-[95%] md:w-[65%] flex flex-col justify-center items-center md:absolute right-0">
+      <div className=" h-[100vh] mx-auto flex-1 flex flex-col justify-center items-center ">
         <h1 className="mb-7 text-[1.2rem] text-[#1b375f] font-bold">
           Quarter 2 details
         </h1>
 
         {quarter2D && (
-          <div className="w-[95%] md:w-[85%] flex flex-col justify-center ">
+          <div className="w-[95%] md:w-[75%] lg:w-[60%] flex flex-col justify-center ">
             <table className="min-w-full bg-white border  shadow-md rounded-lg overflow-hidden">
               <thead className="bg-gray-300">
                 <tr>
