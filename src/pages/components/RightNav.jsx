@@ -8,6 +8,8 @@ import { RxCross2 } from "react-icons/rx";
 import { useGetIndividualStartup } from "../../api/MyStartupApi";
 import { useGetUserQuarter1 } from "../../api/MyQuarter1Api";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { useGetUserQuarter2 } from "../../api/MyQuarter2Api";
+import { useGetUserQuarter3 } from "../../api/MyQuarter3Api";
 
 const RightNav = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -16,13 +18,19 @@ const RightNav = () => {
   const [open, setOpen] = useState(false);
   const { getIndividualStartup } = useGetIndividualStartup();
   const { UserQuarter1 } = useGetUserQuarter1();
+  const { UserQuarter2 } = useGetUserQuarter2();
+  const { UserQuarter3 } = useGetUserQuarter3();
 
-  const [quarter1, setQuarter1] = useState(true);
   const [startup, setStartup] = useState(true);
-  const [selectedOption, setSelectedOption] = useState();
+  const [quarter1, setQuarter1] = useState(true);
+  const [quarter2, setQuarter2] = useState(true);
+  const [quarter3, setQuarter3] = useState(true);
+  const [quarter4, setQuarter4] = useState(true);
+  // const [selectedOption, setSelectedOption] = useState();
   const [options, setOptions] = useState(false);
   const [comparison, setComparison] = useState(false);
   const [resourcesOption, setResourcesOption] = useState(false);
+  const [quarterOptions, setQuarterOptions] = useState(false);
 
   useEffect(() => {
     let User = JSON.parse(localStorage.getItem("breadUser"));
@@ -35,6 +43,8 @@ const RightNav = () => {
     const loadData = async () => {
       const startupD = await getIndividualStartup();
       const quarter1D = await UserQuarter1();
+      const quarter2D = await UserQuarter2();
+      const quarter3D = await UserQuarter3();
 
       if (startupD) {
         setStartup(false);
@@ -42,17 +52,23 @@ const RightNav = () => {
       if (quarter1D) {
         setQuarter1(false);
       }
+      if (quarter2D) {
+        setQuarter2(false);
+      }
+      if (quarter3D) {
+        setQuarter3(false);
+      }
     };
 
     loadData();
   }, []);
-  const handleNavigation = (event) => {
-    const selectedValue = event.target.value;
-    if (selectedValue) {
-      setOpen(!open);
-      navigate(selectedValue);
-    }
-  };
+  // const handleNavigation = (event) => {
+  //   const selectedValue = event.target.value;
+  //   if (selectedValue) {
+  //     setOpen(!open);
+  //     navigate(selectedValue);
+  //   }
+  // };
   const logoutHandler = () => {
     logout();
     setOpen(!open);
@@ -61,12 +77,12 @@ const RightNav = () => {
 
   console.log("OPEN", open);
 
-  const handleSelectChange = (event) => {
-    const selectedValue = event.target.value;
-    // console.log(selectedValue);
-    setSelectedOption(selectedValue);
-    navigate(selectedValue);
-  };
+  // const handleSelectChange = (event) => {
+  //   const selectedValue = event.target.value;
+  //   // console.log(selectedValue);
+  //   setSelectedOption(selectedValue);
+  //   navigate(selectedValue);
+  // };
   return (
     <>
       {/* <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
@@ -225,6 +241,66 @@ const RightNav = () => {
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
                 Expenditure Comparison
+              </button>
+            </div>
+          )}
+
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setQuarterOptions(!quarterOptions)}
+          >
+            Quarters <MdKeyboardArrowDown />
+          </button>
+          {quarterOptions && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/startup");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Startup
+              </button>
+              <button
+                disabled={startup}
+                onClick={() => {
+                  navigate("/quarter1EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                Quarter 1
+              </button>
+              <button
+                disabled={quarter1}
+                onClick={() => {
+                  navigate("/quarter2EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 2
+              </button>
+              <button
+                disabled={quarter2}
+                onClick={() => {
+                  navigate("/quarter3EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 3
+              </button>
+              <button
+                disabled={quarter3}
+                onClick={() => {
+                  navigate("/quarter4EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 4
               </button>
             </div>
           )}

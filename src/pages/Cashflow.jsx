@@ -544,6 +544,14 @@ const Cashflow = () => {
                             </td>
                           </>
                         ))}
+                      {incomeStatementD && (
+                        <td className={`py-2 px-4 border-b text-center`}>
+                          {incomeStatementD.reduce(
+                            (acc, curr) => acc + curr.Income["Total Income"],
+                            0
+                          )}
+                        </td>
+                      )}
                     </tr>
                     {/* Expenditure row */}
                     <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300 font-bold">
@@ -607,6 +615,15 @@ const Cashflow = () => {
                             </td>
                           </>
                         ))}
+                      {incomeStatementD && (
+                        <td className={`py-2 px-4 border-b text-center`}>
+                          {incomeStatementD.reduce(
+                            (acc, curr) =>
+                              acc + curr.Expenditure["Total Expenditure"],
+                            0
+                          )}
+                        </td>
+                      )}
                     </tr>
                     {/* Profit / loss row */}
 
@@ -711,10 +728,12 @@ const Cashflow = () => {
                             </td>
                           ))}
                           <td className={`py-2 px-4 border-b text-center`}>
-                            {cashflow.reduce(
-                              (acc, current) => acc + current[key],
-                              0
-                            )}
+                            {key !== "Cash at beginnining" &&
+                              key !== "Cash at end of period" &&
+                              cashflow.reduce(
+                                (acc, current) => acc + current[key],
+                                0
+                              )}
                           </td>
                         </tr>
                       ))}

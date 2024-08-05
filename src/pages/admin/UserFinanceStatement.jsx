@@ -784,6 +784,14 @@ const UserFinanceStatement = ({ id }) => {
                         </td>
                       </>
                     ))}
+                  {incomeStatementD && (
+                    <td className={`py-2 px-4 border-b text-center`}>
+                      {incomeStatementD.reduce(
+                        (acc, current) => acc + current.Income["Total Income"],
+                        0
+                      )}
+                    </td>
+                  )}
                 </tr>
                 {/* Expenditure row */}
                 <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300 font-bold">
@@ -847,6 +855,15 @@ const UserFinanceStatement = ({ id }) => {
                         </td>
                       </>
                     ))}
+                  {incomeStatementD && (
+                    <td className={`py-2 px-4 border-b text-center`}>
+                      {incomeStatementD.reduce(
+                        (acc, current) =>
+                          acc + current.Expenditure["Total Expenditure"],
+                        0
+                      )}
+                    </td>
+                  )}
                 </tr>
                 {/* Profit / loss row */}
 
@@ -949,11 +966,19 @@ const UserFinanceStatement = ({ id }) => {
                         </td>
                       ))}
                       <td className={`py-2 px-4 border-b text-center`}>
+                        {key !== "Cash at beginnining" &&
+                          key !== "Cash at end of period" &&
+                          cashflow.reduce(
+                            (acc, current) => acc + current[key],
+                            0
+                          )}
+                      </td>
+                      {/* <td className={`py-2 px-4 border-b text-center`}>
                         {cashflow.reduce(
                           (acc, current) => acc + current[key],
                           0
                         )}
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
               </>

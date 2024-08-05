@@ -150,7 +150,7 @@ const UserIncomeComparison = () => {
           {quarter1Graph && (
             <>
               <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-                Quarter 2 Income Comparison
+                Quarter 1 Income Comparison
               </h1>
 
               <div className="w-[100%] h-[50vh]">
