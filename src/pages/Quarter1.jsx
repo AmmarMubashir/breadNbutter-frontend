@@ -7,10 +7,11 @@ import {
 } from "../api/MyQuarter1Api";
 import RightNav from "./components/RightNav";
 import { useCreateUserIncomeStatement } from "../api/MyIncomeStatementApi";
+import Loader from "./components/Loader";
 
 const Quarter1 = () => {
   const navigate = useNavigate();
-  const { Quarter1Info } = useGetQuarter1();
+  const { Quarter1Info, isLoading } = useGetQuarter1();
   const { CreateQuarter1 } = useCreateQuarter1();
   const { UserQuarter1 } = useGetUserQuarter1();
   const { CreateUserIncome } = useCreateUserIncomeStatement();
@@ -74,6 +75,7 @@ const Quarter1 = () => {
         <h1 className="mb-7 text-[1.8rem] text-[#1b375f] font-bold font-mono">
           Quarter 1
         </h1>
+        {!quarter1D && <Loader />}
         {quarter1D && (
           <form
             onSubmit={handleSubmit}

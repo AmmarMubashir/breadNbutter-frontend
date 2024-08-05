@@ -11,6 +11,7 @@ import {
   useUpdateUserIncomeStatement,
   useUpdateUserIncomeStatementQuarter4,
 } from "../../api/MyIncomeStatementApi";
+import Loader from "../components/Loader";
 
 // import { useCashContext } from "../../context/CashFlowContext";
 
@@ -331,6 +332,8 @@ const Quarter4 = () => {
         <h1 className="mb-7 text-[1.8rem] text-[#1b375f] font-bold font-mono">
           Quarter 4
         </h1>
+
+        {!quarter4D && <Loader />}
 
         {quarter4D && (
           <form

@@ -5,6 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 import { useGetIndividualUserQuarter3 } from "../../api/MyQuarter3Api";
 import RightNav from "../../pages/components/RightNav";
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 const Quarter3Detail = () => {
   const [quarter3D, setQuarter3D] = useState();
   const { id } = useParams();
@@ -29,6 +30,8 @@ const Quarter3Detail = () => {
         <h1 className="mb-7 text-[1.2rem] text-[#1b375f] font-bold">
           Quarter 3 details
         </h1>
+
+        {!quarter3D && <Loader />}
 
         {quarter3D && (
           <div className="w-[95%] md:w-[75%] lg:w-[60%] flex flex-col justify-center ">

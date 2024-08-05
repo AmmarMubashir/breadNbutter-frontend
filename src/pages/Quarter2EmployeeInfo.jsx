@@ -7,6 +7,7 @@ import {
 } from "../api/MyQuarter2EmpApi";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import Loader from "./components/Loader";
 
 const Quarter2EmployeeInfo = () => {
   const { getEmployeeInfo } = useGetEmployeeInfo();
@@ -64,10 +65,14 @@ const Quarter2EmployeeInfo = () => {
     }
   }, [isSuccess, error]);
   return (
-    <div className="w-[100%] h-[100vh] overflow-auto flex">
+    <div
+      className="w-[1
+    00%] h-[100vh] overflow-auto flex"
+    >
       <RightNav />
       <div className="h-[100vh] overflow-auto flex-1">
         <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem] flex items-center">
+          {!employeeInfo && <Loader />}
           {employeeInfo && (
             <div className="w-[95%] md:w-[85%] rounded mx-auto overflow-auto">
               <div className="w-[100%] px-2 py-3 bg-white rounded font-bold ">

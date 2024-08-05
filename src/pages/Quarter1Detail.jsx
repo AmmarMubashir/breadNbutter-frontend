@@ -4,11 +4,12 @@ import { TiTick } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
 import { useGetIndividualUserQuarter1 } from "../api/MyQuarter1Api";
 import RightNav from "./components/RightNav";
+import Loader from "./components/Loader";
 const Quarter1Detail = () => {
   const navigate = useNavigate();
   const [quarter1D, setQuarter1D] = useState();
   const { id } = useParams();
-  const { IndividualUserQuarter1 } = useGetIndividualUserQuarter1();
+  const { IndividualUserQuarter1, isLoading } = useGetIndividualUserQuarter1();
 
   useEffect(() => {
     const loadData = async () => {
@@ -30,6 +31,7 @@ const Quarter1Detail = () => {
           Quarter 1 details
         </h1>
 
+        {!quarter1D && <Loader />}
         {quarter1D && (
           <div className="w-[95%] md:w-[75%] lg:w-[60%] flex flex-col justify-center ">
             <table className="min-w-full bg-white border  shadow-md rounded-lg overflow-hidden">
