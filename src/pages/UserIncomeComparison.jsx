@@ -40,12 +40,19 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[0]["Income"]["Additional income"],
       },
       {
+        id: "Extra income from opportunities",
+        "Extra income from opportunities":
+          incomeStatement[0]["Income"]["Extra income from opportunities"],
+      },
+
+      {
         id: "Total Income",
         // "Total Income": incomeStatement[0].Income["Total Income"],
         "Total Income":
           incomeStatement[0]["Income"]["Income from opportunities"] +
           incomeStatement[0]["Income"]["Sales from Home"] +
-          incomeStatement[0]["Income"]["Additional income"],
+          incomeStatement[0]["Income"]["Additional income"] +
+          incomeStatement[0]["Income"]["Extra income from opportunities"],
       },
     ];
   }
@@ -68,12 +75,19 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[1]["Income"]["Additional income"],
       },
       {
+        id: "Extra income from opportunities",
+        "Extra income from opportunities":
+          incomeStatement[1]["Income"]["Extra income from opportunities"],
+      },
+
+      {
         id: "Total Income",
         // "Total Income": incomeStatement[1].Income["Total Income"],
         "Total Income":
           incomeStatement[1]["Income"]["Income from opportunities"] +
           incomeStatement[1]["Income"]["Sales from Home"] +
-          incomeStatement[1]["Income"]["Additional income"],
+          incomeStatement[1]["Income"]["Additional income"] +
+          incomeStatement[1]["Income"]["Extra income from opportunities"],
       },
     ];
   }
@@ -96,12 +110,19 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[2]["Income"]["Additional income"],
       },
       {
+        id: "Extra income from opportunities",
+        "Extra income from opportunities":
+          incomeStatement[2]["Income"]["Extra income from opportunities"],
+      },
+
+      {
         id: "Total Income",
         // "Total Income": incomeStatement[1].Income["Total Income"],
         "Total Income":
           incomeStatement[2]["Income"]["Income from opportunities"] +
           incomeStatement[2]["Income"]["Sales from Home"] +
-          incomeStatement[2]["Income"]["Additional income"],
+          incomeStatement[2]["Income"]["Additional income"] +
+          incomeStatement[2]["Income"]["Extra income from opportunities"],
       },
     ];
   }
@@ -124,12 +145,19 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[3]["Income"]["Additional income"],
       },
       {
+        id: "Extra income from opportunities",
+        "Extra income from opportunities":
+          incomeStatement[3]["Income"]["Extra income from opportunities"],
+      },
+
+      {
         id: "Total Income",
         // "Total Income": incomeStatement[1].Income["Total Income"],
         "Total Income":
           incomeStatement[3]["Income"]["Income from opportunities"] +
           incomeStatement[3]["Income"]["Sales from Home"] +
-          incomeStatement[3]["Income"]["Additional income"],
+          incomeStatement[3]["Income"]["Additional income"] +
+          incomeStatement[3]["Income"]["Extra income from opportunities"],
       },
     ];
   }
@@ -160,6 +188,8 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
+                    "Extra income from opportunities",
+
                     "Total Income",
                   ]}
                   indexBy="id"
@@ -215,6 +245,8 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
+                    "Extra income from opportunities",
+
                     "Total Income",
                   ]}
                   indexBy="id"
@@ -270,6 +302,8 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
+                    "Extra income from opportunities",
+
                     "Total Income",
                   ]}
                   indexBy="id"
@@ -306,10 +340,10 @@ const UserIncomeComparison = () => {
             </>
           )}
 
-          {!quarter3Graph && (
+          {!quarter4Graph && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter3 Income Comparison goes here when you fill it...
+                Quarter4 Income Comparison goes here when you fill it...
               </p>
             </div>
           )}
@@ -325,6 +359,8 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
+                    "Extra income from opportunities",
+
                     "Total Income",
                   ]}
                   indexBy="id"

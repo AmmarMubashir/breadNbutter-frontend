@@ -75,39 +75,97 @@ const UpdateUserFinanceStatement = () => {
                     </h1>
                     <div className=" mt-1 flex flex-col md:flex-row gap-5">
                       <div className="flex flex-1 flex-col gap-6">
-                        <h1 className="font-bold text-1.4rem">Income:</h1>
-                        <div className="flex flex-col flex-1 items-start gap-2">
-                          <label htmlFor="AdditionalIncome">
-                            Additional income:
-                          </label>
-                          <input
-                            type="number"
-                            value={item.Income["Additional income"]}
-                            onChange={(e) =>
-                              handleRevenueChange(index, "Additional income", e)
-                            }
-                            // min={0}
-                            id="AdditionalIncome"
-                            className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
-                          />
+                        <div className="flex flex-1 flex-col gap-6">
+                          <h1 className="font-bold text-1.4rem">Income:</h1>
+                          <div className="flex flex-col flex-1 items-start gap-2">
+                            <label htmlFor="AdditionalIncome">
+                              Additional income:
+                            </label>
+                            <input
+                              type="number"
+                              value={item.Income["Additional income"]}
+                              onChange={(e) =>
+                                handleRevenueChange(
+                                  index,
+                                  "Additional income",
+                                  e
+                                )
+                              }
+                              // min={0}
+                              id="AdditionalIncome"
+                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                            />
+                          </div>
+                        </div>
+                        <div className="flex flex-1 flex-col gap-6">
+                          <div className="flex flex-col flex-1 items-start gap-2">
+                            <label htmlFor="extraIncome">
+                              Extra income from opportunities:
+                            </label>
+                            <input
+                              type="number"
+                              value={
+                                item.Income["Extra income from opportunities"]
+                              }
+                              onChange={(e) =>
+                                handleRevenueChange(
+                                  index,
+                                  "Extra income from opportunities",
+                                  e
+                                )
+                              }
+                              // min={0}
+                              id="extraIncome"
+                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                            />
+                          </div>
                         </div>
                       </div>
                       <div className="flex flex-1 flex-col gap-6">
-                        <h1 className="font-bold text-1.4rem">Expenditure:</h1>
-                        <div className="flex flex-col flex-1 items-start gap-2">
-                          <label htmlFor="AdditionalCost">
-                            Additional cost:
-                          </label>
-                          <input
-                            type="number"
-                            value={item["Expenditure"]["Additional cost"]}
-                            onChange={(e) =>
-                              handleCostChange(index, "Additional cost", e)
-                            }
-                            // min={0}
-                            id="AdditionalCost"
-                            className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
-                          />
+                        <div className="flex flex-1 flex-col gap-6">
+                          <h1 className="font-bold text-1.4rem">
+                            Expenditure:
+                          </h1>
+                          <div className="flex flex-col flex-1 items-start gap-2">
+                            <label htmlFor="AdditionalCost">
+                              Additional cost:
+                            </label>
+                            <input
+                              type="number"
+                              value={item["Expenditure"]["Additional cost"]}
+                              onChange={(e) =>
+                                handleCostChange(index, "Additional cost", e)
+                              }
+                              // min={0}
+                              id="AdditionalCost"
+                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                            />
+                          </div>
+                        </div>
+                        <div className="flex flex-1 flex-col gap-6">
+                          <div className="flex flex-col flex-1 items-start gap-2">
+                            <label htmlFor="extraIncome">
+                              Extra cost from opportunities:
+                            </label>
+                            <input
+                              type="number"
+                              value={
+                                item.Expenditure[
+                                  "Extra cost from opportunities"
+                                ]
+                              }
+                              onChange={(e) =>
+                                handleCostChange(
+                                  index,
+                                  "Extra cost from opportunities",
+                                  e
+                                )
+                              }
+                              // min={0}
+                              id="extraIncome"
+                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

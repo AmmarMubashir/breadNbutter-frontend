@@ -5,11 +5,14 @@ import { useLogout } from "../../api/MyUserApi";
 import { IoMdLogOut } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const AdminNav = () => {
   const { logout } = useLogout();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [expenditureOption, setExpenditureOption] = useState(false);
+  const [incomeOption, setIncomeOption] = useState(false);
   return (
     <>
       <div className="w-[200px] lg:w-[240px] h-[100vh] overflow-auto custom-scrollbar bg-white border-r-[5px] border-[#1B375F] py-6 hidden md:flex flex-col gap-[2rem]">
@@ -22,17 +25,109 @@ const AdminNav = () => {
             Game
           </button>
           <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setExpenditureOption(!expenditureOption)}
+          >
+            Expenditure <MdKeyboardArrowDown />
+          </button>
+          {expenditureOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/admin/dashboard");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Expenditure comparison
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/expensesFromOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Expenses from opportunities
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/additionalCost");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Additional cost
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/extraCostOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Extra cost opportunities
+              </button>
+            </div>
+          )}
+          {/* <button
             onClick={() => navigate("/admin/dashboard")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Expenditure Comparison
-          </button>
+          </button> */}
           <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setIncomeOption(!incomeOption)}
+          >
+            Income <MdKeyboardArrowDown />
+          </button>
+          {incomeOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/admin/revenue");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income comparison
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/incomeFromOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income from opportunities
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/additionalIncome");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Additional Income
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/extraIncomeOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Extra income opportunities
+              </button>
+            </div>
+          )}
+          {/* <button
             onClick={() => navigate("/admin/revenue")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Income Comparison
-          </button>
+          </button> */}
           <button
             onClick={() => navigate("/admin/users")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -111,23 +206,97 @@ const AdminNav = () => {
             Game
           </button>
           <button
-            onClick={() => {
-              navigate("/admin/dashboard");
-              setOpen(!open);
-            }}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setExpenditureOption(!expenditureOption)}
           >
-            Expenditure Comparison
+            Expenditure <MdKeyboardArrowDown />
           </button>
+          {expenditureOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/admin/dashboard");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Expenditure comparison
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/expensesFromOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Expenses from opportunities
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/additionalCost");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Additional cost
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/extraCostOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Extra cost opportunities
+              </button>
+            </div>
+          )}
           <button
-            onClick={() => {
-              navigate("/admin/revenue");
-              setOpen(!open);
-            }}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setIncomeOption(!incomeOption)}
           >
-            Income Comparison
+            Income <MdKeyboardArrowDown />
           </button>
+          {incomeOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/admin/revenue");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income comparison
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/incomeFromOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Income from opportunities
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/additionalIncome");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Additional Income
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/extraIncomeOpportunities");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Extra income opportunities
+              </button>
+            </div>
+          )}
           <button
             onClick={() => {
               navigate("/admin/users");

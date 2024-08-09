@@ -43,6 +43,11 @@ const userCostComparison = () => {
         id: "Additional cost",
         "Additional cost": incomeStatement[0]["Expenditure"]["Additional cost"],
       },
+      {
+        id: "Extra cost from opportunities",
+        "Extra cost from opportunities":
+          incomeStatement[0]["Expenditure"]["Extra cost from opportunities"],
+      },
 
       {
         id: "Total Expenditure",
@@ -50,7 +55,8 @@ const userCostComparison = () => {
           incomeStatement[0]["Expenditure"]["Expenses from opportunities"] +
           incomeStatement[0]["Expenditure"]["Expenses from other sources"] +
           incomeStatement[0]["Expenditure"]["Purchases"] +
-          incomeStatement[0]["Expenditure"]["Additional cost"],
+          incomeStatement[0]["Expenditure"]["Additional cost"] +
+          incomeStatement[0]["Expenditure"]["Extra cost from opportunities"],
         // "Total Expenditure":
         //   incomeStatement[0]["Expenditure"]["Total Expenditure"],
       },
@@ -79,12 +85,18 @@ const userCostComparison = () => {
         "Additional cost": incomeStatement[1]["Expenditure"]["Additional cost"],
       },
       {
+        id: "Extra cost from opportunities",
+        "Extra cost from opportunities":
+          incomeStatement[1]["Expenditure"]["Extra cost from opportunities"],
+      },
+      {
         id: "Total Expenditure",
         "Total Expenditure":
           incomeStatement[1]["Expenditure"]["Expenses from opportunities"] +
           incomeStatement[1]["Expenditure"]["Expenses from other sources"] +
           incomeStatement[1]["Expenditure"]["Purchases"] +
-          incomeStatement[1]["Expenditure"]["Additional cost"],
+          incomeStatement[1]["Expenditure"]["Additional cost"] +
+          incomeStatement[1]["Expenditure"]["Extra cost from opportunities"],
         // "Total Expenditure":
         //   incomeStatement[1]["Expenditure"]["Total Expenditure"],
       },
@@ -113,12 +125,18 @@ const userCostComparison = () => {
         "Additional cost": incomeStatement[2]["Expenditure"]["Additional cost"],
       },
       {
+        id: "Extra cost from opportunities",
+        "Extra cost from opportunities":
+          incomeStatement[2]["Expenditure"]["Extra cost from opportunities"],
+      },
+      {
         id: "Total Expenditure",
         "Total Expenditure":
           incomeStatement[2]["Expenditure"]["Expenses from opportunities"] +
           incomeStatement[2]["Expenditure"]["Expenses from other sources"] +
           incomeStatement[2]["Expenditure"]["Purchases"] +
-          incomeStatement[2]["Expenditure"]["Additional cost"],
+          incomeStatement[2]["Expenditure"]["Additional cost"] +
+          incomeStatement[2]["Expenditure"]["Extra cost from opportunities"],
         // "Total Expenditure":
         //   incomeStatement[2]["Expenditure"]["Total Expenditure"],
       },
@@ -147,12 +165,18 @@ const userCostComparison = () => {
         "Additional cost": incomeStatement[3]["Expenditure"]["Additional cost"],
       },
       {
+        id: "Extra cost from opportunities",
+        "Extra cost from opportunities":
+          incomeStatement[3]["Expenditure"]["Extra cost from opportunities"],
+      },
+      {
         id: "Total Expenditure",
         "Total Expenditure":
           incomeStatement[3]["Expenditure"]["Expenses from opportunities"] +
           incomeStatement[3]["Expenditure"]["Expenses from other sources"] +
           incomeStatement[3]["Expenditure"]["Purchases"] +
-          incomeStatement[3]["Expenditure"]["Additional cost"],
+          incomeStatement[3]["Expenditure"]["Additional cost"] +
+          incomeStatement[3]["Expenditure"]["Extra cost from opportunities"],
         // "Total Expenditure":
         //   incomeStatement[3]["Expenditure"]["Total Expenditure"],
       },
@@ -185,6 +209,7 @@ const userCostComparison = () => {
                     "Expenses from opportunities",
                     "Purchases",
                     "Additional cost",
+                    "Extra cost from opportunities",
                     "Total Expenditure",
                   ]}
                   indexBy="id"
@@ -295,6 +320,7 @@ const userCostComparison = () => {
                     "Expenses from opportunities",
                     "Purchases",
                     "Additional cost",
+                    "Extra cost from opportunities",
                     "Total Expenditure",
                   ]}
                   indexBy="id"
@@ -350,6 +376,7 @@ const userCostComparison = () => {
                     "Expenses from opportunities",
                     "Purchases",
                     "Additional cost",
+                    "Extra cost from opportunities",
                     "Total Expenditure",
                   ]}
                   indexBy="id"

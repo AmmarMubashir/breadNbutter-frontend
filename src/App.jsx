@@ -24,6 +24,11 @@ import UserIncomeComparison from "./pages/UserIncomeComparison";
 import UserCostComparison from "./pages/UserCostComparison";
 
 import Dashboard from "./pages/admin/Dashboard";
+import IncomeFromOpportunities from "./pages/admin/IncomeFromOpportunities";
+import ExpensesFromOpportunities from "./pages/admin/ExpensesFromOpportunities";
+import AdditionalExpenses from "./pages/admin/AdditionalExpenses";
+import ExtraCostOpportunities from "./pages/admin/ExtraCostOpportunities";
+import ExtraIncomeOpportunities from "./pages/admin/ExtraIncomeOpportunities.jsx";
 import Revenue from "./pages/admin/Revenue";
 import UpdateQuarter1Info from "./pages/admin/UpdateQuarter1Info";
 import UpdateQuarter2Info from "./pages/admin/UpdateQuarter2Info";
@@ -39,6 +44,7 @@ import Quarter4 from "./pages/Quarters/Quarter4";
 import Quarter4EmployeeInfo from "./pages/QuartersEmployeeInfo/Quarter4EmployeeInfo";
 import UpdateQuarter4Info from "./pages/admin/UpdateQuarter4Info";
 import ResetPassword from "./pages/ResetPassword";
+import AdditionalIncome from "./pages/admin/AdditionalIncome";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -93,7 +99,25 @@ function App() {
         />
         <Route path="/user/costComparison" element={<UserCostComparison />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route
+          path="/admin/incomeFromOpportunities"
+          element={<IncomeFromOpportunities />}
+        />
+        <Route path="/admin/additionalCost" element={<AdditionalExpenses />} />
+        <Route
+          path="/admin/extraCostOpportunities"
+          element={<ExtraCostOpportunities />}
+        />
         <Route path="/admin/revenue" element={<Revenue />} />
+        <Route
+          path="/admin/expensesFromOpportunities"
+          element={<ExpensesFromOpportunities />}
+        />
+        <Route path="/admin/additionalIncome" element={<AdditionalIncome />} />
+        <Route
+          path="/admin/extraIncomeOpportunities"
+          element={<ExtraIncomeOpportunities />}
+        />
         <Route path="/admin/incomeStatement" element={<IncomeStatement />} />
         <Route path="/admin/users" element={<UsersList />} />
         <Route path="/admin/user/:id" element={<UserDetails />} />

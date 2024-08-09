@@ -102,7 +102,9 @@ const UserDetails = () => {
                     </td>
                   </tr>
                   <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
-                    <td className="py-2 px-4 border-b text-start">Budget</td>
+                    <td className="py-2 px-4 border-b text-start">
+                      Bank balance
+                    </td>
                     <td className="py-2 px-4 border-b text-start">
                       {startupData.budjet}
                     </td>

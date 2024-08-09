@@ -187,15 +187,6 @@ const RightNav = () => {
           </button>
           {resourcesOption && (
             <div className="transition-all duration-300 overflow-hidden">
-               <button
-                onClick={() => {
-                  window.open("https://www.stepstobusiness.co.uk", "_blank");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                Game
-              </button>
               <button
                 onClick={() => {
                   window.open("https://www.stepstobusiness.co.uk", "_blank");
@@ -457,15 +448,6 @@ const RightNav = () => {
           </button>
           {resourcesOption && (
             <div className="transition-all duration-300 overflow-hidden">
-               <button
-                onClick={() => {
-                  window.open("https://www.stepstobusiness.co.uk", "_blank");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                Game
-              </button>
               <button
                 onClick={() => {
                   window.open("https://www.stepstobusiness.co.uk", "_blank");
