@@ -102,6 +102,69 @@ export const useLoggedMyUser = () => {
   };
 };
 
+export const useForgotPassword = () => {
+  const forgotPasswordData = async (data) => {
+    const response = await fetch(`${API_BASE_URL}/api/v1/password/forgot`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      throw new Error("Error in Sending mail.Try again later");
+    }
+
+    return await response.json();
+  };
+
+  const {
+    mutateAsync: forgotPassword,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(forgotPasswordData);
+
+  return { forgotPassword, isLoading, isSuccess, error };
+};
+
+export const useResetPassword = () => {
+  const { setAuthUser, setJwt } = useAuthContext();
+  const resetPasswordData = async ({ data, token }) => {
+    console.log(data, token);
+    const response = await fetch(
+      `${API_BASE_URL}/api/v1/password/reset/${token}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    const Userdata = await response.json();
+    if (!response.ok) {
+      throw new Error("Error in Updating password.Try again later");
+    }
+
+    setJwt(Userdata.cokkieToken);
+    localStorage.setItem("breadUser", JSON.stringify(Userdata.data));
+    localStorage.setItem("breadToken", Userdata.cokkieToken);
+    setAuthUser(Userdata);
+
+    // return await response.json();
+  };
+
+  const {
+    mutateAsync: resetPassword,
+    isLoading,
+    isSuccess,
+    error,
+  } = useMutation(resetPasswordData);
+
+  return { resetPassword, isLoading, isSuccess, error };
+};
+
 export const useLogout = () => {
   const { setAuthUser } = useAuthContext();
   const logoutUser = async () => {

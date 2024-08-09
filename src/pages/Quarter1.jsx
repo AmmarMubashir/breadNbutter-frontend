@@ -86,7 +86,7 @@ const Quarter1 = () => {
                 Quarterly Opportunities and Events (OE)
               </h2>
               <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
-                Income At Start: 350
+                Cash running total: 350
               </p>
               <div
                 className={`bg-white rounded px-2 py-2 ${

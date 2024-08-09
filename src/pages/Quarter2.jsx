@@ -274,7 +274,7 @@ const Quarter2 = () => {
                 Quarterly Opportunities and Events (OE)
               </h2>
               <p className="mb-1 text-end text-[0.8rem] text-[#1b375f] font-bold cursor-pointer">
-                Income At Start: {cashflow && cashflow[2]["Income at end"]}
+                Cash running total: {cashflow && cashflow[2]["Income at end"]}
               </p>
               <div
                 className={`bg-white rounded px-2 py-2 ${

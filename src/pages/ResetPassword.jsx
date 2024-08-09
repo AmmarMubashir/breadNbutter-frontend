@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useLoggedMyUser } from "../api/MyUserApi";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useLoggedMyUser, useResetPassword } from "../api/MyUserApi";
 import { useAuthContext } from "../../context/AuthContext";
 import logo from "../assets/Logo.png";
+import { toast } from "react-toastify";
 
-const Login = () => {
+const ResetPassword = () => {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
-    email: "",
     password: "",
+    confirmPassword: "",
   });
+  const { token } = useParams();
   const { authUser, setAuthUser } = useAuthContext();
-  const { login, isSuccess } = useLoggedMyUser();
+  //   const { login, isSuccess } = useLoggedMyUser();
+  const { resetPassword, isSuccess, error, loading } = useResetPassword();
 
-  const loginHandler = async (e) => {
+  const resetPasswordHandler = async (e) => {
     e.preventDefault();
-    login(inputs);
+    resetPassword({ data: inputs, token });
   };
   useEffect(() => {
     if (authUser) {
@@ -28,8 +31,12 @@ const Login = () => {
 
       setInputs({ email: "", password: "" });
       setAuthUser(true);
+      toast.success("Password reset successfully");
     }
-  }, [isSuccess]);
+    if (error) {
+      toast.error("Failed to reset password. Please try again");
+    }
+  }, [isSuccess, error]);
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
@@ -37,70 +44,57 @@ const Login = () => {
       </div>
       <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center absolute right-0">
         <h1 className="mb-7 text-[1.2rem] text-[#1b375f] font-bold">
-          Login to continue...
+          Reset Password
         </h1>
         <form
           action=""
-          onSubmit={loginHandler}
+          onSubmit={resetPasswordHandler}
           className="flex flex-col gap-[20px] w-[95%] md:w-[80%]"
         >
           <div className="flex gap-5 items-center">
             <label
-              htmlFor="email"
-              className="font-bold text-[#1b375f] text-[1rem] md:text-[1.2rem] w-[70px] md:w-[80px] lg:w-[120px]"
-            >
-              Email:
-            </label>
-            <input
-              type="email"
-              placeholder="Enter your Email"
-              id="email"
-              required
-              value={inputs.email}
-              onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
-              className="rounded-full py-3 px-4 flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
-            />
-          </div>
-          <div className="flex gap-5 items-center">
-            <label
               htmlFor="password"
-              className="font-bold text-[#1b375f] text-[1rem] md:text-[1.2rem] w-[70px] md:w-[80px] lg:w-[120px]"
+              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
             >
               Password:
             </label>
             <input
               type="password"
+              placeholder="Enter your Password"
               id="password"
               required
-              placeholder="Enter your password"
               value={inputs.password}
               onChange={(e) =>
                 setInputs({ ...inputs, password: e.target.value })
               }
-              className="rounded-full py-3 px-4 flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
+              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
             />
           </div>
-          <div className="text-end">
-            <Link
-              to="/password/forgot"
-              className="text-[#1b375f] text-sm underline"
+          <div className="flex gap-5 items-center">
+            <label
+              htmlFor="confirmPassword"
+              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
             >
-              Forgot password?
-            </Link>
+              Confirm Password:
+            </label>
+            <input
+              type="password"
+              placeholder="Enter your Confirm Password"
+              id="confirmPassword"
+              required
+              value={inputs.confirmPassword}
+              onChange={(e) =>
+                setInputs({ ...inputs, confirmPassword: e.target.value })
+              }
+              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
+            />
           </div>
-          <div>
-            <p className="text-center text-[#1b375f] text-sm">
-              Don't have an account?{" "}
-              <Link to="/signup" className="underline">
-                Signup
-              </Link>
-            </p>
-          </div>
+
           <button
             type="submit"
             className="bg-[#1b375f] w-max  rounded-full py-2 px-6 ml-auto text-white font-bold text-[1.2rem]"
           >
-            Login
+            Update
           </button>
         </form>
       </div>
@@ -108,4 +102,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ResetPassword;

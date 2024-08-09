@@ -2,6 +2,7 @@ import "./App.css";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
 import Login from "./pages/Login";
 import Startup from "./pages/Startup";
 import Quarter1 from "./pages/Quarter1";
@@ -37,6 +38,7 @@ import Quarter4Details from "./pages/QuartersDetail/Quarter4Details";
 import Quarter4 from "./pages/Quarters/Quarter4";
 import Quarter4EmployeeInfo from "./pages/QuartersEmployeeInfo/Quarter4EmployeeInfo";
 import UpdateQuarter4Info from "./pages/admin/UpdateQuarter4Info";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -57,6 +59,8 @@ function App() {
       {/* <Route path="/" element={<Login />} /> */}
       <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/password/forgot" element={<ForgotPassword />} />
+      <Route path="/password/reset/:token" element={<ResetPassword />} />
 
       {/* </Route> */}
 
