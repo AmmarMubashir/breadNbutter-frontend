@@ -184,6 +184,7 @@ const userCostComparison = () => {
   }
 
   console.log(quarter1Graph);
+  const colorsPattern = ["#FF6F61", "#FFD966", "#6AB04C", "#E8C1A0", "#9C88FF"];
   return (
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <RightNav />
@@ -233,7 +234,9 @@ const userCostComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>
@@ -265,6 +268,7 @@ const userCostComparison = () => {
                     "Expenses from opportunities",
                     "Purchases",
                     "Additional cost",
+                    "Extra cost from opportunities",
                     "Total Expenditure",
                   ]}
                   indexBy="id"
@@ -288,7 +292,10 @@ const userCostComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  // colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>
@@ -344,7 +351,10 @@ const userCostComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  // colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>
@@ -400,7 +410,10 @@ const userCostComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  // colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>

@@ -6,6 +6,7 @@ const MyRevenueChart = ({ data }) => {
   const minIncome = Math.min(...income);
   const maxIncome = Math.max(...income);
   console.log(maxIncome);
+  const colorsPattern = ["#FF6F61", "#FFD966", "#6AB04C", "#4A69BD", "#9C88FF"];
   return (
     <div className="h-[70vh]">
       <ResponsiveBar
@@ -18,7 +19,8 @@ const MyRevenueChart = ({ data }) => {
         maxValue={maxIncome + 2000}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
-        colors="#fff8d8"
+        // colors="#fff8d8"
+        colors={({ index }) => colorsPattern[index % colorsPattern.length]}
         defs={[
           {
             id: "dots",

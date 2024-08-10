@@ -109,7 +109,8 @@ const UpdateIncomeStatement = () => {
                             className={`py-2 px-4 border-b ${
                               key === "Total Income" ||
                               key === "Income from opportunities" ||
-                              key === "Additional income"
+                              key === "Additional income" ||
+                              key == "Extra income from opportunities"
                                 ? `hidden`
                                 : ``
                             }`}
@@ -121,7 +122,8 @@ const UpdateIncomeStatement = () => {
                               className={`py-2 px-0 md:px-4 border-b text-center ${
                                 key === "Total Income" ||
                                 key === "Income from opportunities" ||
-                                key === "Additional income"
+                                key === "Additional income" ||
+                                key == "Extra income from opportunities"
                                   ? `hidden`
                                   : ``
                               }`}
@@ -155,7 +157,8 @@ const UpdateIncomeStatement = () => {
                               key === "Total Expenditure" ||
                               key === "Expenses from opportunities" ||
                               key === "Expenses from other sources" ||
-                              key === "Additional cost"
+                              key === "Additional cost" ||
+                              key == "Extra cost from opportunities"
                                 ? `hidden`
                                 : ``
                             }`}
@@ -168,7 +171,8 @@ const UpdateIncomeStatement = () => {
                                 key === "Total Expenditure" ||
                                 key === "Expenses from opportunities" ||
                                 key === "Expenses from other sources" ||
-                                key === "Additional cost"
+                                key === "Additional cost" ||
+                                key == "Extra cost from opportunities"
                                   ? `hidden`
                                   : ``
                               }`}

@@ -147,6 +147,65 @@ const RightNav = () => {
           </select> */}
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setQuarterOptions(!quarterOptions)}
+          >
+            Quarters <MdKeyboardArrowDown />
+          </button>
+          {quarterOptions && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/startup");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Startup
+              </button>
+              <button
+                disabled={startup}
+                onClick={() => {
+                  navigate("/quarter1EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                Quarter 1
+              </button>
+              <button
+                disabled={quarter1}
+                onClick={() => {
+                  navigate("/quarter2EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 2
+              </button>
+              <button
+                disabled={quarter2}
+                onClick={() => {
+                  navigate("/quarter3EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 3
+              </button>
+              <button
+                disabled={quarter3}
+                onClick={() => {
+                  navigate("/quarter4EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 4
+              </button>
+            </div>
+          )}
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setOptions(!options)}
           >
             Finance <MdKeyboardArrowDown />
@@ -254,66 +313,6 @@ const RightNav = () => {
             </div>
           )}
 
-          <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => setQuarterOptions(!quarterOptions)}
-          >
-            Quarters <MdKeyboardArrowDown />
-          </button>
-          {quarterOptions && (
-            <div className="transition-all duration-300 overflow-hidden">
-              <button
-                onClick={() => {
-                  navigate("/startup");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                Startup
-              </button>
-              <button
-                disabled={startup}
-                onClick={() => {
-                  navigate("/quarter1EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                Quarter 1
-              </button>
-              <button
-                disabled={quarter1}
-                onClick={() => {
-                  navigate("/quarter2EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
-              >
-                Quarter 2
-              </button>
-              <button
-                disabled={quarter2}
-                onClick={() => {
-                  navigate("/quarter3EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
-              >
-                Quarter 3
-              </button>
-              <button
-                disabled={quarter3}
-                onClick={() => {
-                  navigate("/quarter4EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
-              >
-                Quarter 4
-              </button>
-            </div>
-          )}
-
           {/* <select
             name="quarters"
             id="quarters"
@@ -403,6 +402,65 @@ const RightNav = () => {
           >
             Income statement
           </button> */}
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setQuarterOptions(!quarterOptions)}
+          >
+            Quarters <MdKeyboardArrowDown />
+          </button>
+          {quarterOptions && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/startup");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Startup
+              </button>
+              <button
+                disabled={startup}
+                onClick={() => {
+                  navigate("/quarter1EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                Quarter 1
+              </button>
+              <button
+                disabled={quarter1}
+                onClick={() => {
+                  navigate("/quarter2EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 2
+              </button>
+              <button
+                disabled={quarter2}
+                onClick={() => {
+                  navigate("/quarter3EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 3
+              </button>
+              <button
+                disabled={quarter3}
+                onClick={() => {
+                  navigate("/quarter4EmpInfo");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
+              >
+                Quarter 4
+              </button>
+            </div>
+          )}
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setOptions(!options)}
@@ -514,65 +572,7 @@ const RightNav = () => {
               </button>
             </div>
           )}
-          <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => setQuarterOptions(!quarterOptions)}
-          >
-            Quarters <MdKeyboardArrowDown />
-          </button>
-          {quarterOptions && (
-            <div className="transition-all duration-300 overflow-hidden">
-              <button
-                onClick={() => {
-                  navigate("/startup");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                Startup
-              </button>
-              <button
-                disabled={startup}
-                onClick={() => {
-                  navigate("/quarter1EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                Quarter 1
-              </button>
-              <button
-                disabled={quarter1}
-                onClick={() => {
-                  navigate("/quarter2EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
-              >
-                Quarter 2
-              </button>
-              <button
-                disabled={quarter2}
-                onClick={() => {
-                  navigate("/quarter3EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
-              >
-                Quarter 3
-              </button>
-              <button
-                disabled={quarter3}
-                onClick={() => {
-                  navigate("/quarter4EmpInfo");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
-              >
-                Quarter 4
-              </button>
-            </div>
-          )}
+
           {/* <select
             name="quarters"
             id="quarters"

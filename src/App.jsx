@@ -45,6 +45,7 @@ import Quarter4EmployeeInfo from "./pages/QuartersEmployeeInfo/Quarter4EmployeeI
 import UpdateQuarter4Info from "./pages/admin/UpdateQuarter4Info";
 import ResetPassword from "./pages/ResetPassword";
 import AdditionalIncome from "./pages/admin/AdditionalIncome";
+import Quarter1Completion from "./pages/Quarter1Completion.jsx";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -75,6 +76,8 @@ function App() {
         <Route path="/startup/:id" element={<StartupDetails />} />
         <Route path="/quarter1" element={<Quarter1 />} />
         <Route path="/quarter1/:id" element={<Quarter1Detail />} />
+        <Route path="/quarter1Completion" element={<Quarter1Completion />} />
+
         <Route path="/quarter2" element={<Quarter2 />} />
         <Route path="/quarter2/:id" element={<Quarter2Detail />} />
         <Route path="/quarter3" element={<Quarter3 />} />

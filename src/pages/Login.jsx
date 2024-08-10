@@ -42,12 +42,12 @@ const Login = () => {
         <form
           action=""
           onSubmit={loginHandler}
-          className="flex flex-col gap-[20px] w-[95%] md:w-[80%]"
+          className="flex flex-col gap-[20px] w-[95%] md:w-[80%] lg:w-[65%]"
         >
-          <div className="flex gap-5 items-center">
+          <div className="flex  flex-col md:flex-row gap-2 md:gap-5 items-center">
             <label
               htmlFor="email"
-              className="font-bold text-[#1b375f] text-[1rem] md:text-[1.2rem] w-[70px] md:w-[80px] lg:w-[120px]"
+              className="font-bold text-[#1b375f] text-[1rem]  md:text-[1.2rem] w-[95%] sm:w-[85%] md:w-[80px] lg:w-[120px]"
             >
               Email:
             </label>
@@ -58,13 +58,13 @@ const Login = () => {
               required
               value={inputs.email}
               onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
-              className="rounded-full py-3 px-4 flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
+              className="rounded-full py-3 px-4 w-[95%] sm:w-[85%] md:flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
             />
           </div>
-          <div className="flex gap-5 items-center">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-5 items-center">
             <label
               htmlFor="password"
-              className="font-bold text-[#1b375f] text-[1rem] md:text-[1.2rem] w-[70px] md:w-[80px] lg:w-[120px]"
+              className="font-bold text-[#1b375f] text-[1rem] md:text-[1.2rem] w-[95%] sm:w-[85%] md:w-[80px] lg:w-[120px]"
             >
               Password:
             </label>
@@ -77,7 +77,7 @@ const Login = () => {
               onChange={(e) =>
                 setInputs({ ...inputs, password: e.target.value })
               }
-              className="rounded-full py-3 px-4 flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
+              className="rounded-full py-3 px-4 w-[95%] sm:w-[85%] md:flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
             />
           </div>
           <div className="text-end">
@@ -98,7 +98,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="bg-[#1b375f] w-max  rounded-full py-2 px-6 ml-auto text-white font-bold text-[1.2rem]"
+            className="bg-[#1b375f] w-[95%] sm:w-[85%] md:w-max  rounded-full py-2 px-6  md:ml-auto text-white font-bold text-[1.2rem]"
           >
             Login
           </button>

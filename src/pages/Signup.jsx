@@ -43,12 +43,12 @@ const Signup = () => {
         <form
           action=""
           onSubmit={signupHandler}
-          className="flex flex-col gap-[20px] w-[95%] md:w-[80%]"
+          className="flex flex-col gap-[20px] w-[95%] md:w-[80%] lg:w-[65%]"
         >
-          <div className="flex  gap-5 items-center">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-5 items-center">
             <label
               htmlFor="name"
-              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
+              className="font-bold text-[#1b375f] text-[1.2rem] md:text-[1.2rem] w-[95%] sm:w-[85%] md:w-[80px] lg:w-[120px]"
             >
               Name:
             </label>
@@ -59,13 +59,13 @@ const Signup = () => {
               required
               value={inputs.name}
               onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
-              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold "
+              className="rounded-full py-3 px-4 w-[95%] sm:w-[85%] md:flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold "
             />
           </div>
-          <div className="flex gap-5 items-center">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-5 items-center">
             <label
               htmlFor="email"
-              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
+              className="font-bold text-[#1b375f] text-[1.2rem] md:text-[1.2rem] w-[95%] sm:w-[85%] md:w-[80px] lg:w-[120px]"
             >
               Email:
             </label>
@@ -76,13 +76,13 @@ const Signup = () => {
               required
               value={inputs.email}
               onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
-              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
+              className="rounded-full py-3 px-4 w-[95%] sm:w-[85%] md:flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
             />
           </div>
-          <div className="flex gap-5 items-center">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-5 items-center">
             <label
               htmlFor="password"
-              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
+              className="font-bold text-[#1b375f] text-[1.2rem] md:text-[1.2rem] w-[95%] sm:w-[85%] md:w-[80px] lg:w-[120px]"
             >
               Password:
             </label>
@@ -94,7 +94,7 @@ const Signup = () => {
               onChange={(e) =>
                 setInputs({ ...inputs, password: e.target.value })
               }
-              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
+              className="rounded-full py-3 px-4 w-[95%] sm:w-[85%] md:flex-1 border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
             />
           </div>
           <div>
@@ -107,7 +107,7 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            className="bg-[#1b375f] w-max rounded-full py-2 px-6 text-white font-bold text-[1.2rem] ml-auto"
+            className="bg-[#1b375f] w-[95%] sm:w-[85%] md:w-max rounded-full py-2 px-6 text-white font-bold text-[1.2rem]  md:ml-auto"
           >
             Signup
           </button>

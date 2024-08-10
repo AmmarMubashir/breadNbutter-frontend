@@ -163,6 +163,7 @@ const UserIncomeComparison = () => {
   }
 
   console.log(quarter1Graph);
+  const colorsPattern = ["#FF6F61", "#FFD966", "#6AB04C", "#4A69BD", "#9C88FF"];
   return (
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <RightNav />
@@ -213,7 +214,10 @@ const UserIncomeComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  // colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>
@@ -270,7 +274,10 @@ const UserIncomeComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  // colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>
@@ -327,7 +334,10 @@ const UserIncomeComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  // colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>
@@ -384,7 +394,10 @@ const UserIncomeComparison = () => {
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
-                  colors={{ scheme: "nivo" }}
+                  // colors={{ scheme: "nivo" }}
+                  colors={({ index }) =>
+                    colorsPattern[index % colorsPattern.length]
+                  }
                   tooltip={({ id, value }) => (
                     <div>
                       <strong>{id}</strong>

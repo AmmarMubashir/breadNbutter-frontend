@@ -13,6 +13,7 @@ const AdminNav = () => {
   const [open, setOpen] = useState(false);
   const [expenditureOption, setExpenditureOption] = useState(false);
   const [incomeOption, setIncomeOption] = useState(false);
+  const [quarterOption, setQuarterOption] = useState(false);
   return (
     <>
       <div className="w-[200px] lg:w-[240px] h-[100vh] overflow-auto custom-scrollbar bg-white border-r-[5px] border-[#1B375F] py-6 hidden md:flex flex-col gap-[2rem]">
@@ -129,6 +130,52 @@ const AdminNav = () => {
             Income Comparison
           </button> */}
           <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setQuarterOption(!quarterOption)}
+          >
+            Update Quarters <MdKeyboardArrowDown />
+          </button>
+          {quarterOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter1");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Update Quarter1
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter2");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Update Quarter2
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter3");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Update Quarter3
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter4");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                UpdateQuarter4
+              </button>
+            </div>
+          )}
+          <button
             onClick={() => navigate("/admin/users")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
@@ -145,30 +192,6 @@ const AdminNav = () => {
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Update Income Statement
-          </button>
-          <button
-            onClick={() => navigate("/admin/quarter1")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 1
-          </button>
-          <button
-            onClick={() => navigate("/admin/quarter2")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 2
-          </button>
-          <button
-            onClick={() => navigate("/admin/quarter3")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 3
-          </button>
-          <button
-            onClick={() => navigate("/admin/quarter4")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 4
           </button>
         </div>
         <button
@@ -298,6 +321,52 @@ const AdminNav = () => {
             </div>
           )}
           <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setQuarterOption(!quarterOption)}
+          >
+            Update Quarters <MdKeyboardArrowDown />
+          </button>
+          {quarterOption && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter1");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Update Quarter1
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter2");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Update Quarter2
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter3");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Update Quarter3
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/admin/quarter4");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                UpdateQuarter4
+              </button>
+            </div>
+          )}
+          <button
             onClick={() => {
               navigate("/admin/users");
               setOpen(!open);
@@ -323,36 +392,6 @@ const AdminNav = () => {
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Update Income Statement
-          </button>
-          <button
-            onClick={() => {
-              navigate("/admin/quarter1");
-              setOpen(!open);
-            }}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 1
-          </button>
-          <button
-            onClick={() => {
-              navigate("/admin/quarter2");
-              setOpen(!open);
-            }}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 2
-          </button>
-          <button
-            onClick={() => navigate("/admin/quarter3")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 3
-          </button>
-          <button
-            onClick={() => navigate("/admin/quarter4")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 4
           </button>
         </div>
         <button
