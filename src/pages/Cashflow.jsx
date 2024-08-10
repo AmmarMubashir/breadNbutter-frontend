@@ -376,7 +376,7 @@ const Cashflow = () => {
                           key={key}
                           className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                         >
-                          <td className=" px-4 py-2">{key}</td>
+                          <td className=" px-4 py-2 text-nowrap">{key}</td>
                           {/* <td className="border px-4 py-2">{value}</td> */}
                           {incomeStatementD.map((item, index) => {
                             return (
@@ -424,7 +424,7 @@ const Cashflow = () => {
                           key={key}
                           className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                         >
-                          <td className=" px-4 py-2">{key}</td>
+                          <td className=" px-4 py-2 text-nowrap">{key}</td>
                           {/* <td className="border px-4 py-2">{value}</td> */}
                           {incomeStatementD.map((item, index) => {
                             // if (index === 0) {

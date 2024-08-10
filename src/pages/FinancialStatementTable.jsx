@@ -404,7 +404,7 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                             className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                           >
                             <td
-                              className={`px-4 py-2 ${
+                              className={`px-4 py-2 text-nowrap ${
                                 key === "Total Income" ? `font-bold px-1` : ``
                               }`}
                             >
@@ -496,7 +496,7 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                             className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                           >
                             <td
-                              className={`px-4 py-2 ${
+                              className={`px-4 py-2 text-nowrap ${
                                 key === "Total Expenditure"
                                   ? `font-bold px-1`
                                   : ``
@@ -590,7 +590,7 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                               className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                             >
                               <td
-                                className={`py-2 px-4 border-b ${
+                                className={`py-2 px-4 border-b text-nowrap ${
                                   key === "EBITIDA" ||
                                   key === "EBIT" ||
                                   key === "PRETAX INCOME" ||

@@ -24,7 +24,7 @@ const RevenueChart = () => {
   return (
     <div>
       {data && (
-        <div className="flex-1 h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
+        <div className="flex-1 h-[100vh] bg-[#80808075] md:py-4 py-[3rem]">
           <div className="pt-4">
             <h1 className="text-center font-bold text-[2rem]">
               Income Comparison

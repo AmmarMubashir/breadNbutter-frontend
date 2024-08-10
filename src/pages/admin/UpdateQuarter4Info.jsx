@@ -77,7 +77,7 @@ const UpdateQuarter4Info = () => {
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <AdminNav />
       <div className="h-[100vh] overflow-auto flex-1">
-        <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
+        <div className="flex-1 min-h-[100vh] bg-[#80808075] md:py-4 py-[3rem]">
           <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
             Update Quarter 4
           </h1>
@@ -93,7 +93,7 @@ const UpdateQuarter4Info = () => {
                         id="opt1Desc"
                         value={quarter4 && quarter4.option1.description}
                         onChange={(event) => handleDescriptionChange(event, 1)}
-                        className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
+                        className="bg-[#80808060] px-3 py-2  rounded resize-none w-[100%] text-[#000000] outline-none"
                       ></textarea>
                     </div>
                     <div className=" flex gap-6">
@@ -108,7 +108,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 1, "cost")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                         />
                       </div>
                       <div className="flex flex-col flex-1 items-start gap-2">
@@ -122,7 +122,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 1, "otherCost")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                         />
                       </div>
                       <div className="flex flex-col flex-1 items-start gap-2">
@@ -136,7 +136,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 1, "income")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 w-[100%] rounded text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 w-[100%] rounded text-[#000000] outline-none"
                         />
                       </div>
                     </div>
@@ -152,7 +152,7 @@ const UpdateQuarter4Info = () => {
                         id="opt2Desc"
                         value={quarter4.option2.description}
                         onChange={(event) => handleDescriptionChange(event, 2)}
-                        className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
+                        className="bg-[#80808060] px-3 py-2  rounded resize-none w-[100%] text-[#000000] outline-none"
                       ></textarea>
                     </div>
                     <div className=" flex gap-6">
@@ -167,7 +167,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 2, "cost")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                         />
                       </div>
                       <div className="flex flex-col flex-1 items-start gap-2">
@@ -181,7 +181,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 2, "otherCost")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                         />
                       </div>
                       <div className="flex flex-col flex-1 items-start gap-2">
@@ -195,7 +195,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 2, "income")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 w-[100%] rounded text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 w-[100%] rounded text-[#000000] outline-none"
                         />
                       </div>
                     </div>
@@ -210,7 +210,7 @@ const UpdateQuarter4Info = () => {
                         id="opt3Desc"
                         value={quarter4 && quarter4.option3.description}
                         onChange={(event) => handleDescriptionChange(event, 3)}
-                        className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
+                        className="bg-[#80808060] px-3 py-2  rounded resize-none w-[100%] text-[#000000] outline-none"
                       ></textarea>
                     </div>
                     <div className=" flex gap-6">
@@ -225,7 +225,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 3, "cost")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                         />
                       </div>
                       <div className="flex flex-col flex-1 items-start gap-2">
@@ -239,7 +239,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 3, "otherCost")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                         />
                       </div>
                       <div className="flex flex-col flex-1 items-start gap-2">
@@ -253,7 +253,7 @@ const UpdateQuarter4Info = () => {
                           onChange={(event) =>
                             handleInputChange(event, 3, "income")
                           }
-                          className="bg-[#FCC56B] px-3 py-2 w-[100%] rounded text-[#00000084] outline-none"
+                          className="bg-[#80808060] px-3 py-2 w-[100%] rounded text-[#000000] outline-none"
                         />
                       </div>
                     </div>
@@ -272,7 +272,7 @@ const UpdateQuarter4Info = () => {
                       onChange={(event) =>
                         handleDataChange(event, "No of Clients per day")
                       }
-                      className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                      className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                     />
                   </div>
                   <div className="flex flex-col flex-1 items-start gap-2">
@@ -286,7 +286,7 @@ const UpdateQuarter4Info = () => {
                       onChange={(event) =>
                         handleDataChange(event, "Average Price")
                       }
-                      className="bg-[#FCC56B] px-3 py-2 rounded w-[100%] text-[#00000084] outline-none"
+                      className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                     />
                   </div>
                 </div>
@@ -300,7 +300,7 @@ const UpdateQuarter4Info = () => {
                     id="event"
                     value={quarter4.event}
                     onChange={(event) => handleEventChange(event)}
-                    className="bg-[#FCC56B] px-3 py-2  rounded resize-none w-[100%] text-[#00000084] outline-none"
+                    className="bg-[#80808060] px-3 py-2  rounded resize-none w-[100%] text-[#000000] outline-none"
                   ></textarea>
                 </div>
                 <button className="w-max px-4 py-2 block ml-auto bg-[#1B375F] text-white rounded mt-4">

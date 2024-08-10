@@ -61,7 +61,7 @@ const UpdateUserFinanceStatement = () => {
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <AdminNav />
       <div className="h-[100vh] overflow-auto flex-1">
-        <div className="flex-1 min-h-[100vh] bg-[#FBB748] md:py-4 py-[3rem]">
+        <div className="flex-1 min-h-[100vh] bg-[#80808075] md:py-4 py-[3rem]">
           <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
             Update Finance Statement
           </h1>
@@ -93,7 +93,7 @@ const UpdateUserFinanceStatement = () => {
                               }
                               // min={0}
                               id="AdditionalIncome"
-                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                              className="bg-[#80808060] px-3 py-2  rounded  w-[100%] text-[#000000] outline-none"
                             />
                           </div>
                         </div>
@@ -116,7 +116,7 @@ const UpdateUserFinanceStatement = () => {
                               }
                               // min={0}
                               id="extraIncome"
-                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                              className="bg-[#80808060] px-3 py-2  rounded  w-[100%] text-[#000000] outline-none"
                             />
                           </div>
                         </div>
@@ -138,7 +138,7 @@ const UpdateUserFinanceStatement = () => {
                               }
                               // min={0}
                               id="AdditionalCost"
-                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                              className="bg-[#80808060] px-3 py-2  rounded  w-[100%] text-[#000000] outline-none"
                             />
                           </div>
                         </div>
@@ -163,7 +163,7 @@ const UpdateUserFinanceStatement = () => {
                               }
                               // min={0}
                               id="extraIncome"
-                              className="bg-[#FCC56B] px-3 py-2  rounded  w-[100%] text-[#00000084] outline-none"
+                              className="bg-[#80808060] px-3 py-2  rounded  w-[100%] text-[#000000] outline-none"
                             />
                           </div>
                         </div>

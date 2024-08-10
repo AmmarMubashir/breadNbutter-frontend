@@ -6,7 +6,13 @@ const MyRevenueChart = ({ data }) => {
   const minIncome = Math.min(...income);
   const maxIncome = Math.max(...income);
   console.log(maxIncome);
-  const colorsPattern = ["#FF6F61", "#FFD966", "#6AB04C", "#4A69BD", "#9C88FF"];
+  const colorsPattern = [
+    "#FF6F6180",
+    "#FFD96680",
+    "#6AB04C80",
+    "#4A69BD80",
+    "#9C88FF80",
+  ];
   return (
     <div className="h-[70vh]">
       <ResponsiveBar
@@ -35,7 +41,7 @@ const MyRevenueChart = ({ data }) => {
             id: "lines",
             type: "patternLines",
             background: "inherit",
-            color: "#eed312",
+            color: "#FF5733",
             rotation: -45,
             lineWidth: 6,
             spacing: 10,

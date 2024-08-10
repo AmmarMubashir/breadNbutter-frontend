@@ -139,7 +139,7 @@ const Quarter2Detail = () => {
             </div> */}
             <div className="absolute bottom-9 right-11">
               <Link
-                to="/quarter3EmpInfo"
+                to="/quarter2Completion"
                 className="bg-[#1b375f] text-white px-4 py-2 rounded"
               >
                 Next

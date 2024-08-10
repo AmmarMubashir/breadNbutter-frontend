@@ -46,6 +46,9 @@ import UpdateQuarter4Info from "./pages/admin/UpdateQuarter4Info";
 import ResetPassword from "./pages/ResetPassword";
 import AdditionalIncome from "./pages/admin/AdditionalIncome";
 import Quarter1Completion from "./pages/Quarter1Completion.jsx";
+import Quarter2Completion from "./pages/Quarter2Completion.jsx";
+import Quarter3Completion from "./pages/Quarter3Completion.jsx";
+import Quarter4Completion from "./pages/Quarter4Completion.jsx";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -80,10 +83,13 @@ function App() {
 
         <Route path="/quarter2" element={<Quarter2 />} />
         <Route path="/quarter2/:id" element={<Quarter2Detail />} />
+        <Route path="/quarter2Completion" element={<Quarter2Completion />} />
         <Route path="/quarter3" element={<Quarter3 />} />
         <Route path="/quarter3/:id" element={<Quarter3Details />} />
+        <Route path="/quarter3Completion" element={<Quarter3Completion />} />
         <Route path="/quarter4" element={<Quarter4 />} />
         <Route path="/quarter4/:id" element={<Quarter4Details />} />
+        <Route path="/quarter4Completion" element={<Quarter4Completion />} />
         <Route
           path="/resources/presentation"
           element={<ResourcesPresentation />}

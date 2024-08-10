@@ -72,7 +72,7 @@ const UpdateIncomeStatement = () => {
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <AdminNav />
       <div className="h-[100vh] overflow-auto flex-1">
-        <div className="bg-[#FBB748] w-[100%] overflow-hidden min-h-[100vh] py-[3rem] md:py-4">
+        <div className="bg-[#80808075] w-[100%] overflow-hidden min-h-[100vh] py-[3rem] md:py-4">
           {incomeData && (
             <div className="w-[100%]">
               <div className="w-[95%] md:w-[85%] mx-auto py-2 px-3 md:px-4 bg-white rounded font-bold flex justify-between">

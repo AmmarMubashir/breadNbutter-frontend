@@ -7,6 +7,14 @@ const AdditionalCostChart = ({ data }) => {
   const maxExpense = Math.max(...Expense);
   console.log(maxExpense);
 
+  const colorsPattern = [
+    "#FF6F6180",
+    "#FFD96680",
+    "#6AB04C80",
+    "#4A69BD80",
+    "#9C88FF80",
+  ];
+
   return (
     <div className="h-[70vh] w-[100%]">
       <ResponsiveBar
@@ -19,7 +27,8 @@ const AdditionalCostChart = ({ data }) => {
         maxValue={maxExpense + 1000}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
-        colors="#fff8d8"
+        // colors="#fff8d8"
+        colors={({ index }) => colorsPattern[index % colorsPattern.length]}
         defs={[
           {
             id: "dots",
