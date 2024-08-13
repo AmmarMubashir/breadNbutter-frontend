@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLoggedMyUser } from "../api/MyUserApi";
 import { useAuthContext } from "../../context/AuthContext";
 import logo from "../assets/Logo.png";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Login = () => {
     password: "",
   });
   const { authUser, setAuthUser } = useAuthContext();
-  const { login, isSuccess } = useLoggedMyUser();
+  const { login, isSuccess, error } = useLoggedMyUser();
 
   const loginHandler = async (e) => {
     e.preventDefault();
@@ -29,7 +30,10 @@ const Login = () => {
       setInputs({ email: "", password: "" });
       setAuthUser(true);
     }
-  }, [isSuccess]);
+    if (error) {
+      toast.error(`${error.message}`);
+    }
+  }, [isSuccess, error]);
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">

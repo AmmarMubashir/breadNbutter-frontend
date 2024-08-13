@@ -66,6 +66,14 @@ const UserDetails = () => {
       <div className="h-[100vh] overflow-auto flex-1">
         <div className=" w-[100%] min-h-[100vh] bg-[#80808075] md:py-4 py-[3rem]">
           <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
+            {startupData && (
+              <>
+                {" "}
+                Team <span className="text-[#F8B65D]">
+                  {startupData.name}
+                </span>{" "}
+              </>
+            )}
             Quarters Details
           </h1>
           {!startupData && (
@@ -99,14 +107,6 @@ const UserDetails = () => {
                     <td className="py-2 px-4 border-b text-start">Location</td>
                     <td className="py-2 px-4 border-b text-start">
                       {startupData.location}
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
-                    <td className="py-2 px-4 border-b text-start">
-                      Bank balance
-                    </td>
-                    <td className="py-2 px-4 border-b text-start">
-                      {startupData.budjet}
                     </td>
                   </tr>
                 </tbody>

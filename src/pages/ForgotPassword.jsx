@@ -15,7 +15,8 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
 
   //   const { fOrgotPassword, isSuccess } = useLoggedMyUser();
-  const { forgotPassword, isLoading, error, isSuccess } = useForgotPassword();
+  const { forgotPassword, isLoading, error, isSuccess, data } =
+    useForgotPassword();
 
   const forgotPasswordHandler = async (e) => {
     e.preventDefault();
@@ -29,13 +30,14 @@ const ForgotPassword = () => {
   useEffect(() => {
     if (isSuccess) {
       setInputs({ email: "" });
-      toast.success("Email send to your account successfully");
+      toast.success(`${data.message}`);
       setAuthUser(true);
     }
     if (error) {
-      toast.error(error.messge);
+      // console.log("ERRORRRRRRRRRRRR", error.message);
+      toast.error(`${error.message}`);
     }
-  }, [isSuccess, error]);
+  }, [isSuccess, error, data]);
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
@@ -48,7 +50,7 @@ const ForgotPassword = () => {
         {isLoading && <Loader />}
         <form
           action=""
-          onClick={forgotPasswordHandler}
+          onSubmit={forgotPasswordHandler}
           className="flex flex-col gap-[20px] w-[95%] md:w-[80%]"
         >
           <div className="flex flex-col md:flex-row gap-2 md:gap-5 items-center">

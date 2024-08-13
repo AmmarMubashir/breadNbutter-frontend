@@ -16,11 +16,12 @@ export const useCreateMyUser = () => {
       body: JSON.stringify(user),
     });
 
-    const data = await response.json();
-
     if (!response.ok) {
-      throw new Error("Failed to create user");
+      // throw new Error("Failed to create user");
+      const errorData = await response.json();
+      throw new Error(errorData.message);
     }
+    const data = await response.json();
 
     // console.log(data.token);
     setJwt(data.token);
@@ -36,16 +37,16 @@ export const useCreateMyUser = () => {
     isSuccess,
   } = useMutation(createMyUserRequest);
 
-  useEffect(() => {
-    if (isSuccess) {
-      toast.success("User created Successfully");
-    }
-  }, [isSuccess]);
-  useEffect(() => {
-    if (error) {
-      toast.error(error.toString());
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     toast.success("User created Successfully");
+  //   }
+  // }, [isSuccess]);
+  // useEffect(() => {
+  //   if (error) {
+  //     toast.error(error.toString());
+  //   }
+  // }, [error]);
 
   return {
     createUser,
@@ -65,10 +66,12 @@ export const useLoggedMyUser = () => {
       body: JSON.stringify(user),
     });
 
-    const data = await response.json();
     if (!response.ok) {
-      throw new Error("Failed to login");
+      // throw new Error("Failed to login");
+      const errorData = await response.json();
+      throw new Error(errorData.message);
     }
+    const data = await response.json();
 
     setJwt(data.token);
     localStorage.setItem("breadUser", JSON.stringify(data.data));
@@ -83,16 +86,16 @@ export const useLoggedMyUser = () => {
     isSuccess,
   } = useMutation(loginUser);
 
-  useEffect(() => {
-    if (isSuccess) {
-      toast.success("User login Successfully");
-    }
-  }, [isSuccess]);
-  useEffect(() => {
-    if (error) {
-      toast.error(error.toString());
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     toast.success("User login Successfully");
+  //   }
+  // }, [isSuccess]);
+  // useEffect(() => {
+  //   if (error) {
+  //     toast.error(error.toString());
+  //   }
+  // }, [error]);
 
   return {
     login,
@@ -112,7 +115,10 @@ export const useForgotPassword = () => {
       body: JSON.stringify(data),
     });
     if (!response.ok) {
-      throw new Error("Error in Sending mail.Try again later");
+      const errorData = await response.json();
+      throw new Error(errorData.message);
+
+      // console.log("ERORRRRR", errorData.message);
     }
 
     return await response.json();
@@ -122,10 +128,11 @@ export const useForgotPassword = () => {
     mutateAsync: forgotPassword,
     isLoading,
     isSuccess,
+    data,
     error,
   } = useMutation(forgotPasswordData);
 
-  return { forgotPassword, isLoading, isSuccess, error };
+  return { forgotPassword, isLoading, isSuccess, data, error };
 };
 
 export const useResetPassword = () => {

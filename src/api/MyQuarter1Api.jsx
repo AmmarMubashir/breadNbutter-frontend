@@ -70,7 +70,7 @@ export const useCreateQuarter1 = () => {
       body: JSON.stringify(data),
     });
     if (!response.ok) {
-      throw new Error("Error in Getting quarter 2");
+      throw new Error("Error in creating quarter 2");
     }
 
     return await response.json();

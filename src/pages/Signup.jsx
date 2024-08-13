@@ -3,6 +3,7 @@ import { useCreateMyUser } from "../api/MyUserApi";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import logo from "../assets/Logo.png";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Signup = () => {
     password: "",
   });
   const { authUser, setAuthUser } = useAuthContext();
-  const { createUser, isSuccess } = useCreateMyUser();
+  const { createUser, isSuccess, error } = useCreateMyUser();
   const signupHandler = async (e) => {
     e.preventDefault();
     // console.log(inputs);
@@ -30,7 +31,11 @@ const Signup = () => {
       setInputs({ name: "", email: "", password: "" });
       setAuthUser(true);
     }
-  }, [isSuccess]);
+
+    if (error) {
+      toast.error(`${error.message}`);
+    }
+  }, [isSuccess, error]);
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <div className="h-[120vh] bg-white w-[35%] md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 md:flex justify-center items-center hidden">

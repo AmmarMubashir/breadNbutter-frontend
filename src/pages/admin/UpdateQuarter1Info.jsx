@@ -291,6 +291,18 @@ const UpdateQuarter1Info = () => {
                       className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
                     />
                   </div>
+                  <div className="flex flex-col flex-1 items-start gap-2">
+                    <label htmlFor="budget" className="w-max font-bold">
+                      Opening balance:
+                    </label>
+                    <input
+                      type="number"
+                      id="budget"
+                      value={quarter1["budget"]}
+                      onChange={(event) => handleDataChange(event, "budget")}
+                      className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
+                    />
+                  </div>
                 </div>
                 {/*  */}
                 <div className="flex flex-col flex-1 items-start gap-2 mt-6">
