@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import RightNav from "./components/RightNav";
 import Loader from "./components/Loader";
-import quarter1CompletionVideo from "../assets/quarter1Complete.mp4";
+import quarter4CompletionVideo from "../assets/quarter4Complete.mp4";
 const Quarter4Completion = () => {
   const navigate = useNavigate();
   //   const [quarter1D, setQuarter1D] = useState();
@@ -38,7 +38,7 @@ const Quarter4Completion = () => {
             {" "}
             {/* 16:9 Aspect Ratio */}
             <iframe
-              src={quarter1CompletionVideo}
+              src={quarter4CompletionVideo}
               className="absolute top-0 left-0 w-full h-full rounded"
               title="Responsive Video"
               frameBorder="0"
