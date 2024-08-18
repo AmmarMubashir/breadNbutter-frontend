@@ -25,6 +25,7 @@ const Login = () => {
   }, []);
   useEffect(() => {
     if (isSuccess) {
+      toast.success("User logged in successfully!");
       navigate("/startup");
 
       setInputs({ email: "", password: "" });

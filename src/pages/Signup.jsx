@@ -26,6 +26,7 @@ const Signup = () => {
   }, []);
   useEffect(() => {
     if (isSuccess) {
+      toast.success("User created successfully!");
       navigate("/startup");
 
       setInputs({ name: "", email: "", password: "" });
