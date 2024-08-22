@@ -34,20 +34,37 @@ const IncomeChart = () => {
     loadData();
   }, []);
 
+  let newData;
   if (data) {
-    console.log(data);
+    newData = data.map((item) => ({
+      name: item.name,
+      email: item.email,
+      Expenditure: item.Expenditure,
+      "Additional Cost": item["Additional Cost"],
+      "Extra cost from opportunities": item["Extra cost from opportunities"],
+      "Expenses from opportunities": item["Expenses from opportunities"],
+    }));
+
+    console.log(newData);
   }
-  // console.log(data);
   return (
     <>
       {data && (
-        <div className="flex-1 h-[100vh] bg-[#80808075] md:py-4 py-[3rem]">
+        <div className="flex-1 min-h-[100vh] bg-[#80808075] md:py-4 py-[3rem] overflow-auto">
           <div>
             <h1 className="text-center font-bold text-[2rem]">
               Expenditure Comparison
             </h1>
           </div>
-          <MyResponsiveBar data={data} />
+          <div className="w-[100%] grid grid-cols-1 lg:grid-cols-2 gap-4 p-4 ">
+            {newData &&
+              newData.map((item) => (
+                <div className="w-[100%] ">
+                  <MyResponsiveBar data={item} name={item.name} />
+                </div>
+              ))}
+          </div>
+          {/* <MyResponsiveBar data={data} /> */}
         </div>
       )}
     </>

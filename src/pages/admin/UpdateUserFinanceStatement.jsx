@@ -11,6 +11,7 @@ const UpdateUserFinanceStatement = () => {
   const { id } = useParams();
   const { getUserIncomeAdmin } = useGetUserIncomeAdmin();
   const [incomeStatement, setIncomeStatement] = useState();
+  const [teamName, setTeamName] = useState();
   const { updateUserIncomeAdmin, isSuccess, error } =
     useUpdateUserIncomeAdmin();
 
@@ -20,6 +21,7 @@ const UpdateUserFinanceStatement = () => {
 
       if (data) {
         setIncomeStatement(data.income);
+        setTeamName(data.name);
         // console.log(data);
       }
     };
@@ -63,7 +65,9 @@ const UpdateUserFinanceStatement = () => {
       <div className="h-[100vh] overflow-auto flex-1">
         <div className="flex-1 min-h-[100vh] bg-[#80808075] md:py-4 py-[3rem]">
           <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-            Update Finance Statement
+            Update{" "}
+            {teamName && <span className="text-[#F8B65D]">{teamName}</span>}{" "}
+            Finance
           </h1>
           <div className="mx-auto mt-4 w-[95%] md:w-[85%] bg-white px-4 py-2 rounded text-start">
             <form onSubmit={handleSubmit}>
