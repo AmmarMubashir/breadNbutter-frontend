@@ -30,7 +30,7 @@ const MyResponsiveBar = ({ data, name }) => {
         keys={["value"]}
         indexBy="name"
         // margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-        margin={{ top: 50, right: 200, bottom: 90, left: 60 }}
+        margin={{ top: 50, right: 190, bottom: 90, left: 60 }}
         padding={0.3}
         minValue={-100}
         maxValue={Math.max(...transformedData.map((d) => d.value)) + 1000}

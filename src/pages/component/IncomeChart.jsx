@@ -36,6 +36,7 @@ const IncomeChart = () => {
 
   let newData;
   if (data) {
+    console.log(data);
     newData = data.map((item) => ({
       name: item.name,
       email: item.email,

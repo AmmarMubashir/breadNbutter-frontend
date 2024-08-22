@@ -21,13 +21,13 @@ import UsersList from "./pages/admin/UsersList";
 import UserDetails from "./pages/admin/UserDetails";
 import UpdateUserFinanceStatement from "./pages/admin/UpdateUserFinanceStatement";
 import UserIncomeComparison from "./pages/UserIncomeComparison";
-import UserCostComparison from "./pages/UserCostComparison";
 
 import Dashboard from "./pages/admin/Dashboard";
 import IncomeFromOpportunities from "./pages/admin/IncomeFromOpportunities";
-import ExpensesFromOpportunities from "./pages/admin/ExpensesFromOpportunities";
-import AdditionalExpenses from "./pages/admin/AdditionalExpenses";
-import ExtraCostOpportunities from "./pages/admin/ExtraCostOpportunities";
+// import UserCostComparison from "./pages/UserCostComparison";
+// import ExpensesFromOpportunities from "./pages/admin/ExpensesFromOpportunities";
+// import AdditionalExpenses from "./pages/admin/AdditionalExpenses";
+// import ExtraCostOpportunities from "./pages/admin/ExtraCostOpportunities";
 import ExtraIncomeOpportunities from "./pages/admin/ExtraIncomeOpportunities.jsx";
 import Revenue from "./pages/admin/Revenue";
 import UpdateQuarter1Info from "./pages/admin/UpdateQuarter1Info";
@@ -106,27 +106,27 @@ function App() {
           path="/user/incomeComparison"
           element={<UserIncomeComparison />}
         />
-        <Route path="/user/costComparison" element={<UserCostComparison />} />
+        {/* <Route path="/user/costComparison" element={<UserCostComparison />} /> */}
         <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route
+        {/* <Route
           path="/admin/incomeFromOpportunities"
           element={<IncomeFromOpportunities />}
-        />
-        <Route path="/admin/additionalCost" element={<AdditionalExpenses />} />
-        <Route
+        /> */}
+        {/* <Route path="/admin/additionalCost" element={<AdditionalExpenses />} /> */}
+        {/* <Route
           path="/admin/extraCostOpportunities"
           element={<ExtraCostOpportunities />}
-        />
+        /> */}
         <Route path="/admin/revenue" element={<Revenue />} />
-        <Route
+        {/* <Route
           path="/admin/expensesFromOpportunities"
           element={<ExpensesFromOpportunities />}
-        />
-        <Route path="/admin/additionalIncome" element={<AdditionalIncome />} />
+        /> */}
+        {/* <Route path="/admin/additionalIncome" element={<AdditionalIncome />} />
         <Route
           path="/admin/extraIncomeOpportunities"
           element={<ExtraIncomeOpportunities />}
-        />
+        /> */}
         <Route path="/admin/incomeStatement" element={<IncomeStatement />} />
         <Route path="/admin/users" element={<UsersList />} />
         <Route path="/admin/user/:id" element={<UserDetails />} />

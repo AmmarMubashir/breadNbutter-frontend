@@ -25,7 +25,7 @@ const AdminNav = () => {
           >
             Game
           </button>
-          <button
+          {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setExpenditureOption(!expenditureOption)}
           >
@@ -70,14 +70,23 @@ const AdminNav = () => {
                 Extra cost opportunities
               </button>
             </div>
-          )}
-          {/* <button
+          )} */}
+          <button
             onClick={() => navigate("/admin/dashboard")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Expenditure Comparison
-          </button> */}
+          </button>
           <button
+            onClick={() => {
+              navigate("/admin/revenue");
+              setOpen(!open);
+            }}
+            className="w-full px-2  py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Income comparison
+          </button>
+          {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setIncomeOption(!incomeOption)}
           >
@@ -122,7 +131,7 @@ const AdminNav = () => {
                 Extra income opportunities
               </button>
             </div>
-          )}
+          )} */}
           {/* <button
             onClick={() => navigate("/admin/revenue")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -229,6 +238,15 @@ const AdminNav = () => {
             Game
           </button>
           <button
+            onClick={() => {
+              navigate("/admin/dashboard");
+              setOpen(!open);
+            }}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Expenditure comparison
+          </button>
+          {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setExpenditureOption(!expenditureOption)}
           >
@@ -273,8 +291,8 @@ const AdminNav = () => {
                 Extra cost opportunities
               </button>
             </div>
-          )}
-          <button
+          )} */}
+          {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setIncomeOption(!incomeOption)}
           >
@@ -319,7 +337,16 @@ const AdminNav = () => {
                 Extra income opportunities
               </button>
             </div>
-          )}
+          )} */}
+          <button
+            onClick={() => {
+              navigate("/admin/revenue");
+              setOpen(!open);
+            }}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Income comparison
+          </button>
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setQuarterOption(!quarterOption)}
