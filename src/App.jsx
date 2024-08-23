@@ -24,7 +24,7 @@ import UserIncomeComparison from "./pages/UserIncomeComparison";
 
 import Dashboard from "./pages/admin/Dashboard";
 import IncomeFromOpportunities from "./pages/admin/IncomeFromOpportunities";
-// import UserCostComparison from "./pages/UserCostComparison";
+import UserCostComparison from "./pages/UserCostComparison";
 // import ExpensesFromOpportunities from "./pages/admin/ExpensesFromOpportunities";
 // import AdditionalExpenses from "./pages/admin/AdditionalExpenses";
 // import ExtraCostOpportunities from "./pages/admin/ExtraCostOpportunities";
@@ -106,7 +106,7 @@ function App() {
           path="/user/incomeComparison"
           element={<UserIncomeComparison />}
         />
-        {/* <Route path="/user/costComparison" element={<UserCostComparison />} /> */}
+        <Route path="/user/costComparison" element={<UserCostComparison />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
         {/* <Route
           path="/admin/incomeFromOpportunities"
