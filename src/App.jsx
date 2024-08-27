@@ -122,8 +122,8 @@ function App() {
           path="/admin/expensesFromOpportunities"
           element={<ExpensesFromOpportunities />}
         /> */}
-        {/* <Route path="/admin/additionalIncome" element={<AdditionalIncome />} />
-        <Route
+        <Route path="/admin/additionalIncome" element={<AdditionalIncome />} />
+        {/* <Route
           path="/admin/extraIncomeOpportunities"
           element={<ExtraIncomeOpportunities />}
         /> */}

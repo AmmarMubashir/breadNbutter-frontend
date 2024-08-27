@@ -19,7 +19,7 @@ const MyResponsiveBar = ({ data }) => {
         data={data}
         keys={["Income from opportunities"]}
         indexBy="name"
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={{ top: 50, right: 10, bottom: 50, left: 60 }}
         padding={0.3}
         minValue={-100}
         maxValue={maxIncome + 1000}
