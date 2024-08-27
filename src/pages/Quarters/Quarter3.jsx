@@ -12,6 +12,7 @@ import {
   useUpdateUserIncomeStatementQuarter3,
 } from "../../api/MyIncomeStatementApi";
 import Loader from "../components/Loader";
+import { toast } from "react-toastify";
 
 // import { useCashContext } from "../../context/CashFlowContext";
 
@@ -314,6 +315,7 @@ const Quarter3 = () => {
     console.log(quarter3D);
 
     if (data) {
+      toast.success("Quarter3 completed successfully");
       UpdateUserIncomeQuarter3();
     }
 

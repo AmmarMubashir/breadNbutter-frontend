@@ -11,6 +11,7 @@ import {
   useUpdateUserIncomeStatement,
 } from "../api/MyIncomeStatementApi";
 import Loader from "./components/Loader";
+import { toast } from "react-toastify";
 // import { useCashContext } from "../../context/CashFlowContext";
 
 const Quarter2 = () => {
@@ -240,9 +241,10 @@ const Quarter2 = () => {
     e.preventDefault(); // Prevent default form submission behavior
     // CreateQuarter2(quarter2D);
     const data = await CreateQuarter2(quarter2D);
-    console.log(quarter2D);
+    // console.log(quarter2D);
 
     if (data) {
+      toast.success("Quarter2 completed successfully");
       UpdateUserIncome();
     }
 

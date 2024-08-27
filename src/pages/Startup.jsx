@@ -3,10 +3,11 @@ import { useCreateStartup, useGetIndividualStartup } from "../api/MyStartupApi";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import RightNav from "./components/RightNav";
+import { toast } from "react-toastify";
 
 const Startup = () => {
   const navigate = useNavigate();
-  const { isSuccess, createStartup } = useCreateStartup();
+  const { isSuccess, createStartup, error } = useCreateStartup();
   const { getIndividualStartup, isSuccess: individualStartupSuccess } =
     useGetIndividualStartup();
   // const { createUserIncome } = useCreateUserIncomeStatement();
@@ -30,12 +31,25 @@ const Startup = () => {
     loadData();
   }, []);
 
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     toast.success("Startup created successfully");
+  //   }
+  //   if (error) {
+  //     toast.error("Error in creating startup");
+  //   }
+  // }, [isSuccess, error]);
+
   const submitHandler = async (e) => {
     e.preventDefault();
 
     // console.log(jwt);
 
     const startup = await createStartup(inputs);
+
+    if (startup) {
+      toast.success("Startup created successfully");
+    }
 
     const startupId = startup.data._id;
 

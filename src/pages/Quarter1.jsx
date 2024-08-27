@@ -8,11 +8,12 @@ import {
 import RightNav from "./components/RightNav";
 import { useCreateUserIncomeStatement } from "../api/MyIncomeStatementApi";
 import Loader from "./components/Loader";
+import { toast } from "react-toastify";
 
 const Quarter1 = () => {
   const navigate = useNavigate();
   const { Quarter1Info, isLoading } = useGetQuarter1();
-  const { CreateQuarter1 } = useCreateQuarter1();
+  const { CreateQuarter1, isSuccess, error } = useCreateQuarter1();
   const { UserQuarter1 } = useGetUserQuarter1();
   const { CreateUserIncome } = useCreateUserIncomeStatement();
   const [quarter1D, setQuarter1D] = useState();
@@ -36,6 +37,14 @@ const Quarter1 = () => {
 
     loadData();
   }, []);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     toast.success("Quarter1 completed successfully");
+  //   }
+  //   if (error) {
+  //     toast.error("Error in creating quarter 1");
+  //   }
+  // }, [isSuccess, error]);
 
   const handleChange = (e) => {
     const { name, checked } = e.target;
@@ -56,7 +65,11 @@ const Quarter1 = () => {
     e.preventDefault(); // Prevent default form submission behavior
     // CreateQuarter1(quarter1D);
     const data = await CreateQuarter1(quarter1D);
-    console.log(quarter1D);
+    // console.log(quarter1D);
+
+    if (data) {
+      toast.success("Quarter1 completed successfully");
+    }
 
     if (data) {
       CreateUserIncome();

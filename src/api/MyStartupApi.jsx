@@ -31,16 +31,16 @@ export const useCreateStartup = () => {
     error,
   } = useMutation(createStartupData);
 
-  useEffect(() => {
-    if (isSuccess) {
-      toast.success("Startup saved Successfully");
-    }
-  }, [isSuccess]);
-  useEffect(() => {
-    if (error) {
-      toast.error(error.toString());
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     toast.success("Startup saved Successfully");
+  //   }
+  // }, [isSuccess, error]);
+  // useEffect(() => {
+  //   if (error) {
+  //     toast.error(error.toString());
+  //   }
+  // }, [error]);
 
   return { createStartup, isLoading, isSuccess, error };
 };
