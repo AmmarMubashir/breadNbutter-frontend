@@ -80,7 +80,6 @@ const AdminNav = () => {
           <button
             onClick={() => {
               navigate("/admin/revenue");
-              setOpen(!open);
             }}
             className="w-full px-2  py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
