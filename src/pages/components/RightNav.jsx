@@ -302,7 +302,7 @@ const RightNav = () => {
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
-                Income Comparison
+                Income
               </button>
               <button
                 onClick={() => {
@@ -311,7 +311,7 @@ const RightNav = () => {
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
-                Expenditure Comparison
+                Expenditure
               </button>
             </div>
           )}
@@ -565,7 +565,7 @@ const RightNav = () => {
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
-                Income Comparison
+                Income
               </button>
               <button
                 onClick={() => {
@@ -574,7 +574,7 @@ const RightNav = () => {
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
-                Expenditure Comparison
+                Expenditure
               </button>
             </div>
           )}

@@ -172,14 +172,14 @@ const UserIncomeComparison = () => {
           {!quarter1Graph && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter1 Income Comparison goes here when you fill it...
+                Quarter1 Income goes here when you fill it...
               </p>
             </div>
           )}
           {quarter1Graph && (
             <>
               <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-                Quarter 1 Income Comparison
+                Quarter 1 Income
               </h1>
 
               <div className="w-[100%] h-[50vh]">
@@ -233,14 +233,14 @@ const UserIncomeComparison = () => {
           {!quarter2Graph && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter2 Income Comparison goes here when you fill it...
+                Quarter2 Income goes here when you fill it...
               </p>
             </div>
           )}
           {quarter2Graph && (
             <>
               <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-                Quarter 2 Income Comparison
+                Quarter 2 Income
               </h1>
               <div className="w-[100%] h-[50vh]">
                 <ResponsiveBar
@@ -293,14 +293,14 @@ const UserIncomeComparison = () => {
           {!quarter3Graph && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter3 Income Comparison goes here when you fill it...
+                Quarter3 Income goes here when you fill it...
               </p>
             </div>
           )}
           {quarter3Graph && (
             <>
               <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-                Quarter 3 Income Comparison
+                Quarter 3 Income
               </h1>
               <div className="w-[100%] h-[50vh]">
                 <ResponsiveBar
@@ -353,14 +353,14 @@ const UserIncomeComparison = () => {
           {!quarter4Graph && (
             <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
               <p className="text-center text-[1.4rem]">
-                Quarter4 Income Comparison goes here when you fill it...
+                Quarter4 Income goes here when you fill it...
               </p>
             </div>
           )}
           {quarter4Graph && (
             <>
               <h1 className="mx-auto w-[95%] md:w-[85%] bg-white px-2 py-2 rounded font-bold text-center text-[1.4rem]">
-                Quarter 4 Income Comparison
+                Quarter 4 Income
               </h1>
               <div className="w-[100%] h-[50vh]">
                 <ResponsiveBar

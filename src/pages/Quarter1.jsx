@@ -67,12 +67,13 @@ const Quarter1 = () => {
     const data = await CreateQuarter1(quarter1D);
     // console.log(quarter1D);
 
-    if (data) {
-      toast.success("Quarter1 completed successfully");
-    }
+    // if (data) {
+
+    // }
 
     if (data) {
       CreateUserIncome();
+      toast.success("Quarter1 completed successfully");
     }
 
     // console.log("Selected options:", selectedOptions);

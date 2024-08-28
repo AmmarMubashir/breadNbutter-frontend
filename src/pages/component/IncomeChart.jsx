@@ -53,9 +53,7 @@ const IncomeChart = () => {
       {data && (
         <div className="flex-1 min-h-[100vh] bg-[#80808075] md:py-4 py-[3rem] overflow-auto">
           <div>
-            <h1 className="text-center font-bold text-[2rem]">
-              Expenditure Comparison
-            </h1>
+            <h1 className="text-center font-bold text-[2rem]">Expenditure</h1>
           </div>
           <div className="w-[100%] grid grid-cols-1 lg:grid-cols-2 gap-4 p-4 ">
             {newData &&

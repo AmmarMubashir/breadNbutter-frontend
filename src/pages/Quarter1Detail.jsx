@@ -133,9 +133,9 @@ const Quarter1Detail = () => {
                 </tr>
               </tbody>
             </table>
-            {/* <div className="hover:bg-gray-300 bg-white rounded mt-3 px-2 py-3 cursor-pointer">
+            <div className="hover:bg-gray-300 bg-white rounded mt-3 px-2 py-3 cursor-pointer">
               <strong>Event:</strong> {quarter1D.event}
-            </div> */}
+            </div>
 
             <div className="absolute bottom-9 right-11">
               <Link

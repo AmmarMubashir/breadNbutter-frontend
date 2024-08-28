@@ -50,7 +50,7 @@ const UpdateEmployeeInfo = () => {
       <div className="h-[100vh] overflow-auto flex-1">
         <div className=" w-[100%] min-h-[100vh] bg-[#80808075] md:py-4 py-[3rem]">
           <div className="w-[95%] md:w-[85%] bg-white px-2 py-2 rounded text-[1.2rem] mx-auto cursor-pointer font-bold flex justify-between">
-            Manage Employees
+            Staffing
             <button
               className="px-4 py-2 rounded ml-auto bg-[#1B375F] text-white text-[1rem] font-normal"
               onClick={submitHandler}

@@ -75,7 +75,7 @@ const AdminNav = () => {
             onClick={() => navigate("/admin/dashboard")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Expenditure Comparison
+            Expenditure
           </button>
           <button
             onClick={() => {
@@ -84,7 +84,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2  py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Income comparison
+            Income
           </button>
           {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -194,7 +194,7 @@ const AdminNav = () => {
             onClick={() => navigate("/admin/employee")}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Manage Employee
+            Staffing
           </button>
           <button
             onClick={() => navigate("/admin/incomeStatement")}
@@ -244,7 +244,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Expenditure comparison
+            Expenditure
           </button>
           {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -345,7 +345,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Income comparison
+            Income
           </button>
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
@@ -409,7 +409,7 @@ const AdminNav = () => {
             }}
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
-            Manage Employee
+            Staffing
           </button>
           <button
             onClick={() => {

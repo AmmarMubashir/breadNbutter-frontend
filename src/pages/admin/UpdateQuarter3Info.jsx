@@ -260,36 +260,7 @@ const UpdateQuarter3Info = () => {
                   </div>
                 </div>
                 {/*  */}
-                <div className="flex md:flex-row flex-col gap-6 mt-4">
-                  <div className="flex flex-col flex-1 items-start gap-2 ">
-                    <label htmlFor="clients" className=" font-bold">
-                      Number of Clients per day:
-                    </label>
-                    <input
-                      type="number"
-                      id="clients"
-                      value={quarter3["No of Clients per day"]}
-                      onChange={(event) =>
-                        handleDataChange(event, "No of Clients per day")
-                      }
-                      className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
-                    />
-                  </div>
-                  <div className="flex flex-col flex-1 items-start gap-2">
-                    <label htmlFor="price" className="w-max font-bold">
-                      Average Price:
-                    </label>
-                    <input
-                      type="number"
-                      id="price"
-                      value={quarter3["Average Price"]}
-                      onChange={(event) =>
-                        handleDataChange(event, "Average Price")
-                      }
-                      className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
-                    />
-                  </div>
-                </div>
+
                 {/*  */}
 
                 <div className="flex flex-col flex-1 items-start gap-2 mt-6">
@@ -302,6 +273,41 @@ const UpdateQuarter3Info = () => {
                     onChange={(event) => handleEventChange(event)}
                     className="bg-[#80808060] px-3 py-2  rounded resize-none w-[100%] text-[#000000] outline-none"
                   ></textarea>
+                </div>
+                <div className="flex flex-col mt-4">
+                  <div className="font-bold text-[1.4rem]">
+                    Update Sales from home:
+                  </div>
+                  <div className="flex md:flex-row flex-col gap-6 mt-4">
+                    <div className="flex flex-col flex-1 items-start gap-2 ">
+                      <label htmlFor="clients" className=" font-bold">
+                        Number of Clients per day:
+                      </label>
+                      <input
+                        type="number"
+                        id="clients"
+                        value={quarter3["No of Clients per day"]}
+                        onChange={(event) =>
+                          handleDataChange(event, "No of Clients per day")
+                        }
+                        className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
+                      />
+                    </div>
+                    <div className="flex flex-col flex-1 items-start gap-2">
+                      <label htmlFor="price" className="w-max font-bold">
+                        Average Price:
+                      </label>
+                      <input
+                        type="number"
+                        id="price"
+                        value={quarter3["Average Price"]}
+                        onChange={(event) =>
+                          handleDataChange(event, "Average Price")
+                        }
+                        className="bg-[#80808060] px-3 py-2 rounded w-[100%] text-[#000000] outline-none"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <button className="w-max px-4 py-2 block ml-auto bg-[#1B375F] text-white rounded mt-4">
                   Update
