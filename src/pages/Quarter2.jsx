@@ -8,7 +8,7 @@ import {
 import RightNav from "./components/RightNav";
 import {
   useGetUserIncome,
-  useUpdateUserIncomeStatement,
+  // useUpdateUserIncomeStatement,
 } from "../api/MyIncomeStatementApi";
 import Loader from "./components/Loader";
 import { toast } from "react-toastify";
@@ -19,7 +19,7 @@ const Quarter2 = () => {
   const { Quarter2Info } = useGetQuarter2();
   const { CreateQuarter2 } = useCreateQuarter2();
   const { UserQuarter2 } = useGetUserQuarter2();
-  const { UpdateUserIncome } = useUpdateUserIncomeStatement();
+  // const { UpdateUserIncome } = useUpdateUserIncomeStatement();
   const [quarter2D, setQuarter2D] = useState();
   const [incomeStatementD, setIncomeStatementD] = useState();
   const { getUserIncome } = useGetUserIncome();
@@ -245,7 +245,7 @@ const Quarter2 = () => {
 
     if (data) {
       toast.success("Quarter2 completed successfully");
-      UpdateUserIncome();
+      // UpdateUserIncome();
     }
 
     // console.log("Selected options:", selectedOptions);

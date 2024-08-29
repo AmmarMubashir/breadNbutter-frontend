@@ -53,7 +53,7 @@ const Quarter1Completion = () => {
 
           <div className="absolute bottom-9 right-11">
             <Link
-              to="/quarter2EmpInfo"
+              to="/quarter2"
               className="bg-[#1b375f] text-white px-4 py-2 rounded"
             >
               Next

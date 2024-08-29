@@ -165,7 +165,7 @@ const RightNav = () => {
               <button
                 disabled={startup}
                 onClick={() => {
-                  navigate("/quarter1EmpInfo");
+                  navigate("/quarter1");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
@@ -175,7 +175,7 @@ const RightNav = () => {
               <button
                 disabled={quarter1}
                 onClick={() => {
-                  navigate("/quarter2EmpInfo");
+                  navigate("/quarter2");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
@@ -185,7 +185,7 @@ const RightNav = () => {
               <button
                 disabled={quarter2}
                 onClick={() => {
-                  navigate("/quarter3EmpInfo");
+                  navigate("/quarter3");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
@@ -195,7 +195,7 @@ const RightNav = () => {
               <button
                 disabled={quarter3}
                 onClick={() => {
-                  navigate("/quarter4EmpInfo");
+                  navigate("/quarter4");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
@@ -425,7 +425,7 @@ const RightNav = () => {
               <button
                 disabled={startup}
                 onClick={() => {
-                  navigate("/quarter1EmpInfo");
+                  navigate("/quarter1");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
@@ -435,7 +435,7 @@ const RightNav = () => {
               <button
                 disabled={quarter1}
                 onClick={() => {
-                  navigate("/quarter2EmpInfo");
+                  navigate("/quarter2");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
@@ -445,7 +445,7 @@ const RightNav = () => {
               <button
                 disabled={quarter2}
                 onClick={() => {
-                  navigate("/quarter3EmpInfo");
+                  navigate("/quarter3");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "
@@ -455,7 +455,7 @@ const RightNav = () => {
               <button
                 disabled={quarter3}
                 onClick={() => {
-                  navigate("/quarter4EmpInfo");
+                  navigate("/quarter4");
                   setOpen(!open);
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed "

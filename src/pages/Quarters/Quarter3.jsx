@@ -9,7 +9,7 @@ import RightNav from "../../pages/components/RightNav";
 import {
   useGetUserIncome,
   useUpdateUserIncomeStatement,
-  useUpdateUserIncomeStatementQuarter3,
+  // useUpdateUserIncomeStatementQuarter3,
 } from "../../api/MyIncomeStatementApi";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
@@ -21,7 +21,7 @@ const Quarter3 = () => {
   const { Quarter3Info } = useGetQuarter3();
   const { CreateQuarter3 } = useCreateQuarter3();
   const { UserQuarter3 } = useGetUserQuarter3();
-  const { UpdateUserIncomeQuarter3 } = useUpdateUserIncomeStatementQuarter3();
+  // const { UpdateUserIncomeQuarter3 } = useUpdateUserIncomeStatementQuarter3();
   const [quarter3D, setQuarter3D] = useState();
   const [incomeStatementD, setIncomeStatementD] = useState();
   const { getUserIncome } = useGetUserIncome();
@@ -316,7 +316,7 @@ const Quarter3 = () => {
 
     if (data) {
       toast.success("Quarter3 completed successfully");
-      UpdateUserIncomeQuarter3();
+      // UpdateUserIncomeQuarter3();
     }
 
     // console.log("Selected options:", selectedOptions);

@@ -72,7 +72,7 @@ const Quarter1 = () => {
     // }
 
     if (data) {
-      CreateUserIncome();
+      // CreateUserIncome();
       toast.success("Quarter1 completed successfully");
     }
 

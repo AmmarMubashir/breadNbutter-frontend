@@ -134,12 +134,15 @@ const Quarter1Detail = () => {
               </tbody>
             </table>
             <div className="hover:bg-gray-300 bg-white rounded mt-3 px-2 py-3 cursor-pointer">
-              <strong>Event:</strong> {quarter1D.event}
+              Activities result will be added if applicable
+            </div>
+            <div className="hover:bg-gray-300 bg-white rounded mt-3 px-2 py-3 cursor-pointer">
+              <strong>Result:</strong> {quarter1D.event}
             </div>
 
             <div className="absolute bottom-9 right-11">
               <Link
-                to="/quarter1Completion"
+                to="/quarter1EmpInfo"
                 className="bg-[#1b375f] text-white px-4 py-2 rounded"
               >
                 Next

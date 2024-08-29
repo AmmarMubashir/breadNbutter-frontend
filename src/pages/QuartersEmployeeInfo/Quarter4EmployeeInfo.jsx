@@ -8,6 +8,7 @@ import {
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
+import { useUpdateUserIncomeStatementQuarter4 } from "../../api/MyIncomeStatementApi";
 
 const Quarter4EmployeeInfo = () => {
   const { getEmployeeInfo } = useGetEmployeeInfo();
@@ -15,6 +16,8 @@ const Quarter4EmployeeInfo = () => {
   const [quarter4EmpInfo, setQuarter4EmpInfo] = useState();
   const { createQuarter4Emp, isSuccess, error } = useCreateQuarter4Emp();
   const { getQuarter4Emp } = useGetQuarter4Emp();
+  const { UpdateUserIncomeQuarter4 } = useUpdateUserIncomeStatementQuarter4();
+
   const navigate = useNavigate();
   useEffect(() => {
     const loadData = async () => {
@@ -22,7 +25,7 @@ const Quarter4EmployeeInfo = () => {
       const data1 = await getQuarter4Emp();
 
       if (data1) {
-        navigate("/quarter4");
+        navigate("/quarter4Completion");
       }
       if (data) {
         console.log(data);
@@ -54,11 +57,15 @@ const Quarter4EmployeeInfo = () => {
 
     console.log(quarter4EmpInfo);
     const data = await createQuarter4Emp(quarter4EmpInfo);
+
+    if (data) {
+      UpdateUserIncomeQuarter4();
+    }
   };
   useEffect(() => {
     if (isSuccess) {
       toast.success("Employees info submitted successfully");
-      navigate("/quarter4");
+      navigate("/quarter4Completion");
     }
     if (error) {
       toast.error("Failed to submit employees info");
