@@ -14,6 +14,7 @@ const UserIncomeComparison = () => {
 
       if (userIncome) {
         setIncomeStatement(userIncome.income);
+        console.log("Check", userIncome.income);
       }
     };
     loadData();

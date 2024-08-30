@@ -80,7 +80,7 @@ const Quarter4EmployeeInfo = () => {
           {employeeInfo && (
             <div className="w-[95%] md:w-[85%] rounded mx-auto overflow-auto">
               <div className="w-[100%] px-2 py-3 bg-white rounded font-bold ">
-                Manage Emloyee for quarter 4
+                Staffing for quarter 4
               </div>
               <table className=" bg-white border  mb-7 w-[100%]  shadow-md rounded-lg  mt-3">
                 <thead>
