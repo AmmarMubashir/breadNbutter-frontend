@@ -313,6 +313,15 @@ const RightNav = () => {
               >
                 Expenditure
               </button>
+              <button
+                onClick={() => {
+                  navigate("/user/quarterOutcomes");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Profit/Loss
+              </button>
             </div>
           )}
 
@@ -575,6 +584,15 @@ const RightNav = () => {
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
                 Expenditure
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/user/quarterOutcomes");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Profit/Loss
               </button>
             </div>
           )}

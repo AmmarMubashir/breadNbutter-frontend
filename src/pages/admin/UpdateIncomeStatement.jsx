@@ -107,6 +107,7 @@ const UpdateIncomeStatement = () => {
                         >
                           <td
                             className={`py-2 px-4 border-b ${
+                              key === "Sales from Home" ||
                               key === "Total Income" ||
                               key === "Income from opportunities" ||
                               key === "Additional income" ||
@@ -120,6 +121,7 @@ const UpdateIncomeStatement = () => {
                           {incomeData.map((item, index) => (
                             <td
                               className={`py-2 px-0 md:px-4 border-b text-center ${
+                                key === "Sales from Home" ||
                                 key === "Total Income" ||
                                 key === "Income from opportunities" ||
                                 key === "Additional income" ||

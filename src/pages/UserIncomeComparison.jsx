@@ -219,13 +219,13 @@ const UserIncomeComparison = () => {
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  tooltip={({ id, value }) => (
-                    <div>
-                      <strong>{id}</strong>
-                      <br />
-                      {value}
-                    </div>
-                  )}
+                  // tooltip={({ id, value }) => (
+                  //   <div>
+                  //     <strong>{id}</strong>
+                  //     <br />
+                  //     {value}
+                  //   </div>
+                  // )}
                 />
               </div>
             </>
@@ -279,13 +279,13 @@ const UserIncomeComparison = () => {
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  tooltip={({ id, value }) => (
-                    <div>
-                      <strong>{id}</strong>
-                      <br />
-                      {value}
-                    </div>
-                  )}
+                  // tooltip={({ id, value }) => (
+                  //   <div>
+                  //     <strong>{id}</strong>
+                  //     <br />
+                  //     {value}
+                  //   </div>
+                  // )}
                 />
               </div>
             </>
@@ -339,13 +339,13 @@ const UserIncomeComparison = () => {
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  tooltip={({ id, value }) => (
-                    <div>
-                      <strong>{id}</strong>
-                      <br />
-                      {value}
-                    </div>
-                  )}
+                  // tooltip={({ id, value }) => (
+                  //   <div>
+                  //     <strong>{id}</strong>
+                  //     <br />
+                  //     {value}
+                  //   </div>
+                  // )}
                 />
               </div>
             </>
@@ -399,13 +399,13 @@ const UserIncomeComparison = () => {
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  tooltip={({ id, value }) => (
-                    <div>
-                      <strong>{id}</strong>
-                      <br />
-                      {value}
-                    </div>
-                  )}
+                  // tooltip={({ id, value }) => (
+                  //   <div>
+                  //     <strong>{id}</strong>
+                  //     <br />
+                  //     {value}
+                  //   </div>
+                  // )}
                 />
               </div>
             </>

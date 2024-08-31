@@ -49,6 +49,8 @@ import Quarter1Completion from "./pages/Quarter1Completion.jsx";
 import Quarter2Completion from "./pages/Quarter2Completion.jsx";
 import Quarter3Completion from "./pages/Quarter3Completion.jsx";
 import Quarter4Completion from "./pages/Quarter4Completion.jsx";
+import Outcomes from "./pages/admin/Outcomes.jsx";
+import QuarterOutcomes from "./pages/QuarterOutcomes.jsx";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -107,6 +109,7 @@ function App() {
           element={<UserIncomeComparison />}
         />
         <Route path="/user/costComparison" element={<UserCostComparison />} />
+        <Route path="/user/quarterOutcomes" element={<QuarterOutcomes />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
         {/* <Route
           path="/admin/incomeFromOpportunities"
@@ -128,6 +131,7 @@ function App() {
           element={<ExtraIncomeOpportunities />}
         /> */}
         <Route path="/admin/incomeStatement" element={<IncomeStatement />} />
+        <Route path="/admin/outcomes" element={<Outcomes />} />
         <Route path="/admin/users" element={<UsersList />} />
         <Route path="/admin/user/:id" element={<UserDetails />} />
         <Route path="/admin/employee" element={<UpdateEmployeeInfo />} />

@@ -85,6 +85,14 @@ const AdminNav = () => {
           >
             Income
           </button>
+          <button
+            onClick={() => {
+              navigate("/admin/outcomes");
+            }}
+            className="w-full px-2  py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Profit/Loss
+          </button>
           {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setIncomeOption(!incomeOption)}
@@ -345,6 +353,15 @@ const AdminNav = () => {
             className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
           >
             Income
+          </button>
+          <button
+            onClick={() => {
+              navigate("/admin/outcomes");
+              setOpen(!open);
+            }}
+            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+          >
+            Profit/Loss
           </button>
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
