@@ -55,14 +55,14 @@ const SettingScene = () => {
             bakery as a trusted provider of delightful baked treats, ready to
             satisfy the cravings and culinary desires of the local community.
           </p>
-          <div>
+          {/* <div>
             <button
               className="px-4 py-2 rounded bg-[#1B375F] text-white w-max ml-auto block"
               onClick={() => navigate("/startup")}
             >
               Next
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

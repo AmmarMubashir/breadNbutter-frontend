@@ -61,14 +61,14 @@ const AboutGame = () => {
             own draft business plan, ready for presenting to funders or
             investors.
           </p>
-          <div>
+          {/* <div>
             <button
               className="px-4 py-2 rounded bg-[#1B375F] text-white w-max ml-auto block"
               onClick={() => navigate("/setting-the-scene")}
             >
               Next
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
