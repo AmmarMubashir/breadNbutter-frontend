@@ -20,13 +20,13 @@ const Login = () => {
   };
   useEffect(() => {
     if (authUser) {
-      navigate("/startup");
+      navigate("/introduction");
     }
   }, []);
   useEffect(() => {
     if (isSuccess) {
       toast.success("User logged in successfully!");
-      navigate("/startup");
+      navigate("/introduction");
 
       setInputs({ email: "", password: "" });
       setAuthUser(true);

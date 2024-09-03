@@ -46,6 +46,14 @@ const Quarter4Completion = () => {
               allowFullScreen
             ></iframe>
           </div>
+          <div className="mt-4 mx-auto">
+            <button
+              className="px-4 py-2 w-max bg-[#1B375F] text-white rounded"
+              onClick={() => navigate("/financialStatement")}
+            >
+              Go to finance statement
+            </button>
+          </div>
           {/* <div className="hover:bg-gray-300 bg-white rounded mt-3 px-2 py-3 cursor-pointer">
               <strong>Event:</strong> {quarter1D.event}
             </div> */}

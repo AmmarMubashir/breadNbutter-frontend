@@ -51,6 +51,9 @@ import Quarter3Completion from "./pages/Quarter3Completion.jsx";
 import Quarter4Completion from "./pages/Quarter4Completion.jsx";
 import Outcomes from "./pages/admin/Outcomes.jsx";
 import QuarterOutcomes from "./pages/QuarterOutcomes.jsx";
+import Introduction from "./pages/Introduction.jsx";
+import SettingScene from "./pages/SettingScene.jsx";
+import AboutGame from "./pages/AboutGame.jsx";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -77,6 +80,9 @@ function App() {
       {/* </Route> */}
 
       <Route element={<ProtectedRoute isAuthenticated={authUser} />}>
+        <Route path="/introduction" element={<Introduction />} />
+        <Route path="/about-game" element={<AboutGame />} />
+        <Route path="/setting-the-scene" element={<SettingScene />} />
         <Route path="/startup" element={<Startup />} />
         <Route path="/startup/:id" element={<StartupDetails />} />
         <Route path="/quarter1" element={<Quarter1 />} />

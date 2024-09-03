@@ -147,6 +147,30 @@ const RightNav = () => {
           </select> */}
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => {
+              navigate("/introduction");
+            }}
+          >
+            Introduction
+          </button>
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => {
+              navigate("/about-game");
+            }}
+          >
+            About Game
+          </button>
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => {
+              navigate("/setting-the-scene");
+            }}
+          >
+            Setting the scene
+          </button>
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setQuarterOptions(!quarterOptions)}
           >
             Quarters <MdKeyboardArrowDown />
@@ -414,6 +438,33 @@ const RightNav = () => {
           >
             Income statement
           </button> */}
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => {
+              navigate("/introduction");
+              setOpen(!open);
+            }}
+          >
+            Introduction
+          </button>
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => {
+              navigate("/about-game");
+              setOpen(!open);
+            }}
+          >
+            About Game
+          </button>
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => {
+              navigate("/setting-the-scene");
+              setOpen(!open);
+            }}
+          >
+            Setting the scene
+          </button>
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setQuarterOptions(!quarterOptions)}

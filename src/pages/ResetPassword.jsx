@@ -23,12 +23,12 @@ const ResetPassword = () => {
   };
   useEffect(() => {
     if (authUser) {
-      navigate("/startup");
+      navigate("/introduction");
     }
   }, []);
   useEffect(() => {
     if (isSuccess) {
-      navigate("/startup");
+      navigate("/introduction");
 
       setInputs({ email: "", password: "" });
       setAuthUser(true);

@@ -219,7 +219,7 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
         <RightNav />
       </div>
       <div className="hidden md:block pt-6 ml-4">
-        <button onClick={() => navigate("/quarter1")}>
+        <button onClick={() => navigate("/introduction")}>
           <IoArrowBack className="text-black text-[2rem] " />
         </button>
       </div>
