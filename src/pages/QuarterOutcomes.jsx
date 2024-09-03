@@ -53,12 +53,16 @@ const QuarterOutcomes = () => {
                   data={incomeStatement}
                   keys={["Outcomes"]}
                   indexBy="quarter"
-                  margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
+                  margin={{ top: 50, right: 140, bottom: 50, left: 60 }}
                   padding={0.3}
                   valueScale={{ type: "linear" }}
                   minValue={
-                    Math.min(...incomeStatement.map((item) => item.Outcomes)) -
-                    1000
+                    Math.min(...incomeStatement.map((item) => item.Outcomes)) <
+                    0
+                      ? Math.min(
+                          ...incomeStatement.map((item) => item.Outcomes)
+                        ) - 1000
+                      : 0
                   }
                   maxValue={
                     Math.max(...incomeStatement.map((item) => item.Outcomes)) +
@@ -66,10 +70,11 @@ const QuarterOutcomes = () => {
                   }
                   indexScale={{ type: "band" }}
                   axisBottom={{
-                    tickSize: 5,
-                    tickPadding: 5,
+                    tickSize: 0,
+                    tickPadding: 0,
                     tickRotation: 0,
-                    legend: "Outcomes",
+                    tickValues: [],
+
                     legendOffset: 36,
                     legendPosition: "middle",
                   }}
@@ -77,13 +82,68 @@ const QuarterOutcomes = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: "Amount",
+                    format: (value) => `£${value}`,
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
+                  legends={[
+                    {
+                      anchor: "bottom-right",
+                      direction: "column",
+                      justify: false,
+                      translateX: 120,
+                      translateY: -40,
+                      itemsSpacing: 2,
+                      itemWidth: 100,
+                      itemHeight: 20,
+                      itemDirection: "left-to-right",
+                      itemOpacity: 0.85,
+                      symbolSize: 20,
+                      effects: [
+                        {
+                          on: "hover",
+                          style: {
+                            itemOpacity: 1,
+                          },
+                        },
+                      ],
+                      data: [
+                        {
+                          id: "quarter1",
+                          label: "quarter1",
+                          color: colorsPattern[0],
+                        },
+                        {
+                          id: "quarter2",
+                          label: "quarter2",
+                          color: colorsPattern[1],
+                        },
+                        {
+                          id: "quarter3",
+                          label: "quarter3",
+                          color: colorsPattern[2],
+                        },
+                        {
+                          id: "quarter4",
+                          label: "quarter4",
+                          color: colorsPattern[3],
+                        },
+                      ],
+                    },
+                  ]}
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
+                  theme={{
+                    axis: {
+                      ticks: {
+                        text: {
+                          fontSize: 14, // Increase the font size
+                          fontWeight: "bold", // Make the text bold
+                        },
+                      },
+                    },
+                  }}
                 />
               </div>
             </>

@@ -45,7 +45,7 @@ const RevenueChart = () => {
             {newData &&
               newData.map((item) => (
                 <div className="w-[100%] ">
-                  <MyRevenueChart data={item} />
+                  <MyRevenueChart data={item} name={item.name} />
                 </div>
               ))}
             {/* <MyRevenueChart data={data} />

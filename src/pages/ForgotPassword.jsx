@@ -6,6 +6,7 @@ import logo from "../assets/Logo.png";
 import { toast } from "react-toastify";
 import Loader from "../pages/components/Loader";
 import { useNavigate } from "react-router-dom";
+import { IoArrowBackSharp } from "react-icons/io5";
 
 const ForgotPassword = () => {
   const [inputs, setInputs] = useState({
@@ -41,9 +42,21 @@ const ForgotPassword = () => {
   return (
     <div className="w-full h-[100vh] flex bg-[#fbb748] relative overflow-hidden">
       <div className="h-[120vh] bg-white  md:w-[35%] rounded-r-full border-r-[20px] border-t-[20px] border-b-[20px] border-[#1b375f] absolute top-[-10vh] left-0 hidden md:flex  justify-center items-center">
+        <button
+          className="absolute top-[10vh] left-4 "
+          onClick={() => navigate("/")}
+        >
+          <IoArrowBackSharp className="text-[2rem]" />
+        </button>
         <img src={logo} className="w-[280px] lg:w-[380px]" />
       </div>
       <div className=" h-[100vh] w-[95%] md:w-[65%] flex flex-col justify-center items-center absolute right-0">
+        <button
+          className="absolute top-4 left-1 md:hidden"
+          onClick={() => navigate("/")}
+        >
+          <IoArrowBackSharp className="text-[2rem]" />
+        </button>
         <h1 className="mb-7 text-[1.4rem] text-[#1b375f] font-bold">
           Forgot Password
         </h1>

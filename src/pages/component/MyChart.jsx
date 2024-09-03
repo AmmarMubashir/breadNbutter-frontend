@@ -101,7 +101,7 @@ const MyResponsiveBar = ({ data, name }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Values",
+          format: (value) => `£${value}`,
           legendPosition: "middle",
           legendOffset: -50,
           truncateTickAt: 0,
@@ -138,6 +138,16 @@ const MyResponsiveBar = ({ data, name }) => {
         barAriaLabel={(e) =>
           e.id + ": " + e.formattedValue + " in cost: " + e.indexValue
         }
+        theme={{
+          axis: {
+            ticks: {
+              text: {
+                fontSize: 14, // Increase the font size
+                fontWeight: "bold", // Make the text bold
+              },
+            },
+          },
+        }}
       />
     </div>
   );

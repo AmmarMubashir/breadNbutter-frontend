@@ -185,6 +185,7 @@ const userCostComparison = () => {
 
   console.log(quarter1Graph);
   const colorsPattern = ["#FF6F61", "#FFD966", "#6AB04C", "#E8C1A0", "#9C88FF"];
+
   return (
     <div className="w-[100%] h-[100vh] overflow-auto flex">
       <RightNav />
@@ -214,15 +215,16 @@ const userCostComparison = () => {
                     "Total Expenditure",
                   ]}
                   indexBy="id"
-                  margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
+                  margin={{ top: 50, right: 200, bottom: 50, left: 60 }}
                   padding={0.3}
                   valueScale={{ type: "linear" }}
                   indexScale={{ type: "band" }}
                   axisBottom={{
-                    tickSize: 5,
-                    tickPadding: 5,
+                    tickSize: 0, // Hide the ticks
+                    tickPadding: 0, // Remove padding to hide the labels
                     tickRotation: 0,
-                    legend: "Cost",
+                    tickValues: [], // No ticks to be shown
+
                     legendOffset: 36,
                     legendPosition: "middle",
                   }}
@@ -230,20 +232,73 @@ const userCostComparison = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: "Amount",
+                    format: (value) => `£${value}`,
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  // tooltip={({ id, value }) => (
-                  //   <div>
-                  //     <strong>{id}</strong>
-                  //     <br />
-                  //     {value}
-                  //   </div>
-                  // )}
+                  legends={[
+                    {
+                      anchor: "bottom-right",
+                      direction: "column",
+                      justify: false,
+                      translateX: 120,
+                      translateY: 0,
+                      itemsSpacing: 2,
+                      itemWidth: 100,
+                      itemHeight: 20,
+                      itemDirection: "left-to-right",
+                      itemOpacity: 0.85,
+                      symbolSize: 20,
+                      effects: [
+                        {
+                          on: "hover",
+                          style: {
+                            itemOpacity: 1,
+                          },
+                        },
+                      ],
+                      data: [
+                        {
+                          id: "Expenses from opportunities",
+                          label: "Expenses from opportunities",
+                          color: colorsPattern[0],
+                        },
+                        {
+                          id: "Purchases",
+                          label: "Purchases",
+                          color: colorsPattern[1],
+                        },
+                        {
+                          id: "Additional cost",
+                          label: "Additional cost",
+                          color: colorsPattern[2],
+                        },
+                        {
+                          id: "Extra cost from opportunities",
+                          label: "Extra cost from opportunities",
+                          color: colorsPattern[3],
+                        },
+                        {
+                          id: "Total Expenditure",
+                          label: "Total Expenditure",
+                          color: colorsPattern[4],
+                        },
+                      ],
+                    },
+                  ]}
+                  theme={{
+                    axis: {
+                      ticks: {
+                        text: {
+                          fontSize: 14, // Increase the font size
+                          fontWeight: "bold", // Make the text bold
+                        },
+                      },
+                    },
+                  }}
                 />
               </div>
             </>
@@ -272,15 +327,16 @@ const userCostComparison = () => {
                     "Total Expenditure",
                   ]}
                   indexBy="id"
-                  margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
+                  margin={{ top: 50, right: 200, bottom: 50, left: 60 }}
                   padding={0.3}
                   valueScale={{ type: "linear" }}
                   indexScale={{ type: "band" }}
                   axisBottom={{
-                    tickSize: 5,
-                    tickPadding: 5,
+                    tickSize: 0, // Hide the ticks
+                    tickPadding: 0, // Remove padding to hide the labels
                     tickRotation: 0,
-                    legend: "Cost",
+                    tickValues: [], // No ticks to be shown
+
                     legendOffset: 36,
                     legendPosition: "middle",
                   }}
@@ -288,7 +344,7 @@ const userCostComparison = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: "Amount",
+                    format: (value) => `£${value}`,
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
@@ -296,13 +352,66 @@ const userCostComparison = () => {
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  // tooltip={({ id, value }) => (
-                  //   <div>
-                  //     <strong>{id}</strong>
-                  //     <br />
-                  //     {value}
-                  //   </div>
-                  // )}
+                  legends={[
+                    {
+                      anchor: "bottom-right",
+                      direction: "column",
+                      justify: false,
+                      translateX: 120,
+                      translateY: 0,
+                      itemsSpacing: 2,
+                      itemWidth: 100,
+                      itemHeight: 20,
+                      itemDirection: "left-to-right",
+                      itemOpacity: 0.85,
+                      symbolSize: 20,
+                      effects: [
+                        {
+                          on: "hover",
+                          style: {
+                            itemOpacity: 1,
+                          },
+                        },
+                      ],
+                      data: [
+                        {
+                          id: "Expenses from opportunities",
+                          label: "Expenses from opportunities",
+                          color: colorsPattern[0],
+                        },
+                        {
+                          id: "Purchases",
+                          label: "Purchases",
+                          color: colorsPattern[1],
+                        },
+                        {
+                          id: "Additional cost",
+                          label: "Additional cost",
+                          color: colorsPattern[2],
+                        },
+                        {
+                          id: "Extra cost from opportunities",
+                          label: "Extra cost from opportunities",
+                          color: colorsPattern[3],
+                        },
+                        {
+                          id: "Total Expenditure",
+                          label: "Total Expenditure",
+                          color: colorsPattern[4],
+                        },
+                      ],
+                    },
+                  ]}
+                  theme={{
+                    axis: {
+                      ticks: {
+                        text: {
+                          fontSize: 14, // Increase the font size
+                          fontWeight: "bold", // Make the text bold
+                        },
+                      },
+                    },
+                  }}
                 />
               </div>
             </>
@@ -331,15 +440,16 @@ const userCostComparison = () => {
                     "Total Expenditure",
                   ]}
                   indexBy="id"
-                  margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
+                  margin={{ top: 50, right: 200, bottom: 50, left: 60 }}
                   padding={0.3}
                   valueScale={{ type: "linear" }}
                   indexScale={{ type: "band" }}
                   axisBottom={{
-                    tickSize: 5,
-                    tickPadding: 5,
+                    tickSize: 0, // Hide the ticks
+                    tickPadding: 0, // Remove padding to hide the labels
                     tickRotation: 0,
-                    legend: "Cost",
+                    tickValues: [], // No ticks to be shown
+
                     legendOffset: 36,
                     legendPosition: "middle",
                   }}
@@ -347,7 +457,7 @@ const userCostComparison = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: "Amount",
+                    format: (value) => `£${value}`,
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
@@ -355,13 +465,66 @@ const userCostComparison = () => {
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  // tooltip={({ id, value }) => (
-                  //   <div>
-                  //     <strong>{id}</strong>
-                  //     <br />
-                  //     {value}
-                  //   </div>
-                  // )}
+                  legends={[
+                    {
+                      anchor: "bottom-right",
+                      direction: "column",
+                      justify: false,
+                      translateX: 120,
+                      translateY: 0,
+                      itemsSpacing: 2,
+                      itemWidth: 100,
+                      itemHeight: 20,
+                      itemDirection: "left-to-right",
+                      itemOpacity: 0.85,
+                      symbolSize: 20,
+                      effects: [
+                        {
+                          on: "hover",
+                          style: {
+                            itemOpacity: 1,
+                          },
+                        },
+                      ],
+                      data: [
+                        {
+                          id: "Expenses from opportunities",
+                          label: "Expenses from opportunities",
+                          color: colorsPattern[0],
+                        },
+                        {
+                          id: "Purchases",
+                          label: "Purchases",
+                          color: colorsPattern[1],
+                        },
+                        {
+                          id: "Additional cost",
+                          label: "Additional cost",
+                          color: colorsPattern[2],
+                        },
+                        {
+                          id: "Extra cost from opportunities",
+                          label: "Extra cost from opportunities",
+                          color: colorsPattern[3],
+                        },
+                        {
+                          id: "Total Expenditure",
+                          label: "Total Expenditure",
+                          color: colorsPattern[4],
+                        },
+                      ],
+                    },
+                  ]}
+                  theme={{
+                    axis: {
+                      ticks: {
+                        text: {
+                          fontSize: 14, // Increase the font size
+                          fontWeight: "bold", // Make the text bold
+                        },
+                      },
+                    },
+                  }}
                 />
               </div>
             </>
@@ -390,15 +553,16 @@ const userCostComparison = () => {
                     "Total Expenditure",
                   ]}
                   indexBy="id"
-                  margin={{ top: 50, right: 30, bottom: 50, left: 60 }}
+                  margin={{ top: 50, right: 200, bottom: 50, left: 60 }}
                   padding={0.3}
                   valueScale={{ type: "linear" }}
                   indexScale={{ type: "band" }}
                   axisBottom={{
-                    tickSize: 5,
-                    tickPadding: 5,
+                    tickSize: 0, // Hide the ticks
+                    tickPadding: 0, // Remove padding to hide the labels
                     tickRotation: 0,
-                    legend: "Cost",
+                    tickValues: [], // No ticks to be shown
+
                     legendOffset: 36,
                     legendPosition: "middle",
                   }}
@@ -406,7 +570,7 @@ const userCostComparison = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: "Amount",
+                    format: (value) => `£${value}`,
                     legendOffset: -40,
                     legendPosition: "middle",
                   }}
@@ -414,13 +578,66 @@ const userCostComparison = () => {
                   colors={({ index }) =>
                     colorsPattern[index % colorsPattern.length]
                   }
-                  // tooltip={({ id, value }) => (
-                  //   <div>
-                  //     <strong>{id}</strong>
-                  //     <br />
-                  //     {value}
-                  //   </div>
-                  // )}
+                  legends={[
+                    {
+                      anchor: "bottom-right",
+                      direction: "column",
+                      justify: false,
+                      translateX: 120,
+                      translateY: 0,
+                      itemsSpacing: 2,
+                      itemWidth: 100,
+                      itemHeight: 20,
+                      itemDirection: "left-to-right",
+                      itemOpacity: 0.85,
+                      symbolSize: 20,
+                      effects: [
+                        {
+                          on: "hover",
+                          style: {
+                            itemOpacity: 1,
+                          },
+                        },
+                      ],
+                      data: [
+                        {
+                          id: "Expenses from opportunities",
+                          label: "Expenses from opportunities",
+                          color: colorsPattern[0],
+                        },
+                        {
+                          id: "Purchases",
+                          label: "Purchases",
+                          color: colorsPattern[1],
+                        },
+                        {
+                          id: "Additional cost",
+                          label: "Additional cost",
+                          color: colorsPattern[2],
+                        },
+                        {
+                          id: "Extra cost from opportunities",
+                          label: "Extra cost from opportunities",
+                          color: colorsPattern[3],
+                        },
+                        {
+                          id: "Total Expenditure",
+                          label: "Total Expenditure",
+                          color: colorsPattern[4],
+                        },
+                      ],
+                    },
+                  ]}
+                  theme={{
+                    axis: {
+                      ticks: {
+                        text: {
+                          fontSize: 14, // Increase the font size
+                          fontWeight: "bold", // Make the text bold
+                        },
+                      },
+                    },
+                  }}
                 />
               </div>
             </>

@@ -391,7 +391,12 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                     Total
                   </td>
                 </tr>
-                <div className="px-1  py-2 font-bold ">Income:</div>
+                <tr className="px-1 py-4 font-bold border-b-[2px] border-black w-[100%]">
+                  <td className="py-2 px-4 border-b text-start">Income:</td>
+                  <td className={`py-2 px-4 border-b text-center`}>{null}</td>
+                  <td className={`py-2 px-4 border-b text-center`}>{null}</td>
+                  <td className={`py-2 px-4 border-b text-center`}>{null}</td>
+                </tr>
 
                 {
                   incomeStatementD && (
@@ -405,7 +410,9 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                           >
                             <td
                               className={`px-4 py-2 text-nowrap ${
-                                key === "Total Income" ? `font-bold px-1` : ``
+                                key === "Total Income"
+                                  ? `font-bold px-1 text-[#fbb648]`
+                                  : ``
                               }`}
                             >
                               {key}
@@ -421,8 +428,8 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                                         className={`py-2 px-4 border-b text-center ${
                                           item.Income < 0 ? `text-red-500` : ""
                                         } ${
-                                          key === "Total Expenditure"
-                                            ? `font-bold`
+                                          key === "Total Income"
+                                            ? `font-bold text-[#fbb648]`
                                             : ``
                                         }`}
                                       >
@@ -479,7 +486,13 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                                   </td>
                                 </>
                               )}
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center  ${
+                                key === "Total Income"
+                                  ? `font-bold text-[#fbb648]`
+                                  : ``
+                              }`}
+                            >
                               {incomeStatementD.reduce(
                                 (acc, current) => acc + current["Income"][key],
                                 0
@@ -488,7 +501,20 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                           </tr>
                         )
                       )}
-                      <div className="px-1 py-2 font-bold">Expenditure:</div>
+                      <tr className="px-1 py-4 font-bold border-b-[2px] border-black w-[100%]">
+                        <td className="py-2 px-4 border-b text-start">
+                          Expenditure:
+                        </td>
+                        <td className={`py-2 px-4 border-b text-center`}>
+                          {null}
+                        </td>
+                        <td className={`py-2 px-4 border-b text-center`}>
+                          {null}
+                        </td>
+                        <td className={`py-2 px-4 border-b text-center`}>
+                          {null}
+                        </td>
+                      </tr>
                       {Object.entries(incomeStatementD[0]["Expenditure"]).map(
                         ([key, value]) => (
                           <tr
@@ -498,7 +524,7 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                             <td
                               className={`px-4 py-2 text-nowrap ${
                                 key === "Total Expenditure"
-                                  ? `font-bold px-1`
+                                  ? `font-bold px-1 text-[#fbb648]`
                                   : ``
                               }`}
                             >
@@ -506,9 +532,9 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                             </td>
                             {incomeStatementD.map((item, index) => (
                               <td
-                                className={`py-2 px-4 border-b text-center ${
+                                className={`py-2 px-4 border-b text-center  ${
                                   key === "Total Expenditure"
-                                    ? `font-bold px-1`
+                                    ? `font-bold text-[#fbb648]`
                                     : ``
                                 }`}
                               >
@@ -560,7 +586,13 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                                   </td>
                                 </>
                               )}
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center  ${
+                                key === "Total Expenditure"
+                                  ? `font-bold text-[#fbb648]`
+                                  : ``
+                              }`}
+                            >
                               {incomeStatementD.reduce(
                                 (acc, current) =>
                                   acc + current["Expenditure"][key],
@@ -580,6 +612,7 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                             key === "EBITIDA" ||
                             key === "EBIT" ||
                             key === "Depreciation" ||
+                            key === "Use Of Net Operating Loss" ||
                             key === "Interest"
                           ) {
                             return null;
@@ -593,9 +626,8 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                                 className={`py-2 px-4 border-b text-nowrap ${
                                   key === "EBITIDA" ||
                                   key === "EBIT" ||
-                                  key === "PRETAX INCOME" ||
                                   key === "NET INCOME"
-                                    ? `font-bold px-1`
+                                    ? `font-bold px-1  text-[#fbb648]`
                                     : ``
                                 }`}
                               >
@@ -608,9 +640,8 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                                   } ${
                                     key === "EBITIDA" ||
                                     key === "EBIT" ||
-                                    key === "PRETAX INCOME" ||
                                     key === "NET INCOME"
-                                      ? `font-bold`
+                                      ? `font-bold  text-[#fbb648]`
                                       : ``
                                   }`}
                                 >
@@ -662,7 +693,13 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                                     </td>
                                   </>
                                 )}
-                              <td className={`py-2 px-4 border-b text-center`}>
+                              <td
+                                className={`py-2 px-4 border-b text-center ${
+                                  key === "NET INCOME"
+                                    ? `font-bold text-[#fbb648]`
+                                    : ``
+                                }`}
+                              >
                                 {incomeStatementD.reduce(
                                   (acc, current) => acc + current[key],
                                   0
@@ -672,6 +709,65 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                           );
                         }
                       )}
+
+                      <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
+                        <td className="px-4 py-2 text-nowrap font-bold">
+                          Profit / Loss
+                        </td>
+                        {incomeStatementD.map((item, index) => (
+                          <td
+                            className={`py-2 px-4 border-b text-center  font-bold`}
+                          >
+                            {item["Income"]["Total Income"] -
+                              item["Expenditure"]["Total Expenditure"]}
+                          </td>
+                        ))}
+                        {incomeStatementD && incomeStatementD.length === 3 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
+                        {incomeStatementD && incomeStatementD.length === 2 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
+                        {incomeStatementD && incomeStatementD.length === 1 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
+                        <td
+                          className={`py-2 px-4 border-b text-center font-bold`}
+                        >
+                          {incomeStatementD.reduce(
+                            (acc, current) =>
+                              acc + current["Income"]["Total Income"],
+                            0
+                          ) -
+                            incomeStatementD.reduce(
+                              (acc, current) =>
+                                acc +
+                                current["Expenditure"]["Total Expenditure"],
+                              0
+                            )}
+                        </td>
+                      </tr>
                     </>
                   )
                   // ))

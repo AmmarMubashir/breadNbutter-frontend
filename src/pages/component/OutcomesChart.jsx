@@ -39,8 +39,8 @@ const OutcomesChart = ({ data }) => {
         indexBy="name"
         margin={{ top: 50, right: 10, bottom: 50, left: 60 }}
         padding={0.3}
-        minValue={minOutcomes < 0 ? minOutcomes - 1000 : -100}
-        maxValue={maxOutcomes + 5000}
+        minValue={minOutcomes < 0 ? minOutcomes - 2000 : -100}
+        maxValue={maxOutcomes + 2000}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
         colors={({ index }) => colorsPattern[index % colorsPattern.length]}
@@ -88,16 +88,16 @@ const OutcomesChart = ({ data }) => {
           tickSize: 5,
           tickPadding: 10,
           tickRotation: 0,
-          legend: "Teams",
+
           legendPosition: "middle",
           legendOffset: 40,
           truncateTickAt: 0,
         }}
         axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
+          tickSize: 0,
+          tickPadding: 0,
           tickRotation: 0,
-          legend: "OUTCOMES",
+          format: (value) => `£${value}`,
           legendPosition: "middle",
           legendOffset: -50,
           truncateTickAt: 0,
@@ -111,6 +111,16 @@ const OutcomesChart = ({ data }) => {
         barAriaLabel={(e) =>
           e.id + ": " + e.formattedValue + " in cost: " + e.indexValue
         }
+        theme={{
+          axis: {
+            ticks: {
+              text: {
+                fontSize: 14, // Increase the font size
+                fontWeight: "bold", // Make the text bold
+              },
+            },
+          },
+        }}
       />
     </div>
   );
