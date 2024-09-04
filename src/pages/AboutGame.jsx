@@ -9,9 +9,9 @@ const AboutGame = () => {
       <RightNav />
       <div className=" h-[100vh] flex-1 flex flex-col py-4  items-center overflow-auto">
         <h1 className="mb-7 mt-5 text-[1.4rem] sm:text-[1.8rem] text-[#1b375f] font-bold font-mono">
-          About to the game
+          About the game
         </h1>
-        <div className="w-[90%] mx-auto text-[1.1rem]  bg-white rounded py-4 px-3 font-mono">
+        <div className="w-[90%] lg:w-[80%] mx-auto text-[1.1rem] lg:text-[1.4rem]  bg-white rounded py-4 px-3 flex flex-col gap-4">
           <p>
             This is a business simulation game where participants learn
             practical skills for running a business. Up to five teams can

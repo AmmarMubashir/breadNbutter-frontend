@@ -320,7 +320,7 @@ const UserFinanceStatement = ({ id }) => {
                 Total
               </td>
             </tr>
-            <tr className="px-1 py-4 font-bold border-b-[2px] border-black w-[100%]">
+            <tr className="px-1 py-4 font-bold ">
               <td className="py-2 px-4 border-b text-start">Income:</td>
               <td className={`py-2 px-4 border-b text-center`}>{null}</td>
               <td className={`py-2 px-4 border-b text-center`}>{null}</td>
@@ -340,7 +340,7 @@ const UserFinanceStatement = ({ id }) => {
                         <td
                           className={`px-4 py-2 text-nowrap ${
                             key === "Total Income"
-                              ? `font-bold px-1 text-[#fbb648]`
+                              ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
                               : ``
                           }`}
                         >
@@ -358,7 +358,7 @@ const UserFinanceStatement = ({ id }) => {
                                       item.Revenue < 0 ? `text-red-500` : ""
                                     } ${
                                       key === "Total Income"
-                                        ? `font-bold px-1 text-[#fbb648]`
+                                        ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
                                         : ``
                                     }`}
                                   >
@@ -403,7 +403,7 @@ const UserFinanceStatement = ({ id }) => {
                         <td
                           className={`py-2 px-4 border-b text-center ${
                             key === "Total Income"
-                              ? `font-bold text-[#fbb648]`
+                              ? `font-bold text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
                               : ``
                           }`}
                         >
@@ -415,7 +415,7 @@ const UserFinanceStatement = ({ id }) => {
                       </tr>
                     )
                   )}
-                  <tr className="px-1 py-4 font-bold border-b-[2px] border-black w-[100%]">
+                  <tr className="px-1 py-4 font-bold ">
                     <td className="py-2 px-4 border-b text-start">
                       Expenditure:
                     </td>
@@ -432,7 +432,7 @@ const UserFinanceStatement = ({ id }) => {
                         <td
                           className={`px-4 py-2 text-nowrap ${
                             key === "Total Expenditure"
-                              ? `font-bold px-1 text-[#fbb648]`
+                              ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
                               : ``
                           }`}
                         >
@@ -442,7 +442,7 @@ const UserFinanceStatement = ({ id }) => {
                           <td
                             className={`py-2 px-4 border-b text-center ${
                               key === "Total Expenditure"
-                                ? `font-bold px-1 text-[#fbb648]`
+                                ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
                                 : ``
                             }`}
                           >
@@ -482,7 +482,7 @@ const UserFinanceStatement = ({ id }) => {
                         <td
                           className={`py-2 px-4 border-b text-center ${
                             key === "Total Expenditure"
-                              ? `font-bold text-[#fbb648]`
+                              ? `font-bold  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
                               : ``
                           }`}
                         >
@@ -494,95 +494,6 @@ const UserFinanceStatement = ({ id }) => {
                       </tr>
                     )
                   )}
-
-                  {Object.entries(incomeStatementD[0]).map(([key, value]) => {
-                    if (
-                      key === "Income" ||
-                      key === "Expenditure" ||
-                      key === "_id" ||
-                      key === "EBITIDA" ||
-                      key === "EBIT" ||
-                      key === "Depreciation" ||
-                      key === "Interest"
-                    ) {
-                      return null;
-                    }
-                    return (
-                      <tr
-                        key={key}
-                        className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
-                      >
-                        <td
-                          className={`py-2 px-4 border-b  text-nowrap ${
-                            key === "EBITIDA" ||
-                            key === "EBIT" ||
-                            key === "NET INCOME"
-                              ? `font-bold px-1  text-[#fbb648]`
-                              : ``
-                          }`}
-                        >
-                          {key}
-                        </td>
-                        {incomeStatementD.map((item, index) => (
-                          <td
-                            className={`py-2 px-4 border-b text-center ${
-                              item[key] < 0 ? `text-red-500` : ""
-                            } ${
-                              key === "EBITIDA" ||
-                              key === "EBIT" ||
-                              key === "NET INCOME"
-                                ? `font-bold px-1  text-[#fbb648]`
-                                : ``
-                            }`}
-                          >
-                            {item[key]}
-                          </td>
-                        ))}
-                        {incomeStatementD && incomeStatementD.length === 3 && (
-                          <>
-                            <td className={`py-2 px-4 border-b text-center`}>
-                              {null}
-                            </td>
-                          </>
-                        )}
-                        {incomeStatementD && incomeStatementD.length === 2 && (
-                          <>
-                            <td className={`py-2 px-4 border-b text-center`}>
-                              {null}
-                            </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
-                              {null}
-                            </td>
-                          </>
-                        )}
-                        {incomeStatementD && incomeStatementD.length === 1 && (
-                          <>
-                            <td className={`py-2 px-4 border-b text-center`}>
-                              {null}
-                            </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
-                              {null}
-                            </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
-                              {null}
-                            </td>
-                          </>
-                        )}
-                        <td
-                          className={`py-2 px-4 border-b text-center ${
-                            key === "NET INCOME"
-                              ? `font-bold text-[#fbb648]`
-                              : ``
-                          }`}
-                        >
-                          {incomeStatementD.reduce(
-                            (acc, current) => acc + current[key],
-                            0
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
 
                   <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                     <td className="px-4 py-2 text-nowrap font-bold">
@@ -639,6 +550,96 @@ const UserFinanceStatement = ({ id }) => {
                         )}
                     </td>
                   </tr>
+
+                  {Object.entries(incomeStatementD[0]).map(([key, value]) => {
+                    if (
+                      key === "Income" ||
+                      key === "Expenditure" ||
+                      key === "_id" ||
+                      key === "EBITIDA" ||
+                      key === "EBIT" ||
+                      key === "Depreciation" ||
+                      key === "Interest" ||
+                      key === "Use Of Net Operating Loss"
+                    ) {
+                      return null;
+                    }
+                    return (
+                      <tr
+                        key={key}
+                        className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
+                      >
+                        <td
+                          className={`py-2 px-4 border-b  text-nowrap ${
+                            key === "EBITIDA" ||
+                            key === "EBIT" ||
+                            key === "NET INCOME"
+                              ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                              : ``
+                          }`}
+                        >
+                          {key}
+                        </td>
+                        {incomeStatementD.map((item, index) => (
+                          <td
+                            className={`py-2 px-4 border-b text-center ${
+                              item[key] < 0 ? `text-red-500` : ""
+                            } ${
+                              key === "EBITIDA" ||
+                              key === "EBIT" ||
+                              key === "NET INCOME"
+                                ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                : ``
+                            }`}
+                          >
+                            {item[key]}
+                          </td>
+                        ))}
+                        {incomeStatementD && incomeStatementD.length === 3 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
+                        {incomeStatementD && incomeStatementD.length === 2 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
+                        {incomeStatementD && incomeStatementD.length === 1 && (
+                          <>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                            <td className={`py-2 px-4 border-b text-center`}>
+                              {null}
+                            </td>
+                          </>
+                        )}
+                        <td
+                          className={`py-2 px-4 border-b text-center ${
+                            key === "NET INCOME"
+                              ? `font-bold  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                              : ``
+                          }`}
+                        >
+                          {incomeStatementD.reduce(
+                            (acc, current) => acc + current[key],
+                            0
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </>
               )
               // ))

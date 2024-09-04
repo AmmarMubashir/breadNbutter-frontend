@@ -51,14 +51,14 @@ const Quarter1Completion = () => {
               <strong>Event:</strong> {quarter1D.event}
             </div> */}
 
-          <div className="absolute bottom-9 right-11">
+          {/* <div className="absolute bottom-9 right-11">
             <Link
               to="/quarter2"
               className="bg-[#1b375f] text-white px-4 py-2 rounded"
             >
               Next
             </Link>
-          </div>
+          </div> */}
         </div>
         {/* )} */}
       </div>

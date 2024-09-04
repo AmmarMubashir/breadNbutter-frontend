@@ -11,7 +11,7 @@ const SettingScene = () => {
         <h1 className="mb-7 mt-5 mx-auto text-[1.4rem] sm:text-[1.8rem] text-[#1b375f] font-bold font-mono">
           Setting Scene to the game
         </h1>
-        <div className="w-[90%] mx-auto text-[1.1rem] text-justify flex flex-col gap-2 bg-white rounded py-4 px-3 font-mono">
+        <div className="w-[90%] lg:w-[80%] mx-auto text-[1.1rem] lg:text-[1.4rem]  bg-white rounded py-4 px-3 flex flex-col gap-4">
           <p>
             My Bread n Butter is a new venture dedicated to delivering a
             delightful array of freshly baked goods crafted with meticulous

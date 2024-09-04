@@ -187,6 +187,16 @@ const RightNav = () => {
                 Startup
               </button>
               <button
+                onClick={() => {
+                  navigate("/choose-role");
+                  setOpen(!open);
+                }}
+                disabled={startup}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start  disabled:bg-[#1B375F] disabled:text-white/50 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                Choose Role
+              </button>
+              <button
                 disabled={startup}
                 onClick={() => {
                   navigate("/quarter1");
@@ -481,6 +491,15 @@ const RightNav = () => {
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
                 Startup
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/choose-role");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Choose Role
               </button>
               <button
                 disabled={startup}

@@ -54,6 +54,7 @@ import QuarterOutcomes from "./pages/QuarterOutcomes.jsx";
 import Introduction from "./pages/Introduction.jsx";
 import SettingScene from "./pages/SettingScene.jsx";
 import AboutGame from "./pages/AboutGame.jsx";
+import ChooseRole from "./pages/ChooseRole.jsx";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -85,6 +86,7 @@ function App() {
         <Route path="/setting-the-scene" element={<SettingScene />} />
         <Route path="/startup" element={<Startup />} />
         <Route path="/startup/:id" element={<StartupDetails />} />
+        <Route path="/choose-role" element={<ChooseRole />} />
         <Route path="/quarter1" element={<Quarter1 />} />
         <Route path="/quarter1/:id" element={<Quarter1Detail />} />
         <Route path="/quarter1Completion" element={<Quarter1Completion />} />
