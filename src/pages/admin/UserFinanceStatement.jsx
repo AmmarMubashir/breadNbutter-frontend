@@ -372,30 +372,66 @@ const UserFinanceStatement = ({ id }) => {
                         })}
                         {incomeStatementD && incomeStatementD.length === 3 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Income"
+                                  ? `font-bold text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
                         )}
                         {incomeStatementD && incomeStatementD.length === 2 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Income"
+                                  ? `font-bold text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Income"
+                                  ? `font-bold text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
                         )}
                         {incomeStatementD && incomeStatementD.length === 1 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Income"
+                                  ? `font-bold text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Income"
+                                  ? `font-bold text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Income"
+                                  ? `font-bold text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
@@ -451,30 +487,66 @@ const UserFinanceStatement = ({ id }) => {
                         ))}
                         {incomeStatementD && incomeStatementD.length === 3 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
                         )}
                         {incomeStatementD && incomeStatementD.length === 2 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
                         )}
                         {incomeStatementD && incomeStatementD.length === 1 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1  text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
@@ -560,7 +632,9 @@ const UserFinanceStatement = ({ id }) => {
                       key === "EBIT" ||
                       key === "Depreciation" ||
                       key === "Interest" ||
-                      key === "Use Of Net Operating Loss"
+                      key === "Use Of Net Operating Loss" ||
+                      key === "Net Operating Loss" ||
+                      key === "Income Tax Expense"
                     ) {
                       return null;
                     }
@@ -592,35 +666,74 @@ const UserFinanceStatement = ({ id }) => {
                                 : ``
                             }`}
                           >
-                            {item[key]}
+                            {key === "NET INCOME"
+                              ? item["NET INCOME"] + item["Income Tax Expense"]
+                              : item[key]}
+                            {/* {item[key]} */}
                           </td>
                         ))}
                         {incomeStatementD && incomeStatementD.length === 3 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "NET INCOME"
+                                  ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
                         )}
                         {incomeStatementD && incomeStatementD.length === 2 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "NET INCOME"
+                                  ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "NET INCOME"
+                                  ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
                         )}
                         {incomeStatementD && incomeStatementD.length === 1 && (
                           <>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "NET INCOME"
+                                  ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "NET INCOME"
+                                  ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
-                            <td className={`py-2 px-4 border-b text-center`}>
+                            <td
+                              className={`py-2 px-4 border-b text-center ${
+                                key === "NET INCOME"
+                                  ? `font-bold px-1   text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
+                              }`}
+                            >
                               {null}
                             </td>
                           </>
@@ -632,10 +745,24 @@ const UserFinanceStatement = ({ id }) => {
                               : ``
                           }`}
                         >
-                          {incomeStatementD.reduce(
+                          {key === "NET INCOME"
+                            ? incomeStatementD.reduce(
+                                (acc, current) => acc + current["NET INCOME"],
+                                0
+                              ) +
+                              incomeStatementD.reduce(
+                                (acc, current) =>
+                                  acc + current["Income Tax Expense"],
+                                0
+                              )
+                            : incomeStatementD.reduce(
+                                (acc, current) => acc + current[key],
+                                0
+                              )}
+                          {/* {incomeStatementD.reduce(
                             (acc, current) => acc + current[key],
                             0
-                          )}
+                          )} */}
                         </td>
                       </tr>
                     );
