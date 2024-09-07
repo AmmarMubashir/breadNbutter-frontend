@@ -87,7 +87,7 @@ const MemberRoles = () => {
                   </label>
                   <input
                     type="text"
-                    // required
+                    required
                     placeholder="Enter Member Name"
                     className="rounded py-2 px-4 sm:w-[90%] bg-[#FBB74889] border-none outline-none text-center text-gray-600 placeholder:text-gray-400 "
                     value={item.name}
@@ -111,7 +111,7 @@ const MemberRoles = () => {
                   <select
                     className="rounded py-2 px-4 sm:w-[90%] bg-[#FBB74889] border-none outline-none text-center text-gray-600 placeholder:text-gray-400  placeholder:font-bold"
                     value={item.role}
-                    // required
+                    required
                     onChange={(e) => {
                       const updatedData = [...roleData];
                       updatedData[roleData.indexOf(item)] = {
