@@ -15,6 +15,7 @@ const Startup = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [inputs, setInputs] = useState({
     name: "",
+    members: "",
     location: "",
   });
 
@@ -85,6 +86,44 @@ const Startup = () => {
               onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
               className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
             />
+          </div>
+          <div className="flex gap-5 items-center">
+            <label
+              htmlFor="members"
+              className="font-bold text-[#1b375f] text-[1.2rem] w-[80px]"
+            >
+              Members:
+            </label>
+            {/* <input
+              type="number"
+              placeholder="Enter number of members"
+              id="members"
+              max={5}
+              required
+              value={inputs.members}
+              onChange={(e) =>
+                setInputs({ ...inputs, members: +e.target.value })
+              }
+              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray placeholder:font-bold"
+            /> */}
+            <select
+              id="members"
+              required
+              value={inputs.members}
+              onChange={(e) =>
+                setInputs({ ...inputs, members: +e.target.value })
+              }
+              className="rounded-full py-3 px-4 w-[75%] border-none outline-none text-center placeholder:text-gray-400 placeholder:font-bold text-[0.9rem]"
+            >
+              <option value="" disabled className="text-gray-400">
+                Select number of members
+              </option>
+              {[...Array(5).keys()].map((number) => (
+                <option key={number + 1} value={number + 1}>
+                  {number + 1}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="flex gap-5 items-center">

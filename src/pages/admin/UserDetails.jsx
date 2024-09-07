@@ -12,22 +12,26 @@ import {
   useGetIndividualQuarter3Admin,
   useGetIndividualQuarter4Admin,
 } from "../../api/MyStartupApi";
+import { usegetMemberRolesAdmin } from "../../api/MyMemberRolesApi";
 
 const UserDetails = () => {
   const { getIndividualStartupAdmin } = useGetIndividualStartupAdmin();
   const [startupData, setStartupData] = useState();
-  const [quarter1, setQuarter1] = useState();
-  const [quarter2, setQuarter2] = useState();
-  const [quarter3, setQuarter3] = useState();
-  const [quarter4, setQuarter4] = useState();
+  const { getMembersAdmin } = usegetMemberRolesAdmin();
   const { getQuarter1Admin } = useGetIndividualQuarter1Admin();
   const { getQuarter2Admin } = useGetIndividualQuarter2Admin();
   const { getQuarter3Admin } = useGetIndividualQuarter3Admin();
   const { getQuarter4Admin } = useGetIndividualQuarter4Admin();
+  const [quarter1, setQuarter1] = useState();
+  const [quarter2, setQuarter2] = useState();
+  const [quarter3, setQuarter3] = useState();
+  const [quarter4, setQuarter4] = useState();
+  const [roleData, setRoleData] = useState();
   const { id } = useParams();
   useEffect(() => {
     const loadData = async function () {
       const data = await getIndividualStartupAdmin(id);
+      const roles = await getMembersAdmin(id);
       const quarter1D = await getQuarter1Admin(id);
       const quarter2D = await getQuarter2Admin(id);
       const quarter3D = await getQuarter3Admin(id);
@@ -38,10 +42,14 @@ const UserDetails = () => {
         console.log(data);
         setStartupData(data.data);
       }
+      if (roles) {
+        setRoleData(roles.positions);
+        // console.log(roles);
+      }
       if (quarter1D) {
         console.log(quarter1D);
         setQuarter1(quarter1D.data);
-        console.log("CHECK QUARTER 1", quarter1D);
+        // console.log("CHECK QUARTER 1", quarter1D);
       }
       if (quarter2D) {
         setQuarter2(quarter2D.data);
@@ -53,7 +61,7 @@ const UserDetails = () => {
       }
       if (quarter4D) {
         setQuarter4(quarter4D.data);
-        console.log("CHECK QUARTE 4 ADMIN", quarter4D);
+        // console.log("CHECK QUARTE 4 ADMIN", quarter4D);
       }
     };
 
@@ -102,6 +110,12 @@ const UserDetails = () => {
                       {startupData.name}
                     </td>
                   </tr>
+                  <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
+                    <td className="py-2 px-4 border-b text-start">Members</td>
+                    <td className="py-2 px-4 border-b text-start">
+                      {startupData.members}
+                    </td>
+                  </tr>
 
                   <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                     <td className="py-2 px-4 border-b text-start">Location</td>
@@ -109,6 +123,37 @@ const UserDetails = () => {
                       {startupData.location}
                     </td>
                   </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {roleData && (
+            <div className="w-[95%] md:w-[95%] lg:w-[85%] flex flex-col justify-center mx-auto">
+              <h1 className=" w-[100%] bg-white px-2 py-2 mt-3 rounded font-bold  text-[1.4rem]">
+                Members Roles Details
+              </h1>
+              <table className=" bg-white border mb-7 w-[100%]  shadow-md rounded-lg">
+                <thead className="bg-gray-300">
+                  <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
+                    <th className="py-2 px-4 border-b text-start">Name</th>
+                    <th className="py-2 px-4 border-b text-center">Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {roleData.map((role, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
+                    >
+                      <td className="py-2 px-4 border-b text-start">
+                        {role.name}
+                      </td>
+                      <td className="py-2 px-4 border-b text-center">
+                        {role.role}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -123,7 +168,7 @@ const UserDetails = () => {
           )}
 
           {quarter1 && (
-            <div className=" w-[95%] md:w-[85%] mx-auto ">
+            <div className=" w-[95%] md:w-[85%] mx-auto mt-3">
               <h1 className=" w-[100%] bg-white px-2 py-2 mt-3 rounded font-bold  text-[1.4rem]">
                 Quarter 1 Details
               </h1>

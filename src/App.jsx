@@ -21,6 +21,8 @@ import UsersList from "./pages/admin/UsersList";
 import UserDetails from "./pages/admin/UserDetails";
 import UpdateUserFinanceStatement from "./pages/admin/UpdateUserFinanceStatement";
 import UserIncomeComparison from "./pages/UserIncomeComparison";
+import MemberRoles from "./pages/MemberRoles";
+import MemberRolesDetails from "./pages/MemberRolesDetails.jsx";
 
 import Dashboard from "./pages/admin/Dashboard";
 import IncomeFromOpportunities from "./pages/admin/IncomeFromOpportunities";
@@ -86,6 +88,8 @@ function App() {
         <Route path="/setting-the-scene" element={<SettingScene />} />
         <Route path="/startup" element={<Startup />} />
         <Route path="/startup/:id" element={<StartupDetails />} />
+        <Route path="/roles" element={<MemberRoles />} />
+        <Route path="/roles/:id" element={<MemberRolesDetails />} />
         <Route path="/choose-role" element={<ChooseRole />} />
         <Route path="/quarter1" element={<Quarter1 />} />
         <Route path="/quarter1/:id" element={<Quarter1Detail />} />
