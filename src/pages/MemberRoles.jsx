@@ -28,7 +28,7 @@ const MemberRoles = () => {
       if (data) {
         // console.log(data);
         setNumberOfMembers(data.data.members);
-        const array = [...Array(4).keys()].map((i) => ({
+        const array = [...Array(data.data.members).keys()].map((i) => ({
           name: "",
           role: "",
         }));
