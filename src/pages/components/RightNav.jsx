@@ -31,6 +31,7 @@ const RightNav = () => {
   const [comparison, setComparison] = useState(false);
   const [resourcesOption, setResourcesOption] = useState(false);
   const [quarterOptions, setQuarterOptions] = useState(false);
+  const [introOptions, setIntroOptions] = useState(false);
 
   useEffect(() => {
     let User = JSON.parse(localStorage.getItem("breadUser"));
@@ -145,7 +146,7 @@ const RightNav = () => {
             <option value="/financialStatement">Income Statement</option>
             <option value="/cashflow">Cashflow</option>
           </select> */}
-          <button
+          {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => {
               navigate("/introduction");
@@ -168,7 +169,45 @@ const RightNav = () => {
             }}
           >
             Setting the scene
+          </button> */}
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setIntroOptions(!introOptions)}
+          >
+            Introduction <MdKeyboardArrowDown />
           </button>
+          {introOptions && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/introduction");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Intro Video
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/about-game");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                About Game
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/setting-the-scene");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Setting the scene
+              </button>
+            </div>
+          )}
+
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setQuarterOptions(!quarterOptions)}
@@ -448,7 +487,7 @@ const RightNav = () => {
           >
             Income statement
           </button> */}
-          <button
+          {/* <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => {
               navigate("/introduction");
@@ -474,7 +513,46 @@ const RightNav = () => {
             }}
           >
             Setting the scene
+          </button> */}
+
+          <button
+            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+            onClick={() => setIntroOptions(!introOptions)}
+          >
+            Introduction <MdKeyboardArrowDown />
           </button>
+          {introOptions && (
+            <div className="transition-all duration-300 overflow-hidden">
+              <button
+                onClick={() => {
+                  navigate("/introduction");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Intro Video
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/about-game");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                ABout game
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/setting-the-scene");
+                  setOpen(!open);
+                }}
+                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
+              >
+                Setting the scene
+              </button>
+            </div>
+          )}
+
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setQuarterOptions(!quarterOptions)}

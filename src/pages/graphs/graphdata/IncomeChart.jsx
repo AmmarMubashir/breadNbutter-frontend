@@ -2,7 +2,7 @@
 // import MyChart from "./MyChart";
 // import { chartData } from "./IncomeChartData.js";
 
-import MyResponsiveBar from "./MyChart";
+import MyResponsiveBar from "../MyChart";
 
 // const IncomeChart = () => {
 //   return (
@@ -16,7 +16,7 @@ import MyResponsiveBar from "./MyChart";
 
 // import { data } from "./IncomeChartData";
 // import { useEffect, useState } from "react";
-import { useGetGraphData } from "../../api/MyGraphApi";
+import { useGetGraphData } from "../../../api/MyGraphApi";
 import { useEffect, useState } from "react";
 
 const IncomeChart = () => {
@@ -42,7 +42,7 @@ const IncomeChart = () => {
       email: item.email,
       Expenditure: item.Expenditure,
       "Additional Cost": item["Additional Cost"],
-      "Extra cost from opportunities": item["Extra cost from opportunities"],
+      "Costs from activities": item["Costs from activities"],
       "Expenses from opportunities": item["Expenses from opportunities"],
     }));
 

@@ -1,7 +1,6 @@
 import React from "react";
 import AdminNav from "../components/AdminNav";
-import IncomeChart from "../component/IncomeChart";
-import RevenueChart from "../component/RevenueChart";
+import RevenueChart from "../graphs/graphdata/RevenueChart";
 
 const Revenue = () => {
   return (

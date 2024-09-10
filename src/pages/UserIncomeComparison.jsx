@@ -41,9 +41,9 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[0]["Income"]["Additional income"],
       },
       {
-        id: "Extra income from opportunities",
-        "Extra income from opportunities":
-          incomeStatement[0]["Income"]["Extra income from opportunities"],
+        id: "Income from activities",
+        "Income from activities":
+          incomeStatement[0]["Income"]["Income from activities"],
       },
 
       {
@@ -53,7 +53,7 @@ const UserIncomeComparison = () => {
           incomeStatement[0]["Income"]["Income from opportunities"] +
           incomeStatement[0]["Income"]["Sales from Home"] +
           incomeStatement[0]["Income"]["Additional income"] +
-          incomeStatement[0]["Income"]["Extra income from opportunities"],
+          incomeStatement[0]["Income"]["Income from activities"],
       },
     ];
   }
@@ -76,9 +76,9 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[1]["Income"]["Additional income"],
       },
       {
-        id: "Extra income from opportunities",
-        "Extra income from opportunities":
-          incomeStatement[1]["Income"]["Extra income from opportunities"],
+        id: "Income from activities",
+        "Income from activities":
+          incomeStatement[1]["Income"]["Income from activities"],
       },
 
       {
@@ -88,7 +88,7 @@ const UserIncomeComparison = () => {
           incomeStatement[1]["Income"]["Income from opportunities"] +
           incomeStatement[1]["Income"]["Sales from Home"] +
           incomeStatement[1]["Income"]["Additional income"] +
-          incomeStatement[1]["Income"]["Extra income from opportunities"],
+          incomeStatement[1]["Income"]["Income from activities"],
       },
     ];
   }
@@ -111,9 +111,9 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[2]["Income"]["Additional income"],
       },
       {
-        id: "Extra income from opportunities",
-        "Extra income from opportunities":
-          incomeStatement[2]["Income"]["Extra income from opportunities"],
+        id: "Income from activities",
+        "Income from activities":
+          incomeStatement[2]["Income"]["Income from activities"],
       },
 
       {
@@ -123,7 +123,7 @@ const UserIncomeComparison = () => {
           incomeStatement[2]["Income"]["Income from opportunities"] +
           incomeStatement[2]["Income"]["Sales from Home"] +
           incomeStatement[2]["Income"]["Additional income"] +
-          incomeStatement[2]["Income"]["Extra income from opportunities"],
+          incomeStatement[2]["Income"]["Income from activities"],
       },
     ];
   }
@@ -146,9 +146,9 @@ const UserIncomeComparison = () => {
         "Additional Income": incomeStatement[3]["Income"]["Additional income"],
       },
       {
-        id: "Extra income from opportunities",
-        "Extra income from opportunities":
-          incomeStatement[3]["Income"]["Extra income from opportunities"],
+        id: "Income from activities",
+        "Income from activities":
+          incomeStatement[3]["Income"]["Income from activities"],
       },
 
       {
@@ -158,7 +158,7 @@ const UserIncomeComparison = () => {
           incomeStatement[3]["Income"]["Income from opportunities"] +
           incomeStatement[3]["Income"]["Sales from Home"] +
           incomeStatement[3]["Income"]["Additional income"] +
-          incomeStatement[3]["Income"]["Extra income from opportunities"],
+          incomeStatement[3]["Income"]["Income from activities"],
       },
     ];
   }
@@ -190,7 +190,7 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
-                    "Extra income from opportunities",
+                    "Income from activities",
 
                     "Total Income",
                   ]}
@@ -262,8 +262,8 @@ const UserIncomeComparison = () => {
                           color: colorsPattern[2],
                         },
                         {
-                          id: "Extra income from opportunities",
-                          label: "Extra income from opportunities",
+                          id: "Income from activities",
+                          label: "Income from activities",
                           color: colorsPattern[3],
                         },
                         {
@@ -308,7 +308,7 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
-                    "Extra income from opportunities",
+                    "Income from activities",
 
                     "Total Income",
                   ]}
@@ -375,8 +375,8 @@ const UserIncomeComparison = () => {
                           color: colorsPattern[2],
                         },
                         {
-                          id: "Extra income from opportunities",
-                          label: "Extra income from opportunities",
+                          id: "Income from activities",
+                          label: "Income from activities",
                           color: colorsPattern[3],
                         },
                         {
@@ -421,7 +421,7 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
-                    "Extra income from opportunities",
+                    "Income from activities",
 
                     "Total Income",
                   ]}
@@ -489,8 +489,8 @@ const UserIncomeComparison = () => {
                           color: colorsPattern[2],
                         },
                         {
-                          id: "Extra income from opportunities",
-                          label: "Extra income from opportunities",
+                          id: "Income from activities",
+                          label: "Income from activities",
                           color: colorsPattern[3],
                         },
                         {
@@ -535,7 +535,7 @@ const UserIncomeComparison = () => {
                     "Income from opportunities",
                     "Sales from Home",
                     "Additional Income",
-                    "Extra income from opportunities",
+                    "Income from activities",
 
                     "Total Income",
                   ]}
@@ -603,8 +603,8 @@ const UserIncomeComparison = () => {
                           color: colorsPattern[2],
                         },
                         {
-                          id: "Extra income from opportunities",
-                          label: "Extra income from opportunities",
+                          id: "Income from activities",
+                          label: "Income from activities",
                           color: colorsPattern[3],
                         },
                         {

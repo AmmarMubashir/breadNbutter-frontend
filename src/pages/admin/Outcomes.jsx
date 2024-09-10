@@ -1,6 +1,6 @@
 import React from "react";
 import AdminNav from "../components/AdminNav";
-import OutcomesData from "../component/OutcomesData";
+import OutcomesData from "../graphs/graphdata/OutcomesData";
 
 const Outcomes = () => {
   return (

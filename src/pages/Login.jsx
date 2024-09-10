@@ -16,17 +16,26 @@ const Login = () => {
 
   const loginHandler = async (e) => {
     e.preventDefault();
-    login(inputs);
+    const data = await login(inputs);
+    if (data) {
+      // console.log(data);
+      if (data.data.role === "admin") {
+        navigate("/admin/dashboard");
+      } else {
+        navigate("/introduction");
+      }
+    }
   };
   useEffect(() => {
     if (authUser) {
+      console.log(authUser);
       navigate("/introduction");
     }
   }, []);
   useEffect(() => {
     if (isSuccess) {
       toast.success("User logged in successfully!");
-      navigate("/introduction");
+      // navigate("/introduction");
 
       setInputs({ email: "", password: "" });
       setAuthUser(true);

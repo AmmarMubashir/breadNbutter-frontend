@@ -1,10 +1,27 @@
 import { ResponsiveBar } from "@nivo/bar";
-const ExtraIncomeOpportunitiesChart = ({ data }) => {
+const OutcomesChart = ({ data }) => {
   console.log(data);
-  const income = data.map((item) => item["Extra income from opportunities"]); // Extract all cost values
+  //   console.log(maxExpense);
 
-  const minIncome = Math.min(...income);
-  const maxIncome = Math.max(...income);
+  const newData = data.map((item) => ({
+    name: item.name,
+    email: item.email,
+    Outcomes: item.Income - item.Expenditure,
+  }));
+
+  //   const newData = [
+  //     { name: "Quarter 1", Outcomes: 5000 },
+  //     { name: "Quarter 2", Outcomes: -10000 },
+  //     { name: "Quarter 3", Outcomes: 15000 },
+  //     { name: "Quarter 4", Outcomes: 20000 },
+  //   ];
+
+  const outcomes = newData.map((item) => item["Outcomes"]); // Extract all cost values
+
+  const minOutcomes = Math.min(...outcomes);
+  const maxOutcomes = Math.max(...outcomes);
+
+  //   console.log(maxOutcomes);
 
   const colorsPattern = [
     "#FF6F6180",
@@ -17,16 +34,15 @@ const ExtraIncomeOpportunitiesChart = ({ data }) => {
   return (
     <div className="h-[70vh] w-[100%]">
       <ResponsiveBar
-        data={data}
-        keys={["Extra income from opportunities"]}
+        data={newData}
+        keys={["Outcomes"]}
         indexBy="name"
         margin={{ top: 50, right: 10, bottom: 50, left: 60 }}
         padding={0.3}
-        minValue={-100}
-        maxValue={maxIncome + 1000}
+        minValue={minOutcomes < 0 ? minOutcomes - 2000 : -100}
+        maxValue={maxOutcomes > 0 ? maxOutcomes + 2000 : 1000}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
-        // colors="#fff8d8"
         colors={({ index }) => colorsPattern[index % colorsPattern.length]}
         defs={[
           {
@@ -72,16 +88,16 @@ const ExtraIncomeOpportunitiesChart = ({ data }) => {
           tickSize: 5,
           tickPadding: 10,
           tickRotation: 0,
-          legend: "Teams",
+
           legendPosition: "middle",
           legendOffset: 40,
           truncateTickAt: 0,
         }}
         axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
+          tickSize: 0,
+          tickPadding: 0,
           tickRotation: 0,
-          legend: "Extra income from opportunities",
+          format: (value) => `£${value}`,
           legendPosition: "middle",
           legendOffset: -50,
           truncateTickAt: 0,
@@ -95,9 +111,19 @@ const ExtraIncomeOpportunitiesChart = ({ data }) => {
         barAriaLabel={(e) =>
           e.id + ": " + e.formattedValue + " in cost: " + e.indexValue
         }
+        theme={{
+          axis: {
+            ticks: {
+              text: {
+                fontSize: 14, // Increase the font size
+                fontWeight: "bold", // Make the text bold
+              },
+            },
+          },
+        }}
       />
     </div>
   );
 };
 
-export default ExtraIncomeOpportunitiesChart;
+export default OutcomesChart;

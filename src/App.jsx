@@ -25,12 +25,12 @@ import MemberRoles from "./pages/MemberRoles";
 import MemberRolesDetails from "./pages/MemberRolesDetails.jsx";
 
 import Dashboard from "./pages/admin/Dashboard";
-import IncomeFromOpportunities from "./pages/admin/IncomeFromOpportunities";
+// import IncomeFromOpportunities from "./pages/admin/IncomeFromOpportunities";
 import UserCostComparison from "./pages/UserCostComparison";
 // import ExpensesFromOpportunities from "./pages/admin/ExpensesFromOpportunities";
 // import AdditionalExpenses from "./pages/admin/AdditionalExpenses";
 // import ExtraCostOpportunities from "./pages/admin/ExtraCostOpportunities";
-import ExtraIncomeOpportunities from "./pages/admin/ExtraIncomeOpportunities.jsx";
+// import ExtraIncomeOpportunities from "./pages/admin/ExtraIncomeOpportunities.jsx";
 import Revenue from "./pages/admin/Revenue";
 import UpdateQuarter1Info from "./pages/admin/UpdateQuarter1Info";
 import UpdateQuarter2Info from "./pages/admin/UpdateQuarter2Info";
@@ -46,7 +46,7 @@ import Quarter4 from "./pages/Quarters/Quarter4";
 import Quarter4EmployeeInfo from "./pages/QuartersEmployeeInfo/Quarter4EmployeeInfo";
 import UpdateQuarter4Info from "./pages/admin/UpdateQuarter4Info";
 import ResetPassword from "./pages/ResetPassword";
-import AdditionalIncome from "./pages/admin/AdditionalIncome";
+// import AdditionalIncome from "./pages/admin/AdditionalIncome";
 import Quarter1Completion from "./pages/Quarter1Completion.jsx";
 import Quarter2Completion from "./pages/Quarter2Completion.jsx";
 import Quarter3Completion from "./pages/Quarter3Completion.jsx";
@@ -137,7 +137,7 @@ function App() {
           path="/admin/expensesFromOpportunities"
           element={<ExpensesFromOpportunities />}
         /> */}
-        <Route path="/admin/additionalIncome" element={<AdditionalIncome />} />
+        {/* <Route path="/admin/additionalIncome" element={<AdditionalIncome />} /> */}
         {/* <Route
           path="/admin/extraIncomeOpportunities"
           element={<ExtraIncomeOpportunities />}

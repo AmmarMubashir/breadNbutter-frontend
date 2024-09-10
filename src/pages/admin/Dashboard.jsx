@@ -1,6 +1,6 @@
 import React from "react";
 import AdminNav from "../components/AdminNav";
-import IncomeChart from "../component/IncomeChart";
+import IncomeChart from "../graphs/graphdata/IncomeChart";
 
 const Dashboard = () => {
   return (

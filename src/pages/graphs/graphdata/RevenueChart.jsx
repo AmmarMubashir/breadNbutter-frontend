@@ -1,6 +1,6 @@
-import { useGetGraphData } from "../../api/MyGraphApi";
+import { useGetGraphData } from "../../../api/MyGraphApi";
 import { useEffect, useState } from "react";
-import MyRevenueChart from "./MyRevenueChart";
+import MyRevenueChart from "../MyRevenueChart";
 // import AdditionalIncomeData from "./AdditionalIncomeData";
 // import AdditionalCostOpportunitiesData from "./AdditionalIncomeOpportunitiesData";
 // import IncomeOpportunities from "./IncomeOpportunities";
@@ -27,8 +27,7 @@ const RevenueChart = () => {
       email: item.email,
       Income: item.Income,
       "Additional Income": item["Additional Income"],
-      "Extra income from opportunities":
-        item["Extra income from opportunities"],
+      "Income from activities": item["Income from activities"],
       "Income from opportunities": item["Income from opportunities"],
     }));
     // console.log(data);

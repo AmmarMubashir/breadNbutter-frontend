@@ -77,6 +77,8 @@ export const useLoggedMyUser = () => {
     localStorage.setItem("breadUser", JSON.stringify(data.data));
     localStorage.setItem("breadToken", data.token);
     setAuthUser(data);
+
+    return data;
   };
 
   const {

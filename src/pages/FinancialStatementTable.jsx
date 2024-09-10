@@ -50,179 +50,16 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
     fetchIncomeData();
   }, []);
 
-  let cashflow = [];
-  // if (incomeStatementD) {
-  //   // console.log("NEWW", incomeStatementD);
-  //   cashflow = [
-  //     {
-  //       "Income at Start": 350,
-  //       "Profit(Loss)":
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         Math.floor(
-  //           incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //         ),
-  //       "Income at end":
-  //         350 +
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         Math.floor(
-  //           incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //         ),
-  //     },
-  //   ];
-
-  //   cashflow = [
-  //     ...cashflow,
-  //     {
-  //       "Income at Start": cashflow[0]["Income at end"],
-  //       "Profit(Loss)":
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         Math.floor(
-  //           incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //         ),
-  //       "Income at end":
-  //         cashflow[0]["Income at end"] +
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         Math.floor(
-  //           incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //         ),
-  //     },
-  //   ];
-
-  //   cashflow = [
-  //     ...cashflow,
-  //     {
-  //       "Income at Start": cashflow[1]["Income at end"],
-  //       "Profit(Loss)":
-  //         incomeStatementD[0].Income["Total Income"] -
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
-  //           Math.floor(
-  //             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //           ) -
-  //           Math.floor(
-  //             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //           )),
-
-  //       "Income at end":
-  //         cashflow[1]["Income at end"] +
-  //         incomeStatementD[0].Income["Total Income"] -
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         Math.floor(incomeStatementD[0].Income["Total Income"] / 3) -
-  //         (incomeStatementD[0]["Expenditure"]["Total Expenditure"] -
-  //           Math.floor(
-  //             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //           ) -
-  //           Math.floor(
-  //             incomeStatementD[0]["Expenditure"]["Total Expenditure"] / 3
-  //           )),
-  //     },
-  //   ];
-
-  //   if (incomeStatementD[1]) {
-  //     cashflow = [
-  //       ...cashflow,
-  //       {
-  //         "Income at Start": cashflow[2]["Income at end"],
-  //         "Profit(Loss)":
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           Math.floor(
-  //             incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //           ),
-  //         "Income at end":
-  //           cashflow[2]["Income at end"] +
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           Math.floor(
-  //             incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //           ),
-  //       },
-  //     ];
-
-  //     cashflow = [
-  //       ...cashflow,
-  //       {
-  //         "Income at Start": cashflow[3]["Income at end"],
-  //         "Profit(Loss)":
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           Math.floor(
-  //             incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //           ),
-  //         "Income at end":
-  //           cashflow[3]["Income at end"] +
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           Math.floor(
-  //             incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //           ),
-  //       },
-  //     ];
-
-  //     cashflow = [
-  //       ...cashflow,
-  //       {
-  //         "Income at Start": cashflow[4]["Income at end"],
-  //         "Profit(Loss)":
-  //           incomeStatementD[1].Income["Total Income"] -
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
-  //             Math.floor(
-  //               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //             ) -
-  //             Math.floor(
-  //               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //             )),
-
-  //         "Income at end":
-  //           cashflow[4]["Income at end"] +
-  //           incomeStatementD[1].Income["Total Income"] -
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           Math.floor(incomeStatementD[1].Income["Total Income"] / 3) -
-  //           (incomeStatementD[1]["Expenditure"]["Total Expenditure"] -
-  //             Math.floor(
-  //               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //             ) -
-  //             Math.floor(
-  //               incomeStatementD[1]["Expenditure"]["Total Expenditure"] / 3
-  //             )),
-  //       },
-  //     ];
-  //   }
-
-  //   console.log(cashflow);
-  // }
-
-  // const headers = [
-  //   { label: "", key: "field" },
-  //   { label: "Quarter 1", key: "value" },
-  //   { label: "Extra 1", key: "value1" },
-  //   { label: "Extra 2", key: "value2" },
-  //   { label: "Extra 3", key: "value3" },
-  // ];
-
-  // // Define the data structure to match the table layout
-  // const data = [
-  //   {
-  //     field: "Team Name",
-  //     value: startupData.name,
-  //     value1: "checking",
-  //     value2: "checking",
-  //     value3: "checking",
-  //   },
-  //   { field: "No. of members", value: startupData.members },
-  //   { field: "Location", value: startupData.location },
-  //   { field: "Budget", value: startupData.budjet },
-  // ];
-
   return (
-    <div>
-      <div className="md:hidden block">
-        <RightNav />
-      </div>
-      <div className="hidden md:block pt-6 ml-4">
+    <div className="w-[100%] h-[100vh]  flex">
+      {/* <div className="md:hidden block"> */}
+      <RightNav />
+      {/* </div> */}
+      {/* <div className="hidden md:block pt-6 ml-4">
         <button onClick={() => navigate("/introduction")}>
           <IoArrowBack className="text-black text-[2rem] " />
         </button>
-      </div>
+      </div> */}
       {quarter1 === undefined && (
         <div className="md:py-4 py-[4rem]">
           <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
@@ -234,8 +71,8 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
       )}
       {quarter1 && (
         <div className="w-[100%] flex flex-col gap-1 justify-center items-center md:mx-auto pt-4">
-          <div className="mt-7">
-            <h1 className="font-bold pt-4 text-[1.4rem]">
+          <div className="mt-4">
+            <h1 className="font-bold pt-2 text-[1.4rem]">
               Financial Statement
             </h1>
           </div>
@@ -370,9 +207,9 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
           )} */}
 
           {incomeStatementD && (
-            <div className="w-[100%] overflow-auto">
-              <table className="w-[70%] mx-auto bg-white border mb-7   shadow-md rounded-lg overflow-hidden">
-                <div className="px-4 py-2 font-bold">Income Statement:</div>
+            <div className="w-[95%] md:w-[85%] overflow-auto">
+              <table className="w-[100%] mx-auto bg-white border mb-7   shadow-md rounded-lg overflow-hidden">
+                <div className="px-4 py-1 font-bold">Income Statement:</div>
                 <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                   <td className="py-2 px-4 border-b text-center">{null}</td>
                   <td className="py-2 px-4 border-b text-center font-bold">
