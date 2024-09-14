@@ -844,24 +844,50 @@ const UserFinanceStatement = ({ id }) => {
                       key={key}
                       className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                     >
-                      <td className=" px-4 py-2 text-nowrap">{key}</td>
+                      <td
+                        className={`px-4 py-2 text-nowrap ${
+                          key === "Total Income"
+                            ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                            : ``
+                        }`}
+                      >
+                        {key}
+                      </td>
                       {/* <td className="border px-4 py-2">{value}</td> */}
                       {incomeStatementD.map((item, index) => {
                         return (
                           <>
                             {/* {quarter2Data && index === 0 && ( */}
                             <>
-                              <td className="px-4 py-2 text-center">
+                              <td
+                                className={`px-4 py-2 text-center ${
+                                  key === "Total Income"
+                                    ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                    : ``
+                                }`}
+                              >
                                 {Math.floor(
                                   incomeStatementD[index].Income[key] / 3
                                 )}
                               </td>
-                              <td className="px-4 py-2 text-center">
+                              <td
+                                className={`px-4 py-2 text-center ${
+                                  key === "Total Income"
+                                    ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                    : ``
+                                }`}
+                              >
                                 {Math.floor(
                                   incomeStatementD[index].Income[key] / 3
                                 )}
                               </td>
-                              <td className="px-4 py-2 text-center">
+                              <td
+                                className={`px-4 py-2 text-center ${
+                                  key === "Total Income"
+                                    ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                    : ``
+                                }`}
+                              >
                                 {incomeStatementD[index].Income[key] -
                                   Math.floor(
                                     incomeStatementD[index].Income[key] / 3
@@ -874,7 +900,13 @@ const UserFinanceStatement = ({ id }) => {
                           </>
                         );
                       })}
-                      <td className={`py-2 px-4 border-b text-center`}>
+                      <td
+                        className={`py-2 px-4 border-b text-center ${
+                          key === "Total Income"
+                            ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                            : ``
+                        }`}
+                      >
                         {incomeStatementD.reduce(
                           (acc, current) => acc + current["Income"][key],
                           0
@@ -890,7 +922,15 @@ const UserFinanceStatement = ({ id }) => {
                       key={key}
                       className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300"
                     >
-                      <td className=" px-4 py-2 text-nowrap">{key}</td>
+                      <td
+                        className={`px-4 py-2 text-nowrap ${
+                          key === "Total Expenditure"
+                            ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                            : ``
+                        }`}
+                      >
+                        {key}
+                      </td>
                       {/* <td className="border px-4 py-2">{value}</td> */}
                       {incomeStatementD.map((item, index) => {
                         // if (index === 0) {
@@ -899,6 +939,10 @@ const UserFinanceStatement = ({ id }) => {
                             <td
                               className={`py-2 px-4 border-b text-center ${
                                 item.Revenue < 0 ? `text-red-500` : ""
+                              } ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
                               }`}
                             >
                               {Math.floor(
@@ -908,6 +952,10 @@ const UserFinanceStatement = ({ id }) => {
                             <td
                               className={`py-2 px-4 border-b text-center ${
                                 item.Revenue < 0 ? `text-red-500` : ""
+                              } ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
                               }`}
                             >
                               {Math.floor(
@@ -928,6 +976,10 @@ const UserFinanceStatement = ({ id }) => {
                             <td
                               className={`py-2 px-4 border-b text-center ${
                                 item.Revenue < 0 ? `text-red-500` : ""
+                              } ${
+                                key === "Total Expenditure"
+                                  ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                                  : ``
                               }`}
                             >
                               {
@@ -950,7 +1002,13 @@ const UserFinanceStatement = ({ id }) => {
                         );
                         // }
                       })}
-                      <td className={`py-2 px-4 border-b text-center`}>
+                      <td
+                        className={`py-2 px-4 border-b text-center ${
+                          key === "Total Expenditure"
+                            ? `font-bold px-1 text-[#1B375F] border-b-[2px] border-t-[2px] border-black bg-gray-300`
+                            : ``
+                        }`}
+                      >
                         {incomeStatementD.reduce(
                           (acc, current) => acc + current["Expenditure"][key],
                           0
