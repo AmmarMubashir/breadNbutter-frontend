@@ -130,46 +130,6 @@ const RightNav = () => {
       <div className="w-[200px] lg:w-[240px] h-[100vh] bg-white border-r-[5px] border-[#1B375F] py-6 hidden md:flex flex-col gap-[2rem]">
         <img src={Logo} width="170px" />
         <div className="w-full">
-          {/* <button
-            onClick={() => navigate("/financialStatement")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Income Statement
-          </button> */}
-          {/* <select
-            name="quarters"
-            id="quarters"
-            onChange={handleSelectChange}
-            className="w-full"
-          >
-            <option>Financial Statements</option>
-            <option value="/financialStatement">Income Statement</option>
-            <option value="/cashflow">Cashflow</option>
-          </select> */}
-          {/* <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => {
-              navigate("/introduction");
-            }}
-          >
-            Introduction
-          </button>
-          <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => {
-              navigate("/about-game");
-            }}
-          >
-            About Game
-          </button>
-          <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => {
-              navigate("/setting-the-scene");
-            }}
-          >
-            Setting the scene
-          </button> */}
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setIntroOptions(!introOptions)}
@@ -331,24 +291,7 @@ const RightNav = () => {
               >
                 Activities
               </button>
-              <button
-                onClick={() => {
-                  navigate("/resources/pdf");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                pdf
-              </button>
-              <button
-                onClick={() => {
-                  navigate("/resources/presentation");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                Presentation
-              </button>
+
               <button
                 onClick={() => {
                   navigate("/resources/videos");
@@ -397,50 +340,6 @@ const RightNav = () => {
               </button>
             </div>
           )}
-
-          {/* <select
-            name="quarters"
-            id="quarters"
-            onChange={handleNavigation}
-            className="w-full"
-          >
-            <option>Quarters</option>
-            <option value="/startup">Startup</option>
-            <option value="/quarter1" disabled={startup}>
-              Quarter1
-            </option>
-            <option value="/quarter3" disabled={quarter1}>
-              Quarter3
-            </option>
-            <option value="/quarter4" disabled={true}>
-              Quarter4
-            </option>
-          </select> */}
-
-          {/* <button
-            onClick={() => navigate("/admin/users")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            User List
-          </button> */}
-          {/* <button
-            onClick={() => navigate("/admin/incomeStatement")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            >
-            Update Income Statement
-            </button>
-            <button
-            onClick={() => navigate("/admin/quarter1")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 2
-          </button>
-          <button
-            onClick={() => navigate("/admin/quarter3")}
-            className="w-full px-2 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-          >
-            Update Quarter 3
-          </button> */}
         </div>
         <div className="w-full mt-auto">
           {isAdmin && (
@@ -478,43 +377,6 @@ const RightNav = () => {
         />
         <img src={Logo} width="180px" />
         <div className="w-full mt-4 flex flex-col">
-          {/* <button
-            onClick={() => {
-              navigate("/financialStatement");
-              setOpen(!open);
-            }}
-            className="py-2 px-2 bg-[#1b375f] text-white text-start border-b-2 border-white w-full"
-          >
-            Income statement
-          </button> */}
-          {/* <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => {
-              navigate("/introduction");
-              setOpen(!open);
-            }}
-          >
-            Introduction
-          </button>
-          <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => {
-              navigate("/about-game");
-              setOpen(!open);
-            }}
-          >
-            About Game
-          </button>
-          <button
-            className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-            onClick={() => {
-              navigate("/setting-the-scene");
-              setOpen(!open);
-            }}
-          >
-            Setting the scene
-          </button> */}
-
           <button
             className="w-full px-2 py-2 flex justify-between items-center bg-[#1B375F] text-white border-b-[2px] border-white text-start"
             onClick={() => setIntroOptions(!introOptions)}
@@ -539,7 +401,7 @@ const RightNav = () => {
                 }}
                 className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
               >
-                ABout game
+                About game
               </button>
               <button
                 onClick={() => {
@@ -678,24 +540,7 @@ const RightNav = () => {
               >
                 Activities
               </button>
-              <button
-                onClick={() => {
-                  navigate("/resources/pdf");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                pdf
-              </button>
-              <button
-                onClick={() => {
-                  navigate("/resources/presentation");
-                  setOpen(!open);
-                }}
-                className="w-full px-2 pl-6 py-2 bg-[#1B375F] text-white border-b-[2px] border-white text-start"
-              >
-                Presentation
-              </button>
+
               <button
                 onClick={() => {
                   navigate("/resources/videos");

@@ -6,20 +6,16 @@ import { Link } from "react-router-dom";
 const ResourcesVideos = () => {
   const videoData = [
     {
-      title: "Quarters Fill",
-      url: "https://drive.google.com/file/d/1ybX93eW0ddL8C6pVsAz6IBcnyJ9sdpYk/view?usp=sharing",
+      title: "Business Plan",
+      url: "https://drive.google.com/file/d/1_P0_qkn6YKFE3Um8ileB1VnQwY8drcIT/view?usp=sharing",
     },
     {
-      title: "Quarters Fill",
-      url: "https://drive.google.com/file/d/1ybX93eW0ddL8C6pVsAz6IBcnyJ9sdpYk/view?usp=sharing",
+      title: "Business Structure",
+      url: "https://drive.google.com/file/d/1hnPDONyV2rv7FZSH5C2XuErrtY6uo3FF/view?usp=sharing",
     },
     {
-      title: "Quarters Fill",
-      url: "https://drive.google.com/file/d/1ybX93eW0ddL8C6pVsAz6IBcnyJ9sdpYk/view?usp=sharing",
-    },
-    {
-      title: "Quarters Fill",
-      url: "https://drive.google.com/file/d/1ybX93eW0ddL8C6pVsAz6IBcnyJ9sdpYk/view?usp=sharing",
+      title: "Tips for Startups",
+      url: "https://drive.google.com/file/d/1bTimjsisI9RVV_J7C3j6leocA4wRb5Jg/view?usp=sharing",
     },
   ];
 

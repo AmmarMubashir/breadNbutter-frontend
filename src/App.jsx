@@ -10,8 +10,7 @@ import Quarter2 from "./pages/Quarter2";
 import StartupDetails from "./pages/StartupDetails";
 import Quarter1Detail from "./pages/Quarter1Detail";
 import Quarter2Detail from "./pages/Quarter2Detail";
-import ResourcesPresentation from "./pages/ResourcesPresentation";
-import ResourcesPdf from "./pages/ResourcesPdf";
+
 import ResourcesVideos from "./pages/ResourcesVideos";
 import Cashflow from "./pages/Cashflow";
 import FinancialStatement from "./pages/FinancialStatement";
@@ -104,11 +103,7 @@ function App() {
         <Route path="/quarter4" element={<Quarter4 />} />
         <Route path="/quarter4/:id" element={<Quarter4Details />} />
         <Route path="/quarter4Completion" element={<Quarter4Completion />} />
-        <Route
-          path="/resources/presentation"
-          element={<ResourcesPresentation />}
-        />
-        <Route path="/resources/pdf" element={<ResourcesPdf />} />
+
         <Route path="/resources/videos" element={<ResourcesVideos />} />
         <Route path="/cashflow" element={<Cashflow />} />
         <Route path="/quarter1EmpInfo" element={<Quarter1EmployeeInfo />} />
