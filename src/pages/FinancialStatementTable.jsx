@@ -61,8 +61,8 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
         </button>
       </div> */}
       {quarter1 === undefined && (
-        <div className="md:py-4 py-[4rem]">
-          <div className="w-[95%] md:w-[85%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
+        <div className="md:py-4 py-[4rem] w-[85%]">
+          <div className="w-[95%] md:w-[95%] mx-auto mb-3 min-h-[200px] bg-[#ffffff31] flex justify-center items-center">
             <p className="text-center text-[1.4rem]">
               Financial Statement goes here when you fill quarters...
             </p>
@@ -76,135 +76,6 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
               Financial Statement
             </h1>
           </div>
-
-          {/* <div className="md:w-[70%] w-[95%] mx-auto">
-            <div className="w-[100%] mx-auto py-2 px-3 md:px-4 bg-white rounded font-bold flex gap-3">
-              Quarter 1 :
-            </div>
-            <table className="w-[100%] bg-white border  shadow-md rounded-lg overflow-hidden">
-              <thead className="bg-gray-300">
-                <tr>
-                  <th className="py-2 px-3 md:px-4 border-b">Name</th>
-                  <th className="py-2 px-3 md:px-4 border-b">Members</th>
-                  <th className="py-2 px-3 md:px-4 border-b">Location</th>
-                  <th className="py-2 px-3 md:px-4 border-b">Budget</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b-[2px] border-gray-300 hover:bg-gray-300 cursor-pointer">
-                  <td className="py-2 px-4 border-b text-center">
-                    {quarter1 && quarter1.name}
-                  </td>
-                  <td className="py-2 px-4 border-b text-center">
-                    {quarter1 && quarter1.members}
-                  </td>
-                  <td className="py-2 px-4 border-b text-center">
-                    {quarter1 && quarter1.location}
-                  </td>
-                  <td className="py-2 px-4 border-b text-center">
-                    {quarter1 && quarter1.budjet} $
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          {quarter2 && (
-            <div className="w-[95%] md:w-[70%]">
-              <div className="w-[100%] mx-auto py-2 px-3 md:px-4 bg-white rounded font-bold flex gap-3">
-                Quarter 2 :
-              </div>
-              <table className="w-[100%] bg-white border  shadow-md rounded-lg overflow-hidden">
-                <thead className="bg-gray-300">
-                  <tr>
-                    <th className="py-2 px-3 md:px-4 border-b">Selected</th>
-                    <th className="py-2 px-3 md:px-4 border-b">Cost</th>
-                    <th className="py-2 px-3 md:px-4 border-b">Other Cost</th>
-                    <th className="py-2 px-3 md:px-4 border-b">Income</th>
-                    <th className="py-2 px-3 md:px-4 border-b">Net Profit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b-[2px] border-gray-300 hover:bg-gray-300 cursor-pointer">
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option1.selected ? (
-                        <TiTick className="text-green-500 mx-auto text-2xl" />
-                      ) : (
-                        <RxCross2 className="text-red-500 mx-auto text-2xl" />
-                      )}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option1.cost}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option1.otherCost}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option1.income}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option1.netProfit}
-                    </td>
-                  </tr>
-                  <tr className="border-b-[2px] border-gray-300 hover:bg-gray-300 cursor-pointer">
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option2.selected ? (
-                        <TiTick className="text-green-500 mx-auto text-2xl" />
-                      ) : (
-                        <RxCross2 className="text-red-500 mx-auto text-2xl" />
-                      )}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option2.cost}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option2.otherCost}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option2.income}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option2.netProfit}
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option3.selected ? (
-                        <TiTick className="text-green-500 mx-auto text-2xl" />
-                      ) : (
-                        <RxCross2 className="text-red-500 mx-auto text-2xl" />
-                      )}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option3.cost}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option3.otherCost}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option3.income}
-                    </td>
-                    <td className="py-2 px-4 border-b text-center">
-                      {quarter2 && quarter2.option3.netProfit}
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
-                    <td className="py-2 px-4 border-b text-center ">{null}</td>
-                    <td className="py-2 px-4 border-b text-center ">{null}</td>
-                    <td className="py-2 px-4 border-b text-center ">{null}</td>
-                    <td className="py-2 px-4 border-b text-center ">{null}</td>
-
-                    <td className="py-2 px-4 border-b text-center ">
-                      {quarter2 && quarter2.totalProfit}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div className="hover:bg-gray-300 cursor-pointer w-[100%] mx-auto py-2 px-3 md:px-4 bg-white rounded  flex gap-3">
-                <strong>Event:</strong> {quarter2.event}
-              </div>
-            </div>
-          )} */}
 
           {incomeStatementD && (
             <div className="w-[95%] md:w-[85%] overflow-auto">
@@ -556,9 +427,7 @@ const MyComponent = ({ startupData, quarter2Data, quarter1, quarter2 }) => {
                             key === "_id" ||
                             key === "EBITIDA" ||
                             key === "EBIT" ||
-                            key === "Depreciation" ||
                             key === "Use Of Net Operating Loss" ||
-                            key === "Interest" ||
                             key === "Net Operating Loss" ||
                             key === "Income Tax Expense"
                           ) {

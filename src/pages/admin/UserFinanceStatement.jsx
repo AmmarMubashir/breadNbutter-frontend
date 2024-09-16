@@ -630,8 +630,6 @@ const UserFinanceStatement = ({ id }) => {
                       key === "_id" ||
                       key === "EBITIDA" ||
                       key === "EBIT" ||
-                      key === "Depreciation" ||
-                      key === "Interest" ||
                       key === "Use Of Net Operating Loss" ||
                       key === "Net Operating Loss" ||
                       key === "Income Tax Expense"
