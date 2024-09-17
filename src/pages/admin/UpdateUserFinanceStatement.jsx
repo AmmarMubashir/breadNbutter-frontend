@@ -104,17 +104,15 @@ const UpdateUserFinanceStatement = () => {
                         <div className="flex flex-1 flex-col gap-6">
                           <div className="flex flex-col flex-1 items-start gap-2">
                             <label htmlFor="extraIncome">
-                              Extra income from opportunities:
+                              Income from activities:
                             </label>
                             <input
                               type="number"
-                              value={
-                                item.Income["Extra income from opportunities"]
-                              }
+                              value={item.Income["Income from activities"]}
                               onChange={(e) =>
                                 handleRevenueChange(
                                   index,
-                                  "Extra income from opportunities",
+                                  "Income from activities",
                                   e
                                 )
                               }
@@ -149,19 +147,15 @@ const UpdateUserFinanceStatement = () => {
                         <div className="flex flex-1 flex-col gap-6">
                           <div className="flex flex-col flex-1 items-start gap-2">
                             <label htmlFor="extraIncome">
-                              Extra cost from opportunities:
+                              Costs from activities:
                             </label>
                             <input
                               type="number"
-                              value={
-                                item.Expenditure[
-                                  "Extra cost from opportunities"
-                                ]
-                              }
+                              value={item.Expenditure["Costs from activities"]}
                               onChange={(e) =>
                                 handleCostChange(
                                   index,
-                                  "Extra cost from opportunities",
+                                  "Costs from activities",
                                   e
                                 )
                               }

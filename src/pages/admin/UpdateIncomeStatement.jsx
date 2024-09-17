@@ -36,11 +36,6 @@ const UpdateIncomeStatement = () => {
     newIncomeData[index]["Expenditure"][key] = +event.target.value;
     setIncomeData(newIncomeData);
   };
-  const handleDepreciationChange = (index, event) => {
-    const newIncomeData = [...incomeData];
-    newIncomeData[index].Depreciation = +event.target.value;
-    setIncomeData(newIncomeData);
-  };
 
   let data1;
   const handleUpdateChange = async () => {
@@ -195,24 +190,6 @@ const UpdateIncomeStatement = () => {
                       )
                     )}
                     {/* Depreciation */}
-                    {
-                      <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
-                        <td className="py-2 px-4 border-b">Depreciation</td>
-                        {incomeData.map((item, index) => (
-                          <td className="py-2 px-4 border-b text-center">
-                            <input
-                              className={`border-none outline-none w-[50px] text-center px-1 bg-gray-300 rounded disabled:cursor-not-allowed`}
-                              type="text"
-                              value={incomeData[index].Depreciation}
-                              onChange={(e) =>
-                                handleDepreciationChange(index, e)
-                              }
-                            />
-                            {/* {incomeData[index].Depreciation} */}
-                          </td>
-                        ))}
-                      </tr>
-                    }
                   </tbody>
                 </table>
               </div>
