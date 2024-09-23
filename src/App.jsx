@@ -56,6 +56,7 @@ import Introduction from "./pages/Introduction.jsx";
 import SettingScene from "./pages/SettingScene.jsx";
 import AboutGame from "./pages/AboutGame.jsx";
 import ChooseRole from "./pages/ChooseRole.jsx";
+import HomePage from "./pages/HomePage.jsx";
 
 function App() {
   // const isAuthenticated = !!localStorage.getItem("breadToken");
@@ -82,6 +83,7 @@ function App() {
       {/* </Route> */}
 
       <Route element={<ProtectedRoute isAuthenticated={authUser} />}>
+        <Route path="/home-page" element={<HomePage />} />
         <Route path="/introduction" element={<Introduction />} />
         <Route path="/about-game" element={<AboutGame />} />
         <Route path="/setting-the-scene" element={<SettingScene />} />

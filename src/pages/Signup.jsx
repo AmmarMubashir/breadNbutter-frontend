@@ -21,13 +21,13 @@ const Signup = () => {
   };
   useEffect(() => {
     if (authUser) {
-      navigate("/introduction");
+      navigate("/home-page");
     }
   }, []);
   useEffect(() => {
     if (isSuccess) {
       toast.success("User created successfully!");
-      navigate("/introduction");
+      navigate("/home-page");
 
       setInputs({ name: "", email: "", password: "" });
       setAuthUser(true);

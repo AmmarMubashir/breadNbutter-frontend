@@ -22,20 +22,20 @@ const Login = () => {
       if (data.data.role === "admin") {
         navigate("/admin/dashboard");
       } else {
-        navigate("/introduction");
+        navigate("/home-page");
       }
     }
   };
   useEffect(() => {
     if (authUser) {
       console.log(authUser);
-      navigate("/introduction");
+      navigate("/home-page");
     }
   }, []);
   useEffect(() => {
     if (isSuccess) {
       toast.success("User logged in successfully!");
-      // navigate("/introduction");
+      // navigate("/home-page");
 
       setInputs({ email: "", password: "" });
       setAuthUser(true);
