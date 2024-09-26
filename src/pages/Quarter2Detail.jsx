@@ -46,9 +46,9 @@ const Quarter2Detail = () => {
                     Other Cost
                   </th>
                   <th className="py-2 px-2 sm:px-3 md:px-4 border-b">Income</th>
-                  <th className="py-2 px-2 sm:px-3 md:px-4 border-b">
+                  {/* <th className="py-2 px-2 sm:px-3 md:px-4 border-b">
                     Net Profit
-                  </th>
+                  </th> */}
                 </tr>
               </thead>
               <tbody>
@@ -69,9 +69,9 @@ const Quarter2Detail = () => {
                   <td className="py-2 px-4 border-b text-center">
                     {quarter2D && quarter2D.option1.income}
                   </td>
-                  <td className="py-2 px-4 border-b text-center">
+                  {/* <td className="py-2 px-4 border-b text-center">
                     {quarter2D && quarter2D.option1.netProfit}
-                  </td>
+                  </td> */}
                 </tr>
                 <tr className="border-b-[2px] border-gray-300 hover:bg-gray-300 cursor-pointer">
                   <td className="py-2 px-4 border-b text-center">
@@ -90,9 +90,9 @@ const Quarter2Detail = () => {
                   <td className="py-2 px-4 border-b text-center">
                     {quarter2D && quarter2D.option2.income}
                   </td>
-                  <td className="py-2 px-4 border-b text-center">
+                  {/* <td className="py-2 px-4 border-b text-center">
                     {quarter2D && quarter2D.option2.netProfit}
-                  </td>
+                  </td> */}
                 </tr>
                 <tr className="hover:bg-gray-300 cursor-pointer border-b-[2px] border-gray-300">
                   <td className="py-2 px-4 border-b text-center">
@@ -111,9 +111,9 @@ const Quarter2Detail = () => {
                   <td className="py-2 px-4 border-b text-center">
                     {quarter2D && quarter2D.option3.income}
                   </td>
-                  <td className="py-2 px-4 border-b text-center">
+                  {/* <td className="py-2 px-4 border-b text-center">
                     {quarter2D && quarter2D.option3.netProfit}
-                  </td>
+                  </td> */}
                 </tr>
                 <tr className="hover:bg-gray-300 cursor-pointer">
                   <td className="py-2 px-4 border-b text-center col-span-3">
@@ -125,9 +125,9 @@ const Quarter2Detail = () => {
                   <td className="py-2 px-4 border-b text-center col-span-3">
                     {null}
                   </td>
-                  <td className="py-2 px-4 border-b text-center col-span-3">
+                  {/* <td className="py-2 px-4 border-b text-center col-span-3">
                     {null}
-                  </td>
+                  </td> */}
                   <td className="py-2 px-4 border-b text-center col-span-3">
                     {quarter2D && quarter2D.totalProfit}
                   </td>
